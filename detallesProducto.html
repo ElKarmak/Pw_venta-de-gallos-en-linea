@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detalles del Producto</title>
+  <link rel="stylesheet" href="./css/bootstrap.css">
+  <style>
+    /* Estilos específicos para los detalles del producto */
+    .product-details-container {
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Agregando sombra */
+      border-radius: 10px; /* Bordes redondeados */
+    }
+    .product-details img {
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Login</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="container mt-5">
+    <h1 class="text-center mb-5">Detalles del Producto</h1>
+    <div class="row">
+      <div class="col-md-6 mx-auto">
+        <div class="product-details-container">
+          <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="https://via.placeholder.com/800x400" class="d-block w-100" alt="Imagen 1">
+              </div>
+              <div class="carousel-item">
+                <img src="https://via.placeholder.com/800x400" class="d-block w-100" alt="Imagen 2">
+              </div>
+              <div class="carousel-item">
+                <img src="https://via.placeholder.com/800x400" class="d-block w-100" alt="Imagen 3">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+          <h2>Nombre del Producto</h2>
+          <p>Precio: $XX.XX</p>
+          <p>Descripción del Producto:</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus suscipit eros justo, eget volutpat libero dignissim ac.</p>
+          <button class="btn btn-primary">Agregar al Carrito</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="./js/bootstrap.js"></script>
+</body>
+</html>
