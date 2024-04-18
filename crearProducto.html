@@ -14,6 +14,19 @@
     ></script>
 
     <style>
+
+      body{
+        background-image: url('./img/galloEnca1.jpeg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        background-attachment: flex;
+        color: white;
+        width: 100%;
+        height: 100vh;
+
+
+      }
        .navbar-nav .nav-item .nav-link,
         .navbar-nav .nav-item a,
         .navbar-brand {
@@ -25,9 +38,9 @@
     </style>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">Venta de Gallos</a>
+        <a class="navbar-brand text-white" href="#">Venta de Gallos</a>
         <button
           class="navbar-toggler"
           type="button"
@@ -42,10 +55,10 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <a class="nav-link " aria-current="page" href="/tienda.html">Inicio</a>
+              <a class="nav-link text-white" aria-current="page" href="/tienda.html">Inicio</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link " aria-current="page" href="/editarProducto.html">Editar Producto</a>
+              <a class="nav-link text-white " aria-current="page" href="/editarProducto.html">Editar Producto</a>
             </li>
           </ul>
         </div>
@@ -53,10 +66,10 @@
     </nav>
     <div
       class="container my-5 d-flex justify-content-center align-items-center border rounded-3 p-5 shadow flex-column
-      w-50
+      w-25
       "
     >
-      <h1 class="text-center pa">Nuevo Producto</h1>
+      <h1 class="text-center pa">Nuevo Producto 📦</h1>
       <form action="store.php" method="POST" enctype="multipart/form-data">
         <div class="mb-3 ">
           <label for="exampleInputEmail1" class="form-label">Encabezado</label>
