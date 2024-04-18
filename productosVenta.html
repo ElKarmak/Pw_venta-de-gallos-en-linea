@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Adminstracion productos</title>
+  <title>Productos en Venta</title>
   <link rel="stylesheet" href="./css/bootstrap.css">
   <script defer src="./js/bootstrap.js"></script>
   <style>
@@ -11,28 +11,33 @@
       max-width: 100%;
       overflow-x: auto;
     }
+    .navbar-nav .nav-item .nav-link,
+        .navbar-nav .nav-item a,
+        .navbar-brand {
+            font-size: 20px; /* Tamaño de fuente más grande */
+            letter-spacing: 2px; /* Espaciado entre letras */
+            text-transform: uppercase; /* Texto en mayúsculas */
+            font-weight: bold; /* Fuente en negrita */
+        }
+
+
+
   </style>
 </head>
 <body>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Navbar</a>
+      <a class="navbar-brand" href="#">Venta de Gallos</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/Tienda.html">Inicio</a>
+            <a class="nav-link " aria-current="page" href="/tienda.html">Inicio</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Features</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Pricing</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled">Disabled</a>
+            <a class="nav-link " href="/crearProducto.html">Crear Producto</a>
           </li>
         </ul>
       </div>
@@ -40,7 +45,7 @@
   </nav>
 
   <div class="container mt-5  shadow-lg rounded-3 text-center">
-    <h2>Tabla Productos</h2>
+    <h2>Editar Productos</h2>
     <div class="table-container shadow-lg rounded-3">
       <table class="table table-hover">
         <thead>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,20 +16,31 @@
       max-width: 100%;
       height: auto;
       margin-bottom: 20px;
+
+      
     }
+
+    .navbar-nav .nav-item .nav-link,
+        .navbar-nav .nav-item a,
+        .navbar-brand {
+            font-size: 20px; /* Tamaño de fuente más grande */
+            letter-spacing: 2px; /* Espaciado entre letras */
+            text-transform: uppercase; /* Texto en mayúsculas */
+            font-weight: bold; /* Fuente en negrita */
+        }
   </style>
 </head>
 <body>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Navbar</a>
+      <a class="navbar-brand" href="#">Venta de Gallos</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Login</a>
+            <a class="nav-link " aria-current="page" href="/tienda.html">Login</a>
           </li>
         </ul>
       </div>

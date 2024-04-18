@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>Pago paypal</title>
+  <link rel="stylesheet" href="./css/bootstrap.css">
+  <style>
+    /* Estilos para el marco del contenedor */
+    #smart-button-container {
+      padding: 20px; /* Espacio interno para separar el contenido del borde */
+      border-radius: 10px; /* Hace que el borde del contenedor sea redondo */
+      border:0; /* Puedes ajustar el grosor y color del borde según tus necesidades */
+      width: 30%; /* Ancho del contenedor */
+      height: auto; /* Alto del contenedor */
+      margin: 0 auto; /* Centra el contenedor horizontalmente */
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Agrega una sombra al contenedor */
+      margin-top: 100px;
+
+    }
+
+  </style>
+  <script defer src="./js/bootstrap.js"></script>
+</head>
+<body>
+  <div id="smart-button-container">
+    <div  style="text-align: center">
+      <div id="paypal-button-container"></div>
+    </div>
+    <div style="text-align: center;">
+      <p>¡Bienvenido a nuestro servicio de pagos!</p>
+      <p>Por favor, sigue las instrucciones para completar tu pago.</p>
+    </div>
+   
+  </div>
+  <script src="https://www.paypal.com/sdk/js?client-id=sb&enable-funding=venmo&currency=USD" data-sdk-integration-source="button-factory"></script>
+  <script>
+    function initPayPalButton() {
+      paypal.Buttons({
+        style: {
+          shape: 'rect',
+          color: 'gold',
+          layout: 'vertical',
+          label: 'paypal',
+        },
+
+        createOrder: function(data, actions) {
+          return actions.order.create({
+            purchase_units: [{"description":"Ejemplo de botón","amount":{"currency_code":"USD","value":1}}]
+          });
+        },
+
+        onApprove: function(data, actions) {
+          return actions.order.capture().then(function(orderData) {
+            // Detalles completos disponibles
+            console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+            // Muestra un mensaje de éxito dentro de esta página web para el usuario
+            const element = document.getElementById('paypal-button-container');
+            element.innerHTML = '';
+            element.innerHTML = '<h3>¡Gracias por tu pago!"</h3>';
+            // O ve a otra URL: actions.redirect('gracias.html');"
+          });
+        },
+
+        onError: function(err) {
+          console.log(err);
+        }
+      }).render('#paypal-button-container');
+    }
+    initPayPalButton();
+  </script>
+</body>
+</html>
