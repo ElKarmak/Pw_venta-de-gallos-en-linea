@@ -17,8 +17,7 @@
       background-attachment: flex;
       color: white;
       width: 100%;
-      height: 100vh;
-
+      min-height: 100vh;
     }
 
     .product-card {
@@ -33,24 +32,39 @@
       height: auto;
     }
 
+    .navbar {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      z-index: 999;
+    }
+
     .navbar-nav .nav-item .nav-link,
     .navbar-nav .nav-item a,
     .navbar-brand {
       font-size: 20px;
-      /* Tamaño de fuente más grande */
       letter-spacing: 2px;
-      /* Espaciado entre letras */
       text-transform: uppercase;
-      /* Texto en mayúsculas */
       font-weight: bold;
-      /* Fuente en negrita */
     }
 
+    .container {
+      padding-top: 80px;
+      padding-bottom: 20px;
+      width: auto;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      border: 2px solid;
+      margin-top: 30px; /* Agregué un margen superior de 30px */
+    }
   </style>
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg">
+  <nav class="navbar navbar-expand-lg position-relative">
     <div class="container-fluid">
       <a class="navbar-brand text-white">Venta de Gallos</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -59,59 +73,58 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
-
-
           <li class="nav-item">
-            <a class="nav-link text-white  " aria-current="page" href="/tienda.html">Inicio</a>
+            <a class="nav-link text-white" aria-current="page" href="#inicio">Inicio</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-white " aria-current="page" href="/carrito.html">Carrito</a>
+            <a class="nav-link text-white" aria-current="page" href="#carrito">Carrito</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-white " aria-current="page" href="/Perfil.html">Perfil</a>
+            <a class="nav-link text-white" aria-current="page" href="#perfil">Perfil</a>
           </li>
-
           <li class="nav-item">
-            <a class="nav-link text-white " aria-current="page" href="/login.html">Salir</a>
+            <a class="nav-link text-white" aria-current="page" href="#salir">Salir</a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
-  <div class="container mt-5">
-    <h1 class="text-center mb-5">Productos</h1>
-    <div class="row">
-      <div class="col-md-4">
-        <div class="product-card">
-          <img src="https://via.placeholder.com/300" alt="Producto 1" class="product-image">
-          <h3 class="mt-3">Producto 1</h3>
-          <p>Precio: $20.00</p>
-          <button class="btn btn-primary">Agregar al Carrito</button>
-
+  <div
+    class="
+    
+    "
+  >
+    <div class="container">
+      <h1 class="text-center mb-5">Productos</h1>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="product-card">
+            <img src="https://via.placeholder.com/300" alt="Producto 1" class="product-image">
+            <h3 class="mt-3">Producto 1</h3>
+            <p>Precio: $20.00</p>
+            <button class="btn btn-primary">Agregar al Carrito</button>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="product-card">
+            <img src="https://via.placeholder.com/300" alt="Producto 2" class="product-image">
+            <h3 class="mt-3">Producto 2</h3>
+            <p>Precio: $25.00</p>
+            <button class="btn btn-primary">Agregar al Carrito</button>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="product-card">
+            <img src="https://via.placeholder.com/300" alt="Producto 3" class="product-image">
+            <h3 class="mt-3">Producto 3</h3>
+            <p>Precio: $30.00</p>
+            <button class="btn btn-primary">Agregar al Carrito</button>
+          </div>
         </div>
       </div>
-      <div class="col-md-4">
-        <div class="product-card">
-          <img src="https://via.placeholder.com/300" alt="Producto 2" class="product-image">
-          <h3 class="mt-3">Producto 2</h3>
-          <p>Precio: $25.00</p>
-          <button class="btn btn-primary">Agregar al Carrito</button>
-
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="product-card">
-          <img src="https://via.placeholder.com/300" alt="Producto 3" class="product-image">
-          <h3 class="mt-3">Producto 3</h3>
-          <h5 class="size-text mt-8">Precio: $30.00</h5>
-          <button class="btn btn-primary">Agregar al Carrito</button>
-
-        </div>
-      </div>
-      <!-- Puedes agregar más columnas aquí para más productos -->
     </div>
   </div>
-
+  
 </body>
 
 </html>

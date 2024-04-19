@@ -57,6 +57,11 @@
       border-radius: 10px;
       text-align: center;
       border: 2px solid;
+      transition: margin-top 0.3s ease; /* Agregar transición al margen superior */
+    }
+
+    .container.down {
+      margin-top: 200px; /* Margen superior aumentado cuando se desplaza hacia abajo */
     }
 
     .rounded-image {
@@ -76,22 +81,24 @@
       <div class="container-fluid">
         <a class="navbar-brand text-white">Venta de Gallos</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"
+          onclick="toggleContainer()"> <!-- Agregar función onclick para llamar a toggleContainer() -->
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
+
             <li class="nav-item">
               <a class="nav-link text-white" aria-current="page" href="/login.html">Salir</a>
             </li>
           </ul>
-        </div>
+        <!-- </div> -->
       </div>
     </nav>
   </div>
 
   <!-- Body of the HTML page. This is where the content of the page goes. -->
-  <div class="container">
+  <div class="container" id="main-container"> <!-- Agregar un ID al contenedor principal -->
     <h1>Perfil de Usuario</h1>
     <div class="card-body">
       <img src="/img/Gallo2.jpeg" class="rounded-image mx-auto d-block w-50 mb-3" alt="Imagen de perfil">
@@ -104,6 +111,12 @@
     </div>
   </div>
 
+  <script>
+    function toggleContainer() {
+      var container = document.getElementById("main-container"); // Obtener el contenedor principal
+      container.classList.toggle("down"); // Alternar la clase "down" en el contenedor
+    }
+  </script>
 </body>
 
 </html>
