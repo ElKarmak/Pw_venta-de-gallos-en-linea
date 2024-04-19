@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crear Usuario</title>
+  <link rel="stylesheet" href="./css/bootstrap.css" />
+  <link rel="icon" href="img/Semental.jpeg">
+  <style>
+
+    
+    .navbar {
+      position: absolute;
+      /* Establece la posición del navbar */
+      top: 0;
+      /* Coloca el navbar en la parte superior */
+      width: 100%;
+      /* Ancho completo */
+    }
+
+    .navbar-nav .nav-item .nav-link,
+    .navbar-nav .nav-item a,
+    .navbar-brand {
+      font-size: 20px;
+      /* Tamaño de fuente más grande */
+      letter-spacing: 2px;
+      /* Espaciado entre letras */
+      text-transform: uppercase;
+      /* Texto en mayúsculas */
+      font-weight: bold;
+      /* Fuente en negrita */
+    }
+
+    body {
+      background-image: url('./img/galloEnca1.jpeg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      background-attachment: flex;
+      width: 100%;
+      height: 100vh;
+      display: flex; /* Uso de Flexbox */
+      justify-content: center; /* Centrado horizontal */
+      align-items: center; /* Centrado vertical */
+      color: white;
+    }
+
+    .container {
+      border: 1px solid #ced4da; /* Borde */
+      border-radius: 8px; /* Bordes redondeados */
+      padding: 20px; /* Espaciado interno */
+      box-shadow: 0px 0px 10px rgba(59, 59, 59, 0.1); /* Sombra */
+      width: 30%; /* Ancho del contenedor */
+    }
+  </style>
+  <script defer src="./js/bootstrap.js"></script>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <a class="navbar-brand text-white">Venta de Gallos</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+
+          <li class="nav-item">
+            <a class="nav-link text-white " aria-current="page" href="/login.html">Salir</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="container-form">
+      <h2 class="text-center mb-4">Crear Usuario</h2>
+      <form id="userForm">
+        <div class="mb-3">
+          <label for="nombre" class="form-label">Nombre</label>
+          <input type="text" class="form-control" id="nombre" placeholder="Nombre del usuario" />
+        </div>
+        <div class="mb-3">
+          <label for="correo" class="form-label">Correo Electrónico</label>
+          <input type="email" class="form-control" id="correo" placeholder="Correo electrónico del usuario" />
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Contraseña</label>
+          <input type="password" class="form-control" id="password" placeholder="Contraseña" />
+        </div>
+        <div class="mb-3">
+          <label for="confirmPassword" class="form-label">Confirmar Contraseña</label>
+          <input type="password" class="form-control" id="confirmPassword" placeholder="Confirmar Contraseña" />
+        </div>
+        <div class="text-center">
+          <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
