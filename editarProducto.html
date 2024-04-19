@@ -22,9 +22,17 @@
         background-attachment: flex;
         color: white;
         width: 100%;
-      width: auto;
+        width: auto;
         
       }
+      .navbar {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      z-index: 999;
+    }
 
 
 
@@ -45,7 +53,7 @@
 
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg ">
+    <nav class="navbar navbar-expand-lg position-relative ">
       <div class="container-fluid">
         <a class="navbar-brand text-white" href="#">Venta de Gallos</a>
         <button

@@ -2,20 +2,11 @@
 <html lang="es">
 
 <head>
-  <!-- Meta tags for character encoding, viewport and title of the page -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Perfil de Usuario</title>
-
-  <!-- Link to the favicon -->
+  <title>Perfil</title>
   <link rel="icon" href="img/Semental.jpeg">
-
-  <!-- Link to the stylesheet -->
-  <link rel="stylesheet" href="./css/bootstrap.css" />
-
-  <!-- Deferred script that loads the JavaScript file -->
-  <script defer src="./js/bootstrap.js"></script>
-
+  <link rel="stylesheet" href="./css/bootstrap.css">
   <style>
     body {
       background-image: url('./img/galloEnca1.jpeg');
@@ -24,19 +15,39 @@
       background-position: center;
       background-attachment: flex;
       color: white;
-      margin: 0;
-      padding: 0;
+      width: 100%;
       height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+    }
+
+
+
+
+    /* Estilos específicos para los detalles del producto */
+    .product-details-container {
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(2, 0, 4, 0.4);
+      /* Agregando sombra */
+      border-radius: 10px;
+      /* Bordes redondeados */
+      border: 1px solid #ccc;
+    }
+
+    .product-details img {
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 20px;
     }
 
     .navbar {
-      position: absolute; /* Establece la posición del navbar */
-      top: 0; /* Coloca el navbar en la parte superior */
-      width: 100%; /* Ancho completo */
+      position: absolute;
+      top: 0;
+      width: 100%;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      z-index: 999;
     }
+
+
     .navbar-nav .nav-item .nav-link,
     .navbar-nav .nav-item a,
     .navbar-brand {
@@ -50,73 +61,58 @@
       /* Fuente en negrita */
     }
 
-    .container {
-      padding-top: 80px; /* Espaciado entre el navbar y el contenido */
-      width: auto; /* Ajusta el ancho del contenedor según tu preferencia */
-      padding: 20px; /* Espaciado interno */
-      border-radius: 10px;
-      text-align: center;
-      border: 2px solid;
-      transition: margin-top 0.3s ease; /* Agregar transición al margen superior */
-    }
+    .img-fluid{
+     
+      width: 50%;
+      height: 50%px;
+      border-radius: 75px;
 
-    .container.down {
-      margin-top: 200px; /* Margen superior aumentado cuando se desplaza hacia abajo */
-    }
-
-    .rounded-image {
-      border-radius: 20%; /* Hace que el borde de la imagen sea redondo */
-    }
-
-    .card-body p  {
-      text-align: left; /* Alinea los párrafos a la izquierda */
-      margin-right: 100px; /* Aumenta el margen derecho */
     }
   </style>
 </head>
 
 <body>
-  <div>
-    <nav class="navbar navbar-expand-lg">
-      <div class="container-fluid">
-        <a class="navbar-brand text-white">Venta de Gallos</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"
-          onclick="toggleContainer()"> <!-- Agregar función onclick para llamar a toggleContainer() -->
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-
-            <li class="nav-item">
-              <a class="nav-link text-white" aria-current="page" href="/login.html">Salir</a>
-            </li>
-          </ul>
-        <!-- </div> -->
+  <nav class="navbar navbar-expand-lg position-relative">
+    <div class="container-fluid">
+      <a class="navbar-brand text-white " href="#">Venta de Gallos</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link text-white" aria-current="page" href="/tienda.html">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" aria-current="page" href="/tienda.html">Volver</a>
+          </li>
+        </ul>
       </div>
-    </nav>
-  </div>
+    </div>
+  </nav>
 
-  <!-- Body of the HTML page. This is where the content of the page goes. -->
-  <div class="container" id="main-container"> <!-- Agregar un ID al contenedor principal -->
-    <h1>Perfil de Usuario</h1>
-    <div class="card-body">
-      <img src="/img/Gallo2.jpeg" class="rounded-image mx-auto d-block w-50 mb-3" alt="Imagen de perfil">
-      <h5 class="card-title">Juan Pérez</h5>
-      <p class="card-text">Correo Electrónico: juan.perez@example.com</p>
-      <p class="card-text">Dirección de Envío: Calle Principal #123, Ciudad, País</p>
-      <p class="card-text">Método de Pago: Tarjeta de crédito</p>
-      <p class="card-text">Rol: Usuario registrado</p>
-      <a href="/editarPerfil.html" class="btn btn-primary">Editar perfil</a>
+
+  <div class="container mt-5">
+
+    <div class="row">
+
+      <div class="col-md-6 mx-auto">
+
+        <div class="product-details-container">
+          <h1 class="text-center mb-5">Detalles del Producto</h1>
+          <img class="img-fluid text-center" src="/img/Gallo2.jpeg" alt="Imagen del Producto">
+          <h5 class="card-title">Juan Pérez</h5>
+          <p class="card-text">Correo Electrónico: juan.perez@example.com</p>
+          <p class="card-text">Dirección de Envío: Calle Principal #123, Ciudad, País</p>
+          <p class="card-text">Método de Pago: Tarjeta de crédito</p>
+          <p class="card-text">Rol: Usuario registrado</p>
+          <a href="/editarPerfil.html" class="btn btn-primary">Editar perfil</a>
+        </div>
+      </div>
     </div>
   </div>
-
-  <script>
-    function toggleContainer() {
-      var container = document.getElementById("main-container"); // Obtener el contenedor principal
-      container.classList.toggle("down"); // Alternar la clase "down" en el contenedor
-    }
-  </script>
+  <script src="./js/bootstrap.js"></script>
 </body>
 
 </html>
