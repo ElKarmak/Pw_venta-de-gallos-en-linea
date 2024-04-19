@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Editar Información del Usuario</title>
+  <link rel="icon" href="img/Semental.jpeg" />
+  <link rel="stylesheet" href="./css/bootstrap.css" />
+  <style>
+    body {
+      background-image: url('./img/galloEnca1.jpeg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      background-attachment: flex;
+      color: white;
+    }
+
+    .navbar-nav .nav-item .nav-link,
+    .navbar-nav .nav-item a,
+    .navbar-brand {
+      font-size: 20px;
+      /* Tamaño de fuente más grande */
+      letter-spacing: 2px;
+      /* Espaciado entre letras */
+      text-transform: uppercase;
+      /* Texto en mayúsculas */
+      font-weight: bold;
+      /* Fuente en negrita */
+    }
+
+
+
+
+
+
+    .container {
+
+      /* Fondo del contenedor */
+      border: 1px solid #ddd;
+      /* Borde del contenedor */
+      border-radius: 10px;
+      /* Borde redondeado */
+      padding: 20px;
+      /* Espaciado interno */
+      margin: 100px auto;
+      /* Centra el contenedor horizontalmente */
+      max-width: 500px;
+      /* Ancho máximo del contenedor */
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <a class="navbar-brand text-white">Venta de Gallos</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link text-white" aria-current="page" href="/tienda.html">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" aria-current="page" href="/Perfil.html">Perfil</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <h1 class="text-center">Editar Información del Usuario</h1>
+    <form>
+      <div class="mb-3">
+        <label for="nombre" class="form-label">Nombre</label>
+        <input type="text" class="form-control" id="nombre" placeholder="Nombre del usuario" />
+      </div>
+      <div class="mb-3">
+        <label for="correo" class="form-label">Correo Electrónico</label>
+        <input type="email" class="form-control" id="correo" placeholder="Correo electrónico del usuario" />
+      </div>
+      <div class="mb-3">
+        <label for="direccion" class="form-label">Dirección de Envío</label>
+        <input type="text" class="form-control" id="direccion" placeholder="Dirección de envío del usuario" />
+      </div>
+      <div class="mb-3">
+        <label for="metodoPago" class="form-label">Método de Pago</label>
+        <select class="form-select" id="metodoPago">
+          <option selected>Selecciona el método de pago</option>
+          <option value="tarjeta">Tarjeta de crédito</option>
+          <option value="paypal">PayPal</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="rol" class="form-label">Rol</label>
+        <select class="form-select" id="rol">
+          <option selected>Selecciona el rol del usuario</option>
+          <option value="usuario">Usuario registrado</option>
+          <option value="invitado">Usuario invitado</option>
+        </select>
+      </div>
+      <div class="text-center">
+        <button type="submit" class="btn btn-primary ">Guardar Cambios</button>
+      </div>
+    </form>
+  </div>
+</body>
+
+</html>

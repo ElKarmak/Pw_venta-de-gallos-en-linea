@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <!-- Meta tags for character encoding, viewport and title of the page -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perfil de Usuario</title>
+
+  <!-- Link to the favicon -->
+  <link rel="icon" href="img/Semental.jpeg">
+
+  <!-- Link to the stylesheet -->
+  <link rel="stylesheet" href="./css/bootstrap.css" />
+
+  <!-- Deferred script that loads the JavaScript file -->
+  <script defer src="./js/bootstrap.js"></script>
+
+  <style>
+    body {
+      background-image: url('./img/galloEnca1.jpeg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      background-attachment: flex;
+      color: white;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .navbar {
+      position: absolute; /* Establece la posición del navbar */
+      top: 0; /* Coloca el navbar en la parte superior */
+      width: 100%; /* Ancho completo */
+    }
+
+    .navbar-nav .nav-item .nav-link,
+    .navbar-nav .nav-item a,
+    .navbar-brand {
+      font-size: 20px;
+      /* Tamaño de fuente más grande */
+      letter-spacing: 2px;
+      /* Espaciado entre letras */
+      text-transform: uppercase;
+      /* Texto en mayúsculas */
+      font-weight: bold;
+      /* Fuente en negrita */
+    }
+
+    .container {
+      padding-top: 80px; /* Espaciado entre el navbar y el contenido */
+      width: auto; /* Ajusta el ancho del contenedor según tu preferencia */
+      padding: 20px; /* Espaciado interno */
+      border-radius: 10px;
+      text-align: center;
+      border: 2px solid;
+    }
+
+    .rounded-image {
+      border-radius: 20%; /* Hace que el borde de la imagen sea redondo */
+    }
+
+    .card-body p  {
+      text-align: left; /* Alinea los párrafos a la izquierda */
+      margin-right: 100px; /* Aumenta el margen derecho */
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <nav class="navbar navbar-expand-lg">
+      <div class="container-fluid">
+        <a class="navbar-brand text-white">Venta de Gallos</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link text-white" aria-current="page" href="/tienda.html">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" aria-current="page" href="/carrito.html">Carrito</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" aria-current="page" href="/Perfil.html">Perfil</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" aria-current="page" href="/login.html">Cerrar Sesión</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <!-- Body of the HTML page. This is where the content of the page goes. -->
+  <div class="container">
+    <h1>Perfil de Usuario</h1>
+    <div class="card-body">
+      <img src="/img/Gallo2.jpeg" class="rounded-image mx-auto d-block w-50 mb-3" alt="Imagen de perfil">
+      <h5 class="card-title">Juan Pérez</h5>
+      <p class="card-text">Correo Electrónico: juan.perez@example.com</p>
+      <p class="card-text">Dirección de Envío: Calle Principal #123, Ciudad, País</p>
+      <p class="card-text">Método de Pago: Tarjeta de crédito</p>
+      <p class="card-text">Rol: Usuario registrado</p>
+      <a href="/editarPerfil.html" class="btn btn-primary">Editar perfil</a>
+    </div>
+  </div>
+
+</body>
+
+</html>
