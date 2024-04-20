@@ -14,7 +14,7 @@
       background-size: cover;
       background-position: center;
       background-attachment: flex;
-      color: white;
+      color: black;
       width: 100%;
       height: 110vh;
     }
@@ -22,14 +22,16 @@
 
 
 
-    /* Estilos específicos para los detalles del producto */
+    
     .product-details-container {
-      padding: 20px;
+      margin-top: 150px;
+      margin-bottom: 100px;
+      padding: 30px;
       box-shadow: 0 0 10px rgba(2, 0, 4, 0.4);
       /* Agregando sombra */
       border-radius: 10px;
       /* Bordes redondeados */
-      border: 1px solid #ccc;
+      background-color: rgba(255, 255, 255, 0.5);
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
       z-index: 999;
@@ -46,6 +48,7 @@
       position: absolute;
       top: 0;
       width: 100%;
+      background-color: rgba(255, 255, 255, 0.5);
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
       z-index: 999;
@@ -69,8 +72,8 @@
     .img-fluid{
      
       width: 50%;
-      height: 50%px;
-      border-radius: 75px;
+      height: 40%px;
+      border-radius: 40px;
 
     }
   </style>
@@ -79,7 +82,7 @@
 <body>
   <nav class="navbar navbar-expand-lg position-relative">
     <div class="container-fluid">
-      <a class="navbar-brand text-white " href="#">Venta de Gallos</a>
+      <a class="navbar-brand text-black"ref="#">Venta de Gallos</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -87,7 +90,7 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <a class="nav-link text-white" aria-current="page" href="/login.html">Login</a>
+            <a class="nav-link text-black" aria-current="page" href="/tienda.html">Volver</a>
           </li>
         </ul>
       </div>
@@ -97,21 +100,18 @@
 
   <div class="container mt-5">
     <div class="row">
-      <div class="col-md-6 mx-auto">
+      <div class="col-md-6 mx-lg-auto">
         <div class="product-details-container d-flex justify-content-center align-items-center flex-column">
-          <h1 class="text-center mb-5">Detalles del Producto</h1>
+          <h1 class="text-center mb-5">Perfil</h1>
           <img class="img-fluid text-center p-4" src="/img/Gallo2.jpeg" alt="Imagen del Producto">
-          <div class="text-center p-3 ">
-            <h5 class="card-title">Juan Pérez</h5>
+          <div class="align-content-center  text-lg-start ">
+
+            <h4 class="card-title p-2">Nombre: Juan Pérez</h4>
+            <h4 class="card-title p-2">Correo Electrónico: juan.perez@example.com</>
+            <h4 class="card-title p-2">Dirección de Envío: Calle Principal #123, Ciudad, País</h4>
+            <h4 class="text-title p-2">Método de Pago: Tarjeta de crédito</>
+            <h4 class="text-title p-2">Rol: Usuario registrado</p>
             </div>
-
-            <div>
-            <p class="text-left">Correo Electrónico: juan.perez@example.com</p>
-            <p class="text-left">Dirección de Envío: Calle Principal #123, Ciudad, País</p>
-            <p class="text-left">Método de Pago: Tarjeta de crédito</p>
-            <p class="text-left">Rol: Usuario registrado</p>
-            <div class="text-center p-3">
-
               <a href="/editarPerfil.html" class="btn btn-primary">Editar perfil</a>
             </div>
         </div>        

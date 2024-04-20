@@ -15,16 +15,18 @@
       background-size: cover;
       background-position: center;
       background-attachment: flex;
-      color: white;
+      color: black;
       width: 100%;
       min-height: 110vh;
     }
 
     .product-card {
-      border: 1px solid #ccc;
+      display: block;
+      width: auto;
       border-radius: 5px;
       padding: 15px;
       margin-bottom: 20px;
+      box-shadow: 0 0 10px rgba(2, 0, 4, 0.4);
     }
 
     .product-image {
@@ -36,6 +38,7 @@
       position: absolute;
       top: 0;
       width: 100%;
+      background-color: rgba(255, 255, 255, 0.5);
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
       z-index: 999;
@@ -58,7 +61,7 @@
       border-radius: 10px;
       text-align: center;
       margin-top: 30px; /* Agregué un margen superior de 30px */
-      border: 1px solid;
+      background-color: rgba(255, 255, 255, 0.5);
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
       z-index: 999;
@@ -71,7 +74,7 @@
 <body>
   <nav class="navbar navbar-expand-lg position-relative">
     <div class="container-fluid">
-      <a class="navbar-brand text-white">Venta de Gallos</a>
+      <a class="navbar-brand text-black">Venta de Gallos</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -79,19 +82,19 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <a class="nav-link text-white" aria-current="page" href="/tienda.html">Inicio</a>
+            <a class="nav-link text-black" aria-current="page" href="/tienda.html">Inicio</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-white" aria-current="page" href="/carrito.html">Carrito</a>
+            <a class="nav-link text-black" aria-current="page" href="/carrito.html">Carrito</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-white" aria-current="page" href="/Perfil.html">Perfil</a>
+            <a class="nav-link text-black" aria-current="page" href="/Perfil.html">Perfil</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-white" aria-current="page" href="/login.html">Inicrar Sesión</a>
+            <a class="nav-link text-black" aria-current="page" href="/login.html">Sesión</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-white" aria-current="page" href="https://www.google.com/">Salir</a>
+            <a class="nav-link text-black" aria-current="page" href="https://www.google.com/">Salir</a>
           </li>
         </ul>
       </div>

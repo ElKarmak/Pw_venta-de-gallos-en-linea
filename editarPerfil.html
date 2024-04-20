@@ -15,7 +15,7 @@
       background-size: cover;
       background-position: center;
       background-attachment: flex;
-      color: white;
+      color: black;
       width: 100%;
       height: 110vh;
     }
@@ -24,6 +24,7 @@
       position: absolute;
       top: 0;
       width: 100%;
+      background-color: rgba(255, 255, 255, 0.5);
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
       z-index: 999;
@@ -38,30 +39,26 @@
       font-weight: bold;
     }
     .container {
-
-      /* Fondo del contenedor */
-      /* Borde del contenedor */
-      border-radius: 10px;
-      /* Borde redondeado */
-      padding: 20px;
-      /* Espaciado interno */
-      margin: 100px auto;
-      /* Centra el contenedor horizontalmente */
-      max-width: 500px;
-      /* Ancho máximo del contenedor */
-
-      border: 1px solid #ccc;
+      margin-top: 200px;
+      margin-bottom: 120px;
+      background-color: rgba(255, 255, 255, 0.5);
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
+      border-radius: 10px;
+      border: 1px solid #ccc;
       z-index: 999;
+      padding: 25px;
+      width: 30%;
     }
+    
+      
   </style>
 </head>
 
 <body>
   <nav class="navbar navbar-expand-lg position-relative">
     <div class="container-fluid">
-      <a class="navbar-brand text-white">Venta de Gallos</a>
+      <a class="navbar-brand text-black">Venta de Gallos</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -69,16 +66,7 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <a class="nav-link text-white" aria-current="page" href="/tienda.html">Inicio</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-white" aria-current="page" href="/carrito.html">Carrito</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-white" aria-current="page" href="/Perfil.html">Perfil</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-white" aria-current="page" href="/login.html">Salir</a>
+            <a class="nav-link text-black" aria-current="page" href="/Perfil.html">Regresar</a>
           </li>
         </ul>
       </div>
@@ -86,26 +74,26 @@
   </nav>
 
   <div class="container">
-    <h1 class="text-center">Editar Información del Usuario</h1>
+    <h1 class="text-center">Editar perfil</h1>
     <form>
-      <div class="mb-3">
-        <label for="nombre" class="form-label">Nombre</label>
-        <input type="text" class="form-control" id="nombre" placeholder="Nombre del usuario" />
+      <div class="mb-3 text-center">
+        <label for="nombre" class="form-label text-center">Nombre</label>
+        <input type="text" class="form-control text-center" id="nombre" placeholder="Nombre del usuario" />
       </div>
-      <div class="mb-3">
-        <label for="correo" class="form-label">Correo Electrónico</label>
-        <input type="email" class="form-control" id="correo" placeholder="Correo electrónico del usuario" />
+      <div class="mb-3 text-center">
+        <label for="correo" class="form-label text-center">Correo Electrónico</label>
+        <input type="email" class="form-control text-center" id="correo" placeholder="Correo electrónico del usuario" />
       </div>
-      <div class="mb-3">
-        <label for="password" class="form-label">Contraseña</label>
-        <input type="password" class="form-control" id="password" placeholder="Contraseña" />
+      <div class="mb-3 text-center">
+        <label for="password" class="form-label text-center">Contraseña</label>
+        <input type="password" class="form-control text-center" id="password" placeholder="Contraseña" />
       </div>
-      <div class="mb-3">
+      <div class="mb-3 text-center">
         <label for="confirmPassword" class="form-label">Confirmar Contraseña</label>
-        <input type="password" class="form-control" id="confirmPassword" placeholder="Confirmar Contraseña" />
+        <input type="password" class="form-control text-center" id="confirmPassword" placeholder="Confirmar Contraseña" />
       </div>
       <div class="text-center">
-        <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+        <button type="submit" class="btn btn-primary text-black">Guardar Cambios</button>
       </div>
       
     </form>

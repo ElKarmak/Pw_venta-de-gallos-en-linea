@@ -1,204 +1,178 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Carrito</title>
-    <link rel="icon" href="img/Semental.jpeg">
-    <link rel="stylesheet" href="./css/bootstrap.css" />
-    <script defer src="./js/bootstrap.js"></script>
-    <style>
-      body{
-        background-image: url('./img/galloEnca1.jpeg');
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
-        background-attachment: flex;
-        color: white;
-        width: auto;
-        height: 110vh;
-      }
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Carrito</title>
+  <link rel="icon" href="img/Semental.jpeg">
+  <link rel="stylesheet" href="./css/bootstrap.css" />
+  <script defer src="./js/bootstrap.js"></script>
+  <style>
+    body {
+      background-image: url('./img/galloEnca1.jpeg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      background-attachment: flex;
+      color: black;
+      width: auto;
+      height: 110vh;
+    }
 
 
 
-      .table-container {
-        max-width: 100%;
-        overflow-x: 100vh;
-      }
+    .table-container {
+      max-width: 100%;
+      overflow-x: 110vh;
+    }
 
-      .button-container {
-        margin-bottom: 5px;
-        margin-top: 5px;
-        /* Agrega margen inferior */
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 100%;
-        padding: 5px;
-        border-radius: 0px;
-      }
-
-      .navbar-nav .nav-item .nav-link,
-        .navbar-nav .nav-item a,
-        .navbar-brand {
-            font-size: 20px; /* Tamaño de fuente más grande */
-            letter-spacing: 2px; /* Espaciado entre letras */
-            text-transform: uppercase; /* Texto en mayúsculas */
-            font-weight: bold; /* Fuente en negrita */
-        }
-        .navbar {
-      position: absolute;
-      top: 0;
-      width: 100%;
+    .container {
+      padding-bottom: 20px;
+      width: auto;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      margin-top: 30px;
+      /* Agregué un margen superior de 30px */
+      background-color: rgba(255, 255, 255, 0.5);
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
       z-index: 999;
     }
-    </style>
-  </head>
 
-  <body>
-    <nav class="navbar navbar-expand-lg">
-      <div class="container-fluid">
-        <a class="navbar-brand text-white" href="#">Venta de Gallos</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a class="nav-link text-white " aria-current="page" href="/tienda.html"
-                >Inicio</a
-              >
-            </li>
-          </ul>
-        </div>
+    .button-container {
+      margin-bottom: 5px;
+      margin-top: 20px;
+      /* Agrega margen inferior */
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      padding: 5px;
+      border-radius: 0px;
+
+    }
+
+    .navbar-nav .nav-item .nav-link,
+    .navbar-nav .nav-item a,
+    .navbar-brand {
+      font-size: 20px;
+      /* Tamaño de fuente más grande */
+      letter-spacing: 2px;
+      /* Espaciado entre letras */
+      text-transform: uppercase;
+      /* Texto en mayúsculas */
+      font-weight: bold;
+      /* Fuente en negrita */
+    }
+
+    .navbar {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.5);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      z-index: 999;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg position-relative">
+    <div class="container-fluid">
+      <a class="navbar-brand text-black" href="#">Venta de Gallos</a>
+      <button class="navbar-toggler  " type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link text-black " aria-current="page" href="/tienda.html">Inicio</a>
+          </li>
+        </ul>
       </div>
-    </nav>
-    <div class="container mt-5 rounded-3 text-center">
-      <h1>Carrito</h1>
-      <div class="table-container shadow-lg">
-        <table class="table table-hover text-white"> <!-- Quitando el table table-hover podemos quitarle el fondo la tabla. -->
-          <thead class="table-dark">
-            <tr>
-              <th scope="col">Image</th>
-              <th scope="col">Nombre</th>
-              <th scope="col">Precio</th>
-              <th scope="col">Cantidad</th>
-              <th scope="col">Descripción</th>
-              <th scope="col">Acciones</th>
-            </tr>
-          </thead>
-          <tbody>
-            <!-- Here you would dynamically generate rows for each product -->
-            <tr class="align-middle table-dark">
-              <td>
-                <img
-                  src="https://via.placeholder.com/150"
-                  alt="Product Image"
-                />
-              </td>
-              <td>Product Name</td>
-              <td>$10.00</td>
-              <td class="text-center col-sm-1">
-                <input class="form-control" type="number" value="1" />
-              </td>
-              <td>Product Description</td>
-              <td>
-                <button type="button" class="btn btn-danger">Eliminar</button>
-              </td>
-            </tr>
-            <tr class="align-middle table-dark">
-              <td>
-                <img
-                  src="https://via.placeholder.com/150"
-                  alt="Product Image"
-                />
-              </td>
-              <td>Product Name</td>
-              <td>$10.00</td>
-              <td class="text-center col-sm-1">
-                <input class="form-control" type="number" value="1" />
-              </td>
-              <td>Product Description</td>
-              <td>
-                <button type="button" class="btn btn-danger">Eliminar</button>
-              </td>
-            </tr>
-            <tr class="align-middle table-dark">
-              <td>
-                <img
-                  src="https://via.placeholder.com/150"
-                  alt="Product Image"
-                />
-              </td>
-              <td>Product Name</td>
-              <td>$10.00</td>
-              <td class="text-center col-sm-1">
-                <input class="form-control" type="number" value="1" />
-              </td>
-              <td>Product Description</td>
-              <td>
-                <button type="button" class="btn btn-danger">Eliminar</button>
-              </td>
-            </tr>
-            <tr class="align-middle table-dark">
-              <td>
-                <img
-                  src="https://via.placeholder.com/150"
-                  alt="Product Image"
-                />
-              </td>
-              <td>Product Name</td>
-              <td>$10.00</td>
-              <td class="text-center col-sm-1">
-                <input class="form-control" type="number" value="1" />
-              </td>
-              <td>Product Description</td>
-              <td>
-                <button type="button" class="btn btn-danger">Eliminar</button>
-              </td>
-            </tr>
-            <tr class="align-middle table-dark">
-              <td>
-                <img
-                  src="https://via.placeholder.com/150"
-                  alt="Product Image"/>
-              </td>
-              <td>Product Name</td>
-              <td>$10.00</td>
-              <td class="text-center col-sm-1">
-                <input class="form-control" type="number" value="1" />
-              </td>
-              <td>Product Description</td>
-              <td>
-                <button type="button" class="btn btn-danger">Eliminar</button>
-              </td>
-            </tr>
+    </div>
+  </nav>
+  <div class="container">
+    <h1>Carrito</h1>
+    <div class="table-container shadow-lg">
+      <table class="table table-hover text-black">
+        <!-- Quitando el table table-hover podemos quitarle el fondo la tabla. -->
+        <thead class="table-light ">
+          <tr>
+            <th scope="col">Image</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Cantidad</th>
+            <th scope="col">Descripción</th>
+            <th scope="col">Acciones</th>
+          </tr>
+        </thead>
+        <tbody class="bg-danger">
+          <!-- Here you would dynamically generate rows for each product -->
+          <tr class="align-middle table-light">
+            <td>
+              <img src="https://via.placeholder.com/150" alt="Product Image" />
+            </td>
+            <td>Product Name</td>
+            <td>$10.00</td>
+            <td class="text-center col-sm-1">
+              <input class="form-control" type="number" value="1" />
+            </td>
+            <td>Product Description</td>
+            <td>
+              <button type="button" class="btn btn-danger  text-black">Eliminar</button>
+            </td>
+          </tr>
+          <tr class="align-middle table-light">
+            <td>
+              <img src="https://via.placeholder.com/150" alt="Product Image" />
+            </td>
+            <td>Product Name</td>
+            <td>$10.00</td>
+            <td class="text-center col-sm-1">
+              <input class="form-control" type="number" value="1" />
+            </td>
+            <td>Product Description</td>
+            <td>
+              <button type="button" class="btn btn-danger text-black">Eliminar</button>
+            </td>
+          </tr>
+          <tr class="align-middle table-light">
+            <td>
+              <img src="https://via.placeholder.com/150" alt="Product Image" />
+            </td>
+            <td>Product Name</td>
+            <td>$10.00</td>
+            <td class="text-center col-sm-1">
+              <input class="form-control" type="number" value="1" />
+            </td>
+            <td>Product Description</td>
+            <td>
+              <button type="button" class="btn btn-danger text-black">Eliminar</button>
+            </td>
+          </tr>
 
-            <!-- More rows can be added here for more products -->
-          </tbody>
-        </table>
-        <div class=" d-flex justify-content-between btn text-white ">
-          <a href="/tienda.html" class="btn btn-primary m-3"
-            >Volver
-            <img width="25" src="./icons/shoping-cart.svg" alt="" />
-          </a>
-          <a href="/Pago.html" class="btn btn-primary m-3">Comparar</a>
-          <div class="mt-3" m-1>
-            <!-- Agrega margen superior -->
-            <h5 class="text-end">Total: $20.00</h5>
-          </div>
+
+
+          <!-- More rows can be added here for more products -->
+        </tbody>
+      </table>
+      <div class=" d-flex justify-content-between btn-done p-4 ">
+        <a href="/tienda.html" class="btn btn-primary m-3 text-black">Volver
+          <img width="25" src="./icons/shoping-cart.svg" alt="" />
+        </a>
+        <a href="/Pago.html" class="btn btn-primary m-3 text-black">Comparar</a>
+        <div class="mt-3" m-1>
+          <!-- Agrega margen superior -->
+          <h3 class="text-end text-black">Total: $30.00</h3>
         </div>
       </div>
     </div>
-  </body>
+  </div>
+</body>
+
 </html>
