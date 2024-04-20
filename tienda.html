@@ -17,7 +17,7 @@
       background-attachment: flex;
       color: white;
       width: 100%;
-      min-height: 100vh;
+      min-height: 110vh;
     }
 
     .product-card {
@@ -57,8 +57,13 @@
       padding: 20px;
       border-radius: 10px;
       text-align: center;
-      border: 2px solid;
       margin-top: 30px; /* Agregué un margen superior de 30px */
+      border: 1px solid;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      z-index: 999;
+
+      
     }
   </style>
 </head>
@@ -74,16 +79,19 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <a class="nav-link text-white" aria-current="page" href="#inicio">Inicio</a>
+            <a class="nav-link text-white" aria-current="page" href="/tienda.html">Inicio</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-white" aria-current="page" href="#carrito">Carrito</a>
+            <a class="nav-link text-white" aria-current="page" href="/carrito.html">Carrito</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-white" aria-current="page" href="#perfil">Perfil</a>
+            <a class="nav-link text-white" aria-current="page" href="/Perfil.html">Perfil</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-white" aria-current="page" href="#salir">Salir</a>
+            <a class="nav-link text-white" aria-current="page" href="/login.html">Inicrar Sesión</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" aria-current="page" href="https://www.google.com/">Salir</a>
           </li>
         </ul>
       </div>

@@ -16,7 +16,7 @@
       background-attachment: flex;
       color: white;
       width: 100%;
-      height: 100vh;
+      height: 110vh;
     }
 
 
@@ -30,6 +30,10 @@
       border-radius: 10px;
       /* Bordes redondeados */
       border: 1px solid #ccc;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      z-index: 999;
+
     }
 
     .product-details img {
@@ -46,6 +50,7 @@
       -webkit-backdrop-filter: blur(10px);
       z-index: 999;
     }
+    
 
 
     .navbar-nav .nav-item .nav-link,
@@ -82,10 +87,7 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <a class="nav-link text-white" aria-current="page" href="/tienda.html">Login</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-white" aria-current="page" href="/tienda.html">Volver</a>
+            <a class="nav-link text-white" aria-current="page" href="/login.html">Login</a>
           </li>
         </ul>
       </div>
@@ -94,24 +96,30 @@
 
 
   <div class="container mt-5">
-
     <div class="row">
-
       <div class="col-md-6 mx-auto">
-
-        <div class="product-details-container">
+        <div class="product-details-container d-flex justify-content-center align-items-center flex-column">
           <h1 class="text-center mb-5">Detalles del Producto</h1>
-          <img class="img-fluid text-center" src="/img/Gallo2.jpeg" alt="Imagen del Producto">
-          <h5 class="card-title">Juan Pérez</h5>
-          <p class="card-text">Correo Electrónico: juan.perez@example.com</p>
-          <p class="card-text">Dirección de Envío: Calle Principal #123, Ciudad, País</p>
-          <p class="card-text">Método de Pago: Tarjeta de crédito</p>
-          <p class="card-text">Rol: Usuario registrado</p>
-          <a href="/editarPerfil.html" class="btn btn-primary">Editar perfil</a>
+          <img class="img-fluid text-center p-4" src="/img/Gallo2.jpeg" alt="Imagen del Producto">
+          <div class="text-center p-3 ">
+            <h5 class="card-title">Juan Pérez</h5>
+            </div>
+
+            <div>
+            <p class="text-left">Correo Electrónico: juan.perez@example.com</p>
+            <p class="text-left">Dirección de Envío: Calle Principal #123, Ciudad, País</p>
+            <p class="text-left">Método de Pago: Tarjeta de crédito</p>
+            <p class="text-left">Rol: Usuario registrado</p>
+            <div class="text-center p-3">
+
+              <a href="/editarPerfil.html" class="btn btn-primary">Editar perfil</a>
+            </div>
+        </div>        
         </div>
       </div>
     </div>
   </div>
+  
   <script src="./js/bootstrap.js"></script>
 </body>
 

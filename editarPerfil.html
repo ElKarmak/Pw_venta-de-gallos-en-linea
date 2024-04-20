@@ -4,9 +4,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Editar Información del Usuario</title>
+  <title>Editar Perfil</title>
   <link rel="icon" href="img/Semental.jpeg" />
   <link rel="stylesheet" href="./css/bootstrap.css" />
+  <script defer src="./js/bootstrap.js"></script>
   <style>
     body {
       background-image: url('./img/galloEnca1.jpeg');
@@ -15,30 +16,30 @@
       background-position: center;
       background-attachment: flex;
       color: white;
+      width: 100%;
+      height: 110vh;
+    }
+
+    .navbar {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      z-index: 999;
     }
 
     .navbar-nav .nav-item .nav-link,
     .navbar-nav .nav-item a,
     .navbar-brand {
       font-size: 20px;
-      /* Tamaño de fuente más grande */
       letter-spacing: 2px;
-      /* Espaciado entre letras */
       text-transform: uppercase;
-      /* Texto en mayúsculas */
       font-weight: bold;
-      /* Fuente en negrita */
     }
-
-
-
-
-
-
     .container {
 
       /* Fondo del contenedor */
-      border: 1px solid #ddd;
       /* Borde del contenedor */
       border-radius: 10px;
       /* Borde redondeado */
@@ -48,12 +49,17 @@
       /* Centra el contenedor horizontalmente */
       max-width: 500px;
       /* Ancho máximo del contenedor */
+
+      border: 1px solid #ccc;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      z-index: 999;
     }
   </style>
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg">
+  <nav class="navbar navbar-expand-lg position-relative">
     <div class="container-fluid">
       <a class="navbar-brand text-white">Venta de Gallos</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -66,7 +72,13 @@
             <a class="nav-link text-white" aria-current="page" href="/tienda.html">Inicio</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link text-white" aria-current="page" href="/carrito.html">Carrito</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link text-white" aria-current="page" href="/Perfil.html">Perfil</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" aria-current="page" href="/login.html">Salir</a>
           </li>
         </ul>
       </div>
@@ -85,28 +97,17 @@
         <input type="email" class="form-control" id="correo" placeholder="Correo electrónico del usuario" />
       </div>
       <div class="mb-3">
-        <label for="direccion" class="form-label">Dirección de Envío</label>
-        <input type="text" class="form-control" id="direccion" placeholder="Dirección de envío del usuario" />
+        <label for="password" class="form-label">Contraseña</label>
+        <input type="password" class="form-control" id="password" placeholder="Contraseña" />
       </div>
       <div class="mb-3">
-        <label for="metodoPago" class="form-label">Método de Pago</label>
-        <select class="form-select" id="metodoPago">
-          <option selected>Selecciona el método de pago</option>
-          <option value="tarjeta">Tarjeta de crédito</option>
-          <option value="paypal">PayPal</option>
-        </select>
-      </div>
-      <div class="mb-3">
-        <label for="rol" class="form-label">Rol</label>
-        <select class="form-select" id="rol">
-          <option selected>Selecciona el rol del usuario</option>
-          <option value="usuario">Usuario registrado</option>
-          <option value="invitado">Usuario invitado</option>
-        </select>
+        <label for="confirmPassword" class="form-label">Confirmar Contraseña</label>
+        <input type="password" class="form-control" id="confirmPassword" placeholder="Confirmar Contraseña" />
       </div>
       <div class="text-center">
-        <button type="submit" class="btn btn-primary ">Guardar Cambios</button>
+        <button type="submit" class="btn btn-primary">Guardar Cambios</button>
       </div>
+      
     </form>
   </div>
 </body>
