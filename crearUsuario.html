@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Crear Usuario</title>
+  <title>Editar Perfil</title>
   <link rel="icon" href="img/Semental.jpeg" />
   <link rel="stylesheet" href="./css/bootstrap.css" />
   <script defer src="./js/bootstrap.js"></script>
@@ -38,20 +38,26 @@
       text-transform: uppercase;
       font-weight: bold;
     }
+
     .container {
-      margin-top: 200px;
+      margin-top: 100px;
       margin-bottom: 120px;
+      padding: 40px;
+      box-shadow: 0 0 10px rgba(2, 0, 4, 0.4);
+      /* Agregando sombra */
+      border-radius: 10px;
+      /* Bordes redondeados */
       background-color: rgba(255, 255, 255, 0.5);
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
-      border-radius: 10px;
-      border: 1px solid #ccc;
       z-index: 999;
-      padding: 25px;
-      width: 40%;
     }
-    
-      
+
+
+    /* Ajusta el ancho de los inputs */
+    .form-control {
+      width: 100%;
+    }
   </style>
 </head>
 
@@ -66,38 +72,62 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <a class="nav-link text-black" aria-current="page" href="/tienda.html">Regresar</a>
+            <a class="nav-link text-black" aria-current="page" href="/login.html">Regresar</a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <div class="container text-center">
-    <h1 class="text-center">Crear Usuario</h1>
-    <form>
-      <div class="mb-3">
-        <label for="nombre" class="form-label">Nombre</label>
-        <input type="text" class="form-control text-center" id="nombre" placeholder="Nombre del usuario" />
+
+  <div class="container-fluid">
+    <div class="row justify-content-center vh-100 align-items-center">
+      <div class="col-md-4">
+        <div class="container">
+          <div class="card-body">
+            <h1 class="card-title text-center mb-4">Crear</h1>
+            <form class="text-center" action="index.html">
+
+              <div class="form-group mb-3 w-75 mx-auto">
+                <label for="username" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="username" name="username" placeholder="Escriba su nombre"
+                  required />
+              </div>
+
+              <div class="form-group mb-3 w-75 mx-auto">
+                <label for="email" class="form-label">Correo</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Escriba su correo"
+                  required />
+              </div>
+
+              <div class="form-group mb-3 w-75 mx-auto">
+                <label for="password" class="form-label">Contraseña</label>
+                <input type="password" class="form-control" id="password" name="password"
+                  placeholder="Escriba su contraseña" required />
+              </div>
+
+              <div class="form-group mb-3 w-75 mx-auto">
+                <label for="confirm-password" class="form-label">Confirme su Contraseña</label>
+                <input type="password" class="form-control" id="confirm-password" name="confirm-password"
+                  placeholder="Confirme su contraseña" required />
+              </div>
+
+              <button type="submit" class="btn btn-primary py-2 text-black">Guardar Cambios</button>
+
+            </form>
+          </div>
+        </div>
       </div>
-      <div class="mb-3">
-        <label for="correo" class="form-label">Correo Electrónico</label>
-        <input type="email" class="form-control text-center" id="correo" placeholder="Correo electrónico del usuario" />
-      </div>
-      <div class="mb-3">
-        <label for="password" class="form-label">Contraseña</label>
-        <input type="password" class="form-control text-center" id="password" placeholder="Contraseña" />
-      </div>
-      <div class="mb-3">
-        <label for="confirmPassword" class="form-label">Confirmar Contraseña</label>
-        <input type="password" class="form-control text-center" id="confirmPassword" placeholder="Confirmar Contraseña" />
-      </div>
-      <div class="text-center">
-        <button type="submit" class="btn btn-primary py-2 text-black">Guardar Cambios</button>
-      </div>
-      
-    </form>
+    </div>
   </div>
+
+
+
+
+
+
+
+
 </body>
 
 </html>

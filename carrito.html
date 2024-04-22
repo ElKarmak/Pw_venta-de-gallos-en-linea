@@ -9,7 +9,6 @@
   <link rel="stylesheet" href="./css/bootstrap.css" />
   <script defer src="./js/bootstrap.js"></script>
   <style>
-    
     body {
       background-image: url('./img/galloEnca1.jpeg');
       background-repeat: no-repeat;
@@ -18,29 +17,8 @@
       background-attachment: flex;
       color: black;
       width: auto;
-      height: 110vh;
+      height: 102vh;
     }
-
-
-
-    .table-container {
-      max-width: 100%;
-
-    }
-
-    .container {
-      padding-top: 80px;
-      padding-bottom: 20px;
-      width: auto;
-      padding: 20px;
-      border-radius: 10px;
-      text-align: center;
-      background-color: rgba(255, 255, 255, 0.5);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      z-index: 999;
-    }
-
     .navbar {
       position: absolute;
       top: 0;
@@ -49,10 +27,8 @@
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
       z-index: 999;
+      height: 80;
     }
-
-
-
     .navbar-nav .nav-item .nav-link,
     .navbar-nav .nav-item a,
     .navbar-brand {
@@ -65,11 +41,44 @@
       font-weight: bold;
       /* Fuente en negrita */
     }
- /* Styles for the image in the table */
-    .img-fluid {
-      width: 125px;
-      height: 125px;
+
+    .table-container {
+      max-width: 100%;
+      border: 2px solid black  
     }
+
+    .container {
+      padding-top: 80px;
+      padding-bottom: px;
+      width: auto;
+      padding: 10px;
+      border-radius: 10px;
+      text-align: center;
+      background-color: rgba(255, 255, 255, 0.5);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      z-index: 999;
+    }
+    input[type="number"] {
+      width: 100px;
+       /* Centrado el input */
+       margin: 0 auto;
+       /*Input mas pequeño*/
+       padding: auto 5px;
+       /*Text align center*/
+       text-align: center; 
+    }
+    .table{
+      border: 2px solid black;
+    
+      border-spacing: 0;
+    }
+    .th,td{
+      border: 2px solid black;
+    }
+
+
+ 
   </style>
 </head>
 
@@ -91,85 +100,91 @@
     </div>
   </nav>
 
+
+
+
   <div class="container mt-5 rounded-3 text-center">
     <h2>Carrito</h2>
-    <div class="table-container shadow-lg">
-
-      <table class="table table-hover">
-        <!-- Quitando el table table-hover podemos quitarle el fondo la tabla utilizando la clase table-light. -->
-        <thead class="table-light ">
+    <div class="table-responsive"> <!-- Agregamos la clase table-responsive -->
+      <table class="table">
+        <thead>
           <tr>
-            <th scope="col">Image</th>
+            <th scope="colgroup">Imagen</th>
             <th scope="col">Nombre</th>
             <th scope="col">Precio</th>
             <th scope="col">Cantidad</th>
             <th scope="col">Descripción</th>
-            <th scope="col">Acciones</th>
+            <th scope="col">Aciones</th>
           </tr>
         </thead>
         <tbody>
-          <!-- Here you would dynamically generate rows for each product -->
+
           <tr class="align-middle">
-            <td>
+            <td class="overflow-auto"> <!-- Agregamos la clase overflow-auto -->
+              <!-- Aquí envolvemos la imagen en un contenedor con overflow-auto -->
               <img src="https://via.placeholder.com/150" alt="Product Image" />
             </td>
             <td>Product Name</td>
-            <td>$10.00</td>
+            
+            <td id="price">$10.00</td>
             <td>
-              <input class="form-control" type="number" value="1" />
+              <div class="align-middle text-center ">
+                <input class="form-control form-control-lg-sm" type="number" value="1" />
+              </div>
             </td>
             <td>Product Description</td>
             <td>
               <button type="button" class="btn btn-danger pt-lg-2 text-black">Eliminar</button>
             </td>
           </tr>
-          <tr class="align-middle table-light">
-            <td>
+
+          <tr class="align-middle">
+            <td class="overflow-auto"> <!-- Agregamos la clase overflow-auto -->
+              <!-- Aquí envolvemos la imagen en un contenedor con overflow-auto -->
               <img src="https://via.placeholder.com/150" alt="Product Image" />
             </td>
             <td>Product Name</td>
-            <td>$10.00</td>
-            <td class="text-center col-sm-1">
-              <input class="form-control" type="number" value="1" />
+            
+            <td id="price">$10.00</td>
+            <td>
+              <div class="align-middle text-center ">
+                <input class="form-control form-control-lg-sm" type="number" value="1" />
+              </div>
             </td>
             <td>Product Description</td>
             <td>
-              <button type="button" class="btn btn-danger  pt-lg-2 text-black">Eliminar</button>
+              <button type="button" class="btn btn-danger pt-lg-2 text-black">Eliminar</button>
             </td>
           </tr>
-          <tr class="align-middle table-light">
-            <td>
-              <img src="https://via.placeholder.com/150" alt="Product Image" />
-            </td>
-            <td>Product Name</td>
-            <td>$10.00</td>
-            <td class="text-center col-sm-1">
-              <input class="form-control" type="number" value="1" />
-            </td>
-            <td>Product Description</td>
-            <td>
-              <button type="button" class="btn btn-danger  pt-lg-2 text-black">Eliminar</button>
-            </td>
-          </tr>
-        </table>
-        <div class=" d-flex justify-content-between btn-done p-4 ">
-          <a href="/index.html" class="btn btn-primary m-3 text-black">Volver
-            <img width="25" src="./icons/shoping-cart.svg" alt="" />
-          </a>
-          <a href="/Pago.html" class="btn btn-primary m-3 text-black">Comparar</a>
-          <div class="mt-3" m-1>
-            <!-- Agrega margen superior -->
-            <h3 class="text-end text-black">Total: $30.00</h3>
-          </div>
-        </div>
 
 
-
-          <!-- More rows can be added here for more products -->
         </tbody>
+      </table>
+    </div>
 
+    <div class=" d-flex table-responsive justify-content-between align-items-center">
+      <div class="col-4 text-start">
+          <a href="/index.html" class="btn btn-primary m-3 text-black">Regresar
+              <img width="25" src="./icons/shoping-cart.svg" alt="Icono de carrito de compras" />
+          </a>
+      </div>
+      <div class="col-4 text-center">
+          <a href="/Pago.html" class="btn btn-primary m-3 text-black end-30">Comprar</a>
+      </div>
+      <div class="col-4 text-end">
+          <div class="mt-3">
+              <!-- Agrega margen superior -->
+              <h3 class="text-end text-black">Total: $50.00</h3>
+          </div>
+      </div>
     </div>
   </div>
+
+
+
+
+
+
 </body>
 
 </html>
