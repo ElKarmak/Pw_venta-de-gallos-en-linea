@@ -68,6 +68,7 @@
        /*Text align center*/
        text-align: center; 
     }
+    
     .table{
       border: 2px solid black;
     
@@ -76,6 +77,33 @@
     .th,td{
       border: 2px solid black;
     }
+
+    .botones[type="submit"] {
+      display: block;
+      margin: 0 auto;
+      /* Alineación horizontal al centro */
+      padding: 12px 50px;
+      /* Ajustar el padding según sea necesario */
+      border: none;
+      border-radius: 5px;
+      background-color: hsl(61, 100%, 50%);
+      /* Azul */
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+  .botones[type="submit"]:hover {
+      background-color: #d3ed50;
+      /* Azul oscuro */
+    }
+
+
+
+    h1,h3,label {
+      font-weight: bold;
+
+    }
+    
 
   </style>
 </head>
@@ -129,7 +157,7 @@
             </td>
             <td>Product Description</td>
             <td>
-              <button type="button" class="btn btn-danger pt-lg-2 text-black">Eliminar</button>
+              <button class="botones" type="submit" class="btn btn-danger pt-lg-2 text-black">Eliminar</button>
             </td>
           </tr>
 
@@ -148,7 +176,7 @@
             </td>
             <td>Product Description</td>
             <td>
-              <button type="button" class="btn btn-danger pt-lg-2 text-black">Eliminar</button>
+              <button class="botones" type="submit" class="btn btn-danger pt-lg-2 text-black">Eliminar</button>
             </td>
           </tr>
 
@@ -159,12 +187,12 @@
 
     <div class=" d-flex table-responsive justify-content-between align-items-center">
       <div class="col-4 text-start">
-          <a href="/index.html" class="btn btn-primary m-3 text-black">Regresar
+          <a type="submit" href="/index.html"  class="botones   btn  m-3 text-black">Regresar
               <img width="25" src="./icons/shoping-cart.svg" alt="Icono de carrito de compras" />
           </a>
       </div>
       <div class="col-4 text-center">
-          <a href="/Pago.html" class="btn btn-primary m-3 text-black end-30">Comprar</a>
+          <a  type="submit" href="/Pago.html" class=" botones btn m-3 text-black end-30">Comprar</a>
       </div>
       <div class="col-4 text-end">
           <div class="mt-3">

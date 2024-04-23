@@ -32,7 +32,7 @@
     .product-image {
       max-width: 100%;
       height: auto;
-      margin-bottom: 10px ;
+      margin-bottom: 10px;
     }
 
     .navbar {
@@ -57,8 +57,8 @@
     }
 
     .container {
-     
-      border-radius:10px;
+
+      border-radius: 10px;
       padding-bottom: 15px;
       background-color: rgba(187, 165, 165, 0.5);
       backdrop-filter: blur(10px);
@@ -76,6 +76,30 @@
 
     img .product-card {
       min-width: 300px;
+    }
+    .botones[type="button"] {
+      display: block;
+      margin: 0 auto;
+      /* Alineación horizontal al centro */
+      padding: 12px 50px;
+      /* Ajustar el padding según sea necesario */
+      border: none;
+      border-radius: 5px;
+      background-color: hsl(61, 100%, 50%);
+      /* Azul */
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .botones[type="button"]:hover {
+      background-color: #d3ed50;
+      /* Azul oscuro */
+    }
+
+    h2,h1,h4,button
+    label {
+      font-weight: bold;
+
     }
 
 
@@ -113,86 +137,73 @@
   justify-content-center 
   ">
     <div class="container row">
-        <h1 class="text-center mb-5">Productos</h1>
-        <div style="
+      <h1 class="text-center mb-5">Productos</h1>
+      <div style="
           display: grid;
           grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
           grid-gap: 10px;
         ">
-            <div class="col-md-4">
-                <div class="product-card">
-                    <img src="/img/GalloTienda1.jpg" alt="Producto 1" class="product-image">
-                    <h2 class="mt-3">Regulay Gray</h2>
-                    <h4>$ 30000</h4>
-                     <div class="
-                     d-flex justify-content-center
-                     ">
-                       <button class="btn btn-primary">Agregar al Carrito</button>
-                     </div>
-
-                </div>
+        <div class="col-md-4" style="cursor: pointer;">
+          <div class="product-card" onclick="window.location.href='/inspecionarProducto.html'">
+            <img src="/img/GalloTienda1.jpg" alt="Producto 1" class="product-image">
+            <h2 class="mt-3">Regulay Gray</h2>
+            <h4>$ 30000</h4>
+            <div class="d-flex justify-content-center">
+              <button  type="button" class="botones  btn"
+                onclick="alert('Botón presionado! Jajajajaa *_*'); event.stopPropagation();">Agregar al Carrito</button>
             </div>
-            <div class="col-md-4">
-                <div class="product-card">
-                    <img src="/img/GalloTienda2.jpg" alt="Producto 2" class="product-image">
-                    <h2 class="mt-3">Hatch</h2>
-                    <h4>Precio: $250000</h4>
-                    <div class="
-                     d-flex justify-content-center
-                     ">
-                       <button class="btn btn-primary">Agregar al Carrito</button>
-                     </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="product-card ">
-                    <img src="/img/GalloTienda3.jpg" alt="Producto 3" class="product-image">
-                    <h2 class="mt-3">White-Kelson</h2>
-                    <h4>Precio: $20000</h4>
-                    <div class="
-                    d-flex justify-content-center
-                    ">
-                      <button class="btn btn-primary">Agregar al Carrito</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="product-card ">
-                    <img src="/img/GalloTienda4.jpg" alt="Producto 4" class="product-image">
-                    <h2 class="mt-3">White-Kelson</h2>
-                    <h4>Precio: $15000</h4>
-                    <div class="
-                    d-flex justify-content-center
-                    ">
-                      <button class="btn btn-primary">Agregar al Carrito</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="product-card">
-                    <img src="/img/GalloTienda5.jpg" alt="Producto 5" class="product-image">
-                    <h2 class="mt-3">Golden</h2>
-                    <h4>Precio: $10000</h4>
-                    <div class="
-                     d-flex justify-content-center
-                     ">
-                       <button class="btn btn-primary">Agregar al Carrito</button>
-                     </div>
-           
-            <!-- Agrega más contenedores aquí si es necesario -->
+          </div>
         </div>
-    </div>
-</div>
 
-<script>
-  var contenedor = document.getElementById('contenedor');
+        <div class="col-md-4" style="cursor: pointer;">
+          <div class="product-card" onclick="window.location.href='/inspecionarProducto.html'">
+            <img src="/img/GalloTienda2.jpg" alt="Producto 1" class="product-image">
+            <h2 class="mt-3">Hatch</h2>
+            <h4>$ 30000</h4>
+            <div class="d-flex justify-content-center">
+              <button type="button" class="botones btn"
+                onclick="alert('Botón presionado! Jajajajaa *_*'); event.stopPropagation();">Agregar al Carrito</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4" style="cursor: pointer;">
+          <div class="product-card" onclick="window.location.href='/inspecionarProducto.html'">
+            <img src="/img/GalloTienda3.jpg" alt="Producto 1" class="product-image">
+            <h2 class="mt-3">White-Kelson</h2>
+            <h4>$ 30000</h4>
+            <div class="d-flex justify-content-center">
+              <button type="button" class="botones  btn"
+                onclick="alert('Botón presionado! Jajajajaa *_*'); event.stopPropagation();">Agregar al Carrito</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4" style="cursor: pointer;">
+          <div class="product-card" onclick="window.location.href='/inspecionarProducto.html'">
+            <img src="/img/GalloTienda4.jpg" alt="Producto 1" class="product-image">
+            <h2 class="mt-3">White-Golden</h2>
+            <h4>$ 30000</h4>
+            <div class="d-flex justify-content-center">
+              <button type="button" class="botones btn"
+                onclick="alert('Botón presionado! Jajajajaa *_*'); event.stopPropagation();">Agregar al Carrito</button>
+            </div>
+          </div>
+        </div>
 
-// Agregar un evento de click al contenedor
-contenedor.addEventListener('click', function() {
-    // Crear una nueva "bajina"
-    var nuevaBajina = window.open('nueva_bajina.html', '_blank');
-});
-</script>
+        <div class="col-md-4" style="cursor: pointer;">
+          <div class="product-card" onclick="window.location.href='/inspecionarProducto.html'">
+            <img src="/img/GalloTienda5.jpg" alt="Producto 1" class="product-image">
+            <h2 class="mt-3">Golden</h2>
+            <h4>$ 30000</h4>
+            <div class="d-flex justify-content-center">
+              <button type="button" class="botones btn"
+                onclick="alert('Botón presionado! Jajajajaa *_*'); event.stopPropagation();">Agregar al Carrito</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
 
 </body>
+
 </html>

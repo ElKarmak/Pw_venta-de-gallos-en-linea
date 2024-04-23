@@ -74,18 +74,34 @@
       text-align: center;
     }
 
-    .table {
-
-      border-radius: 10px;
-      /* Añade un radio de borde */
-      border-spacing: 0;
+    button[type="submit"] {
+      display: block;
+      margin: 0 auto;
+      /* Alineación horizontal al centro */
+      padding: 12px 50px;
+      /* Ajustar el padding según sea necesario */
+      border: none;
+      border-radius: 5px;
+      background-color: hsl(61, 100%, 50%);
+      /* Azul */
+      font-size: 16px;
+      cursor: pointer;
     }
 
-    .th,
-    td {
+    button[type="submit"]:hover {
+      background-color: #d3ed50;
+      /* Azul oscuro */
+    }
 
-      border-radius: 5px;
 
+
+    .table{
+      border: 2px solid black;
+    
+      border-spacing: 0;
+    }
+    .th,td{
+      border: 2px solid black;
     }
 
     /* Styles for the image in the table */
@@ -93,6 +109,33 @@
       width: 175px;
       height: 125px;
     }
+
+    .botones[type="button"] {
+      display: block;
+      margin: 0 auto;
+      /* Alineación horizontal al centro */
+      padding: 12px 50px;
+      /* Ajustar el padding según sea necesario */
+      border: none;
+      border-radius: 5px;
+      background-color: hsl(61, 100%, 50%);
+      /* Azul */
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .botones[type="button"]:hover {
+      background-color: #d3ed50;
+      /* Azul oscuro */
+    }
+    h2,h1,h4,button
+    label {
+      font-weight: bold;
+
+    }
+
+
+
   </style>
 </head>
 
@@ -133,20 +176,27 @@
             <td class="overflow-auto">
               <img class="img-fluid" src="/img/Semental.jpeg" alt="Product Image" />
             </td>
-            <td>Product Name</td>
+            <td>Hatch combate </td>
             <td id="price">$10.00</td>
             <td>
               <div class="align-middle text-center">
                 <input class="form-control form-control-lg-sm" type="number" value="1" />
               </div>
             </td>
-            <td>Product Description</td>
-            <td>
-              <a href="/editarProducto.html">
-                <button type="button" class="m-3 btn btn-danger pt-lg-2 text-black">Editar</button></a>
-              <a href="#">
-                <button type="button" class=" btn btn-danger pt-lg-2 text-black">Eliminar</button></a>
+            <td>Albany combate</td>
+            <td class="d-flex flex-column align-items-center">
+              <div class="mb-3">
+                <a href="/editarProducto.html" style="text-decoration: none;">
+                  <button type="button" class="botones btn pt-lg-2 text-black">Editar</button>
+                </a>
+              </div>
+              <div>
+                <a href="#" style="text-decoration: none;">
+                  <button type="button" class="botones  m-3 pt-lg-2 text-black">Eliminar</button>
+                </a>
+              </div>
             </td>
+            
           </tr>
 
           <tr class="align-middle">
@@ -161,13 +211,21 @@
               </div>
             </td>
             <td>Product Description</td>
-            <td>
-              <a href="/editarProducto.html">
-                <button type="button" class="m-3 btn btn-danger pt-lg-2 text-black">Editar</button></a>
-              <a href="#">
-                <button type="button" class=" btn btn-danger pt-lg-2 text-black">Eliminar</button></a>
-
+            <td class="d-flex flex-column align-items-center">
+              <div class="mb-3">
+                <a href="/editarProducto.html" style="text-decoration: none;">
+                  <button type="button" class="botones btn pt-lg-2 text-black">Editar</button>
+                </a>
+              </div>
+              <div>
+                
+                <a href="#" style="text-decoration: none;">
+                  <button type="button" class="botones  m-3 pt-lg-2 text-black">Eliminar</button>
+                </a>
+              </div>
             </td>
+            
+            
           </tr>
         </tbody>
       </table>

@@ -32,6 +32,12 @@
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Agrega una sombra al contenedor */     
     }
 
+
+    p {
+      font-weight: bold;
+
+    }
+
   </style>
   <script defer src="./js/bootstrap.js"></script>
 </head>
@@ -45,7 +51,8 @@
       <p>Por favor, sigue las instrucciones para completar tu pago.</p>
     </div>
   </div>
-  <script src="https://www.paypal.com/sdk/js?client-id=sb&enable-funding=venmo&currency=USD" data-sdk-integration-source="button-factory"></script>
+  <script src="https://www.paypal.com/sdk/js?client-id=sb&enable-funding=venmo&currency=USD"
+   data-sdk-integration-source="button-factory"></script>
   <script>
     function initPayPalButton() {
       paypal.Buttons({
@@ -70,7 +77,6 @@
             const element = document.getElementById('paypal-button-container');
             element.innerHTML = '';
             element.innerHTML = '<h3>¡Gracias por tu pago!"</h3>';
-            // O ve a otra URL: actions.redirect('gracias.html');"
           });
         },
 

@@ -76,6 +76,26 @@
       border-radius: 40px;
 
     }
+
+    button[type="submit"] {
+      display: block;
+      margin: 0 auto; /* Alineación horizontal al centro */
+      padding: 12px 50px; /* Ajustar el padding según sea necesario */
+      border: none;
+      border-radius: 5px;
+      background-color: hsl(61, 100%, 50%); /* Azul */
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #d3ed50; /* Azul oscuro */
+    }
+    h2,h1,h4
+    label {
+      font-weight: bold;
+
+    }
   </style>
 </head>
 
@@ -109,9 +129,9 @@
             <h4 class="card-title p-2">Nombre: Juan Pérez</h4>
             <h4 class="card-title p-2">Correo Electrónico: juan.perez@example.com</>
             <h4 class="card-title p-2">Dirección de Envío: Calle Principal #123, Ciudad, País</h4>
-            </div>
-              <a href="/editarPerfil.html" class="btn btn-primary text-black px-4 py-2 ">Editar perfil</a>
-            </div>
+
+           <a href=" /editarPerfil.html" style="text-decoration: none"><button type="submit" class="btn  text-black">Editar perfil</button></a> 
+            
         </div>        
         </div>
       </div>
