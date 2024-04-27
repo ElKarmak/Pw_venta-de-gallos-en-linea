@@ -6,9 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Login Secion</title>
   <link rel="stylesheet" href="./css/bootstrap.css" />
-  <link rel="icon" href="img/Semental.jpeg">
+  <link rel="icon" href="img/Semental.jpeg" />
   <style>
-    .container{
+    .container {
       margin-top: 150px;
       margin-bottom: 120px;
       padding: 40px;
@@ -20,11 +20,10 @@
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
       z-index: 999;
-      
-      
     }
+
     body {
-      background-image: url('./img/galloEnca1.jpeg');
+      background-image: url("./img/galloEnca1.jpeg");
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center;
@@ -32,9 +31,9 @@
       color: black;
       width: 100%;
       height: 110vh;
-
     }
-    button[type="submit"] {
+
+    button[type="button"] {
       display: block;
       margin: 0 auto;
       /* Alineación horizontal al centro */
@@ -48,17 +47,15 @@
       cursor: pointer;
     }
 
-    button[type="submit"]:hover {
+    button[type="button"]:hover {
       background-color: #d3ed50;
       /* Azul oscuro */
     }
-    
-    h1, label {
+
+    h1,
+    label {
       font-weight: bold;
-
     }
-
-
   </style>
 </head>
 
@@ -69,7 +66,7 @@
         <div class="container">
           <div class="card-body">
             <h1 class="card-title text-center mb-4">Inicio de Sesión</h1>
-            <form class="text-center" action="index.html">
+            <form class="text-center"">
               <div class="mb-3 w-50 mx-auto">
                 <label for="username" class="form-label">Usuario</label>
                 <input type="text" class="form-control" id="username" name="username" required />
@@ -79,14 +76,12 @@
                 <input type="password" class="form-control" id="password" name="password" required />
               </div>
 
-              
               <div class="text-center">
-
-                <button href="/index.html" type="submit" class="btn text-black py-2">
+                <button onclick="Login()" type="button" class="btn text-black py-2">
                   Iniciar Sesión
                 </button>
                 <div class="text-center mt-3">
-                  <a href="/crearUsuario.html" class="text-black ">¿No tienes cuenta? ¡Crea una aquí!</a>
+                  <a href="/crearUsuario.html" class="text-black">¿No tienes cuenta? ¡Crea una aquí!</a>
                 </div>
               </div>
             </form>
@@ -95,6 +90,28 @@
       </div>
     </div>
   </div>
+
+  <script>
+    function Login() {
+      
+    var username = document.getElementById("username").value;
+    var password = document.getElementById("password").value;
+
+    if (!username || !password) {
+      alert("Por favor, complete todos los campos");
+      return;
+    }
+
+    if (username === "admin" && password === "admin") {
+      // Credenciales correctas, redirigir a la página index.html
+      window.location.href = "index.html";
+    } else {
+      // Credenciales incorrectas, mostrar un mensaje de error
+      alert("Credenciales incorrectas");
+    }
+  }
+  
+  </script>
 </body>
 
 </html>
