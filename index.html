@@ -37,13 +37,12 @@
 
       .navbar {
         position: absolute;
-        top: 0;
-
         margin-bottom: 10px;
         background-color: rgba(255, 255, 255, 0.5);
         backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(10px);
         z-index: 999;
+        box-shadow: 0 0 10px rgba(2, 0, 4, 0.4);
       }
 
       .navbar-nav .nav-item .nav-link,
@@ -68,21 +67,17 @@
 
       .botones[type="button"] {
         display: block;
-      
-        /* Alineación horizontal al centro */
         padding: auto auto;
-        /* Ajustar el padding según sea necesario */
         border: none;
         border-radius: 5px;
         background-color: hsl(61, 100%, 50%);
-        /* Azul */
         font-size: 16px;
         cursor: pointer;
       }
 
       .botones[type="button"]:hover {
         background-color: #d3ed50;
-        /* Azul oscuro */
+
       }
 
       h2,
@@ -90,6 +85,9 @@
       h4,
       button label {
         font-weight: bold;
+      }
+      .navbar-brand::img-icon {
+        width: 50%;
       }
 
       .img-fluid {
@@ -101,9 +99,7 @@
         min-height: 35vh;
         min-width: auto;
       }
-      .navbar-brand::img-icon {
-        width: 50%;
-      }
+
 
       .img-flu {
         height: 50px;
