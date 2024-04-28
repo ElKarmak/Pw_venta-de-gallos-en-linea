@@ -20,10 +20,11 @@
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
       z-index: 999;
+      box-shadow: 0 0 10px rgba(2, 0, 4, 0.4);
     }
 
     body {
-      background-image: url("./img/galloEnca1.jpeg");
+      background-color: aliceblue;
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center;
@@ -36,9 +37,6 @@
     button[type="button"] {
       display: block;
       margin: 0 auto;
-      /* Alineación horizontal al centro */
-      padding: 12px 50px;
-      /* Ajustar el padding según sea necesario */
       border: none;
       border-radius: 5px;
       background-color: hsl(61, 100%, 50%);
@@ -93,7 +91,7 @@
 
   <script>
     function Login() {
-      
+
     var username = document.getElementById("username").value;
     var password = document.getElementById("password").value;
 
@@ -110,7 +108,7 @@
       alert("Credenciales incorrectas");
     }
   }
-  
+
   </script>
 </body>
 
