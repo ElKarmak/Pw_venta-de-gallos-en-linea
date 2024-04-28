@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login Sesión Administradores</title>
+  <link rel="stylesheet" href="./css/bootstrap.css" />
+  <link rel="icon" href="img/Semental.jpeg" />
+  <style>
+    .container {
+      margin-top: 150px;
+      margin-bottom: 120px;
+      padding: 40px;
+      box-shadow: 0 0 10px rgba(2, 0, 4, 0.4);
+      /* Agregando sombra */
+      border-radius: 10px;
+      /* Bordes redondeados */
+      background-color: rgba(255, 255, 255, 0.5);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      z-index: 999;
+      box-shadow: 0 0 10px rgba(2, 0, 4, 0.4);
+    }
+
+    body {
+      background-color: aliceblue;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      background-attachment: flex;
+      color: black;
+      width: 100%;
+      height: 110vh;
+    }
+
+    button[type="button"] {
+      display: block;
+      margin: 0 auto;
+      border: none;
+      border-radius: 5px;
+      background-color: hsl(61, 100%, 50%);
+      /* Azul */
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button[type="button"]:hover {
+      background-color: #d3ed50;
+      /* Azul oscuro */
+    }
+
+    h1,
+    label {
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="row justify-content-center vh-100 align-items-center">
+      <div class="col-md-4">
+        <div class="container">
+          <div class="card-body">
+            <h1 class="card-title text-center mb-4">Inicio de Sesión</h1>
+            <form class="text-center"">
+              <div class="mb-3 w-50 mx-auto">
+                <label for="username" class="form-label">Usuario</label>
+                <input type="text" class="form-control" id="username" name="username" required />
+              </div>
+              <div class="mb-3 w-50 mx-auto">
+                <label for="password" class="form-label">Contraseña</label>
+                <input type="password" class="form-control" id="password" name="password" required />
+              </div>
+
+              <div class="text-center">
+                <button onclick="Login()" type="button" class="btn text-black py-2">
+                  Iniciar Sesión
+                </button>
+                <div class="text-center mt-3">
+                  <a href="/crearUsuario.html" class="text-black">¿No tienes cuenta? ¡Crea una aquí!</a>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+  </div>
+
+  <script>
+    function Login() {
+
+    var username = document.getElementById("username").value;
+    var password = document.getElementById("password").value;
+
+    if (!username || !password) {
+      alert("Por favor, complete todos los campos");
+      return;
+    }
+
+    if (username === "admin" && password === "admin") {
+      // Credenciales correctas, redirigir a la página index.html
+      window.location.href = "index.html";
+    } else {
+      // Credenciales incorrectas, mostrar un mensaje de error
+      alert("Credenciales incorrectas");
+    }
+  }
+
+  </script>
+</body>
+
+</html>
