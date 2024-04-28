@@ -14,7 +14,7 @@
       background-attachment: fixed;
       color: black;
       width: 100%;
-      min-height: 110vh;
+      min-height: 100vh;
       position: relative;
        }
 
@@ -72,12 +72,11 @@
 
       }
 
-
-
-
-
-
-
+      footer{
+      background-color: rgba(255, 255, 255, 0.5);
+      text-emphasis-color: black;
+      box-shadow: 0 0 10px rgba(2, 0, 4, 0.4);
+    }
   </style>
   <script defer src="./js/bootstrap.js"></script>
 </head>
@@ -173,17 +172,6 @@
       </div>
     </div>
   </nav>
-
-
-
-
-
-
-
-
-
-
-
   <div class="tex-dark" id="smart-button-container">
     <div  style="text-align: center">
       <div class="text-white " id="paypal-button-container"></div>
@@ -193,6 +181,12 @@
       <p>Por favor, sigue las instrucciones para completar tu pago.</p>
     </div>
   </div>
+
+  <footer class="footer mt-auto py-3 text-center">
+    <div class="container">
+      <span class="text-muted">Victor Manuel - <script>document.write(new Date().getFullYear())</script>. Todos los derechos reservados.</span>
+    </div>
+  </footer>
   <script src="https://www.paypal.com/sdk/js?client-id=sb&enable-funding=venmo&currency=USD"
    data-sdk-integration-source="button-factory"></script>
   <script>
