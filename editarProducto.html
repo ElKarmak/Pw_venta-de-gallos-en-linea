@@ -16,11 +16,10 @@
         background-attachment: flex;
         color: black;
         width: 100%;
-        min-height: 110vh;
+        min-height: 100vh;
       }
 
-
-    .navbar {
+      .navbar {
         position: absolute;
         margin-bottom: 10px;
         background-color: rgba(255, 255, 255, 0.5);
@@ -110,12 +109,17 @@
         border-radius: 5px;
       }
 
-       /* Styles for the image in the table */
-    .img-fluid {
-      width: 175px;
-      height: 125px;
-    }
+      /* Styles for the image in the table */
+      .img-fluid {
+        width: 175px;
+        height: 125px;
+      }
 
+      footer {
+        background-color: rgba(255, 255, 255, 0.5);
+        text-emphasis-color: black;
+        box-shadow: 0 0 10px rgba(2, 0, 4, 0.4);
+      }
 
 
 
@@ -160,18 +164,9 @@
                 aria-current="page"
                 href="/productosVenta.html"
               >
-                <img
-                  class="img-flu"
-                  src="/icons/icon.svg"
-                  alt=""
-                />
+                <img class="img-flu" src="/icons/icon.svg" alt="" />
               </a>
             </li>
-
-
-
-
-
 
             <li class="nav-item">
               <a
@@ -179,11 +174,7 @@
                 aria-current="page"
                 href="/productosVenta.html"
               >
-                <img
-                  class="img-flu"
-                  src="/icons/iconProduct.svg"
-                  alt=""
-                />
+                <img class="img-flu" src="/icons/iconProduct.svg" alt="" />
               </a>
             </li>
 
@@ -193,11 +184,7 @@
                 aria-current="page"
                 href="/editarProducto.html"
               >
-                <img
-                  class="img-flu"
-                  src="/icons/IconUpdate.svg"
-                  alt=""
-                />
+                <img class="img-flu" src="/icons/IconUpdate.svg" alt="" />
               </a>
             </li>
 
@@ -207,11 +194,7 @@
                 aria-current="page"
                 href="/crearProducto.html"
               >
-                <img
-                  class="img-flu"
-                  src="/icons/iconCreate.svg"
-                  alt=""
-                />
+                <img class="img-flu" src="/icons/iconCreate.svg" alt="" />
               </a>
             </li>
 
@@ -269,7 +252,6 @@
                 />
               </a>
             </li>
-
           </ul>
         </div>
       </div>
@@ -352,5 +334,17 @@
         </div>
       </div>
     </div>
+
+    <footer class="footer mt-auto py-3 text-center">
+
+      <span class="text-muted"
+        >Victor Manuel -
+        <script>
+          document.write(new Date().getFullYear());
+        </script>
+        . Todos los derechos reservados.</span
+      >
+
+  </footer>
   </body>
 </html>

@@ -9,9 +9,7 @@
   <link rel="icon" href="img/Semental.jpeg" />
   <style>
     .container {
-      margin-top: 150px;
-      margin-bottom: 120px;
-      padding: 40px;
+      padding: 20px;
       box-shadow: 0 0 10px rgba(2, 0, 4, 0.4);
       /* Agregando sombra */
       border-radius: 10px;
@@ -31,7 +29,7 @@
       background-attachment: flex;
       color: black;
       width: 100%;
-      height: 110vh;
+      height: 100vh;
     }
 
     button[type="button"] {
@@ -54,6 +52,15 @@
     label {
       font-weight: bold;
     }
+
+
+
+    footer {
+        background-color: rgba(255, 255, 255, 0.5);
+        text-emphasis-color: black;
+        box-shadow: 0 0 10px rgba(2, 0, 4, 0.4);
+      }
+
   </style>
 </head>
 
@@ -88,10 +95,19 @@
       </div>
     </div>
 
-
-
-
   </div>
+
+  <footer class="footer mt-auto py-3 text-center">
+
+    <span class="text-muted"
+      >Victor Manuel -
+      <script>
+        document.write(new Date().getFullYear());
+      </script>
+      . Todos los derechos reservados.</span
+    >
+
+</footer>
 
   <script>
     function Login() {
@@ -106,7 +122,7 @@
 
     if (username === "admin" && password === "admin") {
       // Credenciales correctas, redirigir a la página index.html
-      window.location.href = "index.html";
+      window.location.href = "/productosVenta.html";
     } else {
       // Credenciales incorrectas, mostrar un mensaje de error
       alert("Credenciales incorrectas");
