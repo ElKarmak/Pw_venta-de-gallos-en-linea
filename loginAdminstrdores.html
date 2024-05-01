@@ -71,7 +71,7 @@
         <div class="container">
           <div class="card-body">
             <h1 class="card-title text-center mb-4">Admistradores</h1>
-            <form class="text-center"">
+            <form id="login-form" class="text-center" action="/productosVenta.html">
               <div class="mb-3 w-50 mx-auto">
                 <label for="username" class="form-label">Usuario</label>
                 <input id="input-text"  type="text" class="form-control" id="username" name="username" required />
@@ -82,7 +82,7 @@
               </div>
 
               <div class="text-center">
-                <button  id="btn-submit"  onclick="Login()" type="button" class="btn btn-primary text-black py-2">
+                <button  id="btn-submit" type="button" class="btn btn-primary text-black py-2">
                   Iniciar Sesión
                 </button>
                 <div class="text-center mt-3">
@@ -111,26 +111,7 @@
 
   <script src="/validate/js/login.js"></script>
 
-  <script>
-    function Login() {
 
-    var username = document.getElementById("username").value;
-    var password = document.getElementById("password").value;
-
-    if (!username || !password) {
-      alert("Por favor, complete todos los campos");
-      return;
-    }
-
-    if (username === "admin" && password === "admin") {
-      // Credenciales correctas, redirigir a la página index.html
-      window.location.href = "/productosVenta.html";
-    } else {
-      // Credenciales incorrectas, mostrar un mensaje de error
-      alert("Credenciales incorrectas");
-    }
-  }
-  </script>
 </body>
 
 </html>
