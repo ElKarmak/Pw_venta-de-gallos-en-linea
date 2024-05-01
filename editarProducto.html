@@ -42,8 +42,8 @@
         display: block;
       }
       .container {
-        margin-top: 100px;
-        margin-bottom: 120px;
+        margin-top: 20px;
+        margin-bottom: 20px;
         padding: 40px;
         box-shadow: 0 0 10px rgba(2, 0, 4, 0.4);
         /* Agregando sombra */
@@ -263,51 +263,49 @@
           <div class="container">
             <div class="card-body">
               <h1 class="card-title text-center mb-4">Editar 📦.</h1>
-              <form class="text-center" action="index.html">
+              <form class="text-center" action="#">
                 <div class="form-group mb-3 w-75 mx-auto">
                   <label for="username" class="form-label">Encabezado</label>
                   <input
                     type="text"
                     class="form-control text-center"
-                    id="username"
+                    id="input-text"
                     name="username"
                     placeholder="Escriba el titulo del producto"
-                    required
                   />
                 </div>
 
                 <div class="form-group mb-3 w-75 mx-auto">
-                  <label for="text" class="form-label">Descripción</label>
-                  <div class="textarea-container">
-                    <textarea
-                      class="form-control"
-                      name="descipcion"
-                      cols="30"
-                      rows="2"
-                      placeholder="Escriba la descripción"
-                      required
-                    ></textarea>
-                  </div>
+                  <label for="username" class="form-label">Descripcion</label>
+                  <input
+                   id="input-description"
+                    type="text"
+                    class="form-control text-center p-4 "
+                    id="input-text"
+                    name="username"
+                    placeholder="Esciba la descripcion del producto"
+                  />
                 </div>
 
                 <div class="form-group mb-3 w-75 mx-auto">
-                  <label for="number" class="form-label">precio</label>
+                  <label for="number" class="form-label">Precio</label>
                   <input
                     type="text"
                     class="form-control text-center"
-                    id="number"
+                    id="input-number"
                     name=" precio"
                     placeholder="Escriba el precio"
-                    required
+
                   />
                 </div>
 
                 <div class="form-group mb-3 w-75 mx-auto">
-                  <label for="confirm-password" class="form-label"
+                  <label for="text" class="form-label"
                     >unidades</label
                   >
                   <input
                     class="form-control form-control-lg-sm text-center"
+                    id="input-number-positive"
                     type="number"
                     value="1"
                     placeholder="Selecione mas unidades"
@@ -325,7 +323,7 @@
                   />
                 </div>
 
-                <button type="submit" class="btn btn-primary py-2 text-black">
+                <button id="btn-submit" type="submit" class="btn btn-primary py-2 text-black">
                   Guardar Cambios
                 </button>
               </form>
@@ -344,7 +342,7 @@
         </script>
         . Todos los derechos reservados.</span
       >
-
+<script src="/validate/js/crearProductoAndEditar.js"></script>
   </footer>
   </body>
 </html>

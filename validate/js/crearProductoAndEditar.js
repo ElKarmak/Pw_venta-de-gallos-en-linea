@@ -18,46 +18,35 @@ const validation = () => {
   const fields = {
     // Campo de texto solo con letras y espacios
     text: {
-      element: $("#input-name"), // Elemento HTML para el campo de texto
+      element: $("#input-text"), // Elemento HTML para el campo de texto
       regEx: /^([a-zA-Z\s])+$/, // Expresión regular para validar
       message: "Solo se aceptan letras", // Mensaje de error
     },
-    // Campo de correo electrónico
-    email: {
-      element: $("#input-email"), // Elemento HTML para el correo
-      regEx: /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i, // RegEx para correos válidos
-      message: "El correo no es válido", // Mensaje de error
-    },
-
-    // Campo para números de teléfono
-    phone: {
-      element: $("#input-phone-number"), // Elemento para el teléfono
-      regEx: /^\d{10}$/, // Requiere 10 dígitos
-      message: "El número de teléfono no es válido", // Mensaje de error
-    },
-
-    int: {
-      element: $("#input-calle"), // Elemento para el número entero
-      regEx: /^([a-zA-Z\s])+$/, // Expresión regular
+    textArea: {
+      element: $("#input-description"), // Elemento HTML para el campo de texto
+      regEx: /^([a-zA-Z\s])+$/, // Expresión regular para validar
       message: "Solo se aceptan letras", // Mensaje de error
     },
-    numberHome: {
-      element: $("#input-number-home"), // Elemento para el número entero
+    // Campo para números enteros
+    int: {
+      element: $("#input-number"), // Elemento para el número entero
       regEx: /^[0-9]+$/, // Solo acepta dígitos
       message: "Solo se aceptan números", // Mensaje de error
     },
-    // Campo para códigos postales
-    selectContry: {
-      element: $("#input-contry"), // Elemento para código postal
-      regEx: /./, // Requiere 5 dígitos
-      message:" null", // Mensaje de error
+
+    numberPositive: {
+      element: $("#input-number-positive"), // Elemento para el número entero
+      regEx: /^[1-9]+$/, // Solo acepta dígitos
+      message: "Solo se aceptan números positivos del 1...", // Mensaje de error
+      isPositive: true,
+
     },
 
-    // Campo para códigos postales
-    postalCode: {
-      element: $("#input-postal-code"), // Elemento para código postal
-      regEx: /^\d{5}$/, // Requiere 5 dígitos
-      message: "El código postal no es válido", // Mensaje de error
+    fileChosser: {
+      element: $("#input-formFile"),
+      regEx: /./,
+      message: "Debe seleccionar un archivo",
+      isFile: true,
     },
   };
 
