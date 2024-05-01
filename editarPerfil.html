@@ -6,7 +6,7 @@
     <title>Editar Perfil</title>
     <link rel="icon" href="img/Semental.jpeg" />
     <link rel="stylesheet" href="./css/bootstrap.css" />
-    <script defer src="./js/bootstrap.js"></script>
+
     <style>
       body {
         background-color: aliceblue;
@@ -190,16 +190,16 @@
         <div class="container">
           <div class="card-body">
             <h1 class="card-title text-center mb-4">Editar</h1>
-            <form class="text-center" action="/Pago.html">
+            <form class="text-center" action="#">
               <div class="form-group mb-3 w-75 mx-auto">
                 <label for="username" class="form-label">Nombre</label>
                 <input
                   type="text"
                   class="form-control text-center"
-                  id="username"
+                  id="input-user"
                   name="username"
                   placeholder="Escriba su nombre"
-                  required
+
                 />
               </div>
 
@@ -208,10 +208,10 @@
                 <input
                   type="email"
                   class="form-control text-center"
-                  id="email"
+                  id="input-email"
                   name="email"
                   placeholder="Escriba su correo"
-                  required
+
                 />
               </div>
 
@@ -220,10 +220,10 @@
                 <input
                   type="password"
                   class="form-control text-center"
-                  id="password"
+                  id="input-password"
                   name="password"
                   placeholder="Escriba su contraseña"
-                  required
+
                 />
               </div>
 
@@ -234,14 +234,14 @@
                 <input
                   type="password"
                   class="form-control text-center"
-                  id="confirm-password"
+                  id="input-confirm-password"
                   name="confirm-password"
                   placeholder="Confirme su contraseña"
-                  required
+
                 />
               </div>
 
-              <button type="submit" class="btn btn-primary text-black">
+              <button  id="btn-submit" type="submit" class="btn btn-primary text-black">
                 <img class="img-flu" src="/icons/iconSave.svg" alt="" />
               </button>
             </form>
@@ -260,6 +260,8 @@
         >
 
     </footer>
+<script src="/validate/js/crearUsuarioaAndEditar.js"></script>
 
+    <script src="./js/bootstrap.js"></script>
   </body>
 </html>

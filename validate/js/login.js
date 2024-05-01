@@ -22,12 +22,7 @@ const validation = () => {
       regEx: /^([a-zA-Z\s])+$/, // Expresión regular para validar
       message: "Solo se aceptan letras", // Mensaje de error
     },
-    // Campo de correo electrónico
-    email: {
-      element: $("#input-email"), // Elemento HTML para el correo
-      regEx: /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i, // RegEx para correos válidos
-      message: "El correo no es válido", // Mensaje de error
-    },
+
     // Campo de contraseña con requisitos específicos
     password: {
       element: $("#input-password"), // Elemento para la contraseña
@@ -35,36 +30,7 @@ const validation = () => {
         /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]).{8,}$/, // Requisitos para la contraseña
       message: "La contraseña no cumple con los requisitos mínimos", // Mensaje de error
     },
-    // Campo para URL
-    url: {
-      element: $("#input-url"), // Elemento para la URL
-      regEx: /^(http|https):\/\/[^ "]+$/, // RegEx para URLs válidas
-      message: "La URL no es válida", // Mensaje de error
-    },
-    // Campo para números enteros
-    int: {
-      element: $("#input-int-number"), // Elemento para el número entero
-      regEx: /^[0-9]+$/, // Solo acepta dígitos
-      message: "Solo se aceptan números", // Mensaje de error
-    },
-    // Campo para números de teléfono
-    phone: {
-      element: $("#input-phone-number"), // Elemento para el teléfono
-      regEx: /^\d{10}$/, // Requiere 10 dígitos
-      message: "El número de teléfono no es válido", // Mensaje de error
-    },
-    // Campo para números decimales (float)
-    float: {
-      element: $("#input-float-number"), // Elemento para números decimales
-      regEx: /^[+-]?\d+(\.\d+)?$/, // RegEx para números decimales
-      message: "Solo se aceptan números", // Mensaje de error
-    },
-    // Campo para códigos postales
-    postalCode: {
-      element: $("#input-postal-code"), // Elemento para código postal
-      regEx: /^\d{5}$/, // Requiere 5 dígitos
-      message: "El código postal no es válido", // Mensaje de error
-    },
+
   };
 
   let isValid = true; // Variable para indicar si el formulario es válido
@@ -81,7 +47,7 @@ const validation = () => {
       error.style.fontSize = "12px"; // Establece el tamaño de la fuente
       error.textContent = "Este campo no puede estar vacío"; // Mensaje para campos vacíos
       error.classList.add("error-message"); // Añade clase para identificar errores
-      element.insertAdjacentElement("afterend", error); // Añade el mensaje de error después del campo
+      element.insertAdjacentElement("beforebegin", error); // Añade el mensaje de error después del campo
       isValid = false; // Indica que el formulario no es válido
       continue; // Pasa al siguiente campo sin más validación
     }
@@ -96,7 +62,7 @@ const validation = () => {
         const error = document.createElement("p");
         error.textContent = message; // Texto de error según el tipo de campo
         error.classList.add("error-message"); // Añade clase para errores
-        element.insertAdjacentElement("afterend", error); // Añade después del campo
+        element.insertAdjacentElement("beforebegin", error); // Añade después del campo
       }
       isValid = false; // Indica que el formulario no es válido
     }
@@ -113,6 +79,7 @@ $("#btn-submit").addEventListener("click", (event) => {
     // Si el formulario es válido
     console.log("Formulario válido"); // Muestra mensaje de validación por consola
     // Puedes realizar el envío del formulario o acciones adicionales
+    $("#login-form").submit();
   } else {
     console.log("Formulario inválido"); // Muestra mensaje si el formulario es inválido por consola
   }
