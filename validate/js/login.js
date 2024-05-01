@@ -47,6 +47,7 @@ const validation = () => {
       error.style.fontSize = "12px"; // Establece el tamaño de la fuente
       error.textContent = "Este campo no puede estar vacío"; // Mensaje para campos vacíos
       error.classList.add("error-message"); // Añade clase para identificar errores
+      error.classList.add("error-animation");
       element.insertAdjacentElement("beforebegin", error); // Añade el mensaje de error después del campo
       isValid = false; // Indica que el formulario no es válido
       continue; // Pasa al siguiente campo sin más validación
@@ -60,9 +61,12 @@ const validation = () => {
       ) {
         // Crea mensaje de error si no existe ya
         const error = document.createElement("p");
+        error.style.color = "blue"; // Cambia el color del texto a rojo
+        error.style.fontSize = "12px"; // Establece el tamaño de la fuente
         error.textContent = message; // Texto de error según el tipo de campo
         error.classList.add("error-message"); // Añade clase para errores
-        element.insertAdjacentElement("beforebegin", error); // Añade después del campo
+        error.classList.add("error-animation");
+        element.insertAdjacentElement("beforebegin", error); // Añade el mensaje de error después del campo// Añade después del campo
       }
       isValid = false; // Indica que el formulario no es válido
     }
