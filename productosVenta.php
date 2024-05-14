@@ -1,5 +1,19 @@
+<?php
+session_start();
+if (!isset($_SESSION['username'])) {
+  header("Location: ../loginAdminstrdores.php");
+  die();
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="es">
+
+
+
+
 
 <head>
   <meta charset="UTF-8" />
@@ -297,7 +311,7 @@
             <a
               class="nav-link text-black"
               aria-current="page"
-              href="/loginAdminstrdores.html"
+              href="/functions/cerrarSesion.php"
             >
               <img
                 class="img-flu"

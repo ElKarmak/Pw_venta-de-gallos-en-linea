@@ -72,7 +72,10 @@
         <div class="container">
           <div class="card-body">
             <h1 class="card-title text-center mb-4">Admistradores</h1>
-            <form id="login-form" class="text-center needs-validation" action="/productosVenta.html">
+
+              <?= isset($_GET['error']) ? '<div class="alert alert-danger" role="alert">Usuario o contraseña incorrectos</div>' : '' ?>
+
+            <form id="login-form" class="text-center needs-validation" action="/functions/adminLogin.php" method="POST">
               <div class="mb-3 w-50 mx-auto">
                 <label for="username" class="form-label">Usuario</label>
                 <input id="input-text"  type="text" class="form-control" id="username" name="username"

@@ -109,6 +109,17 @@
         height: 75px;
         border-radius: 5px;
       }
+      footer {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.5);
+        text-emphasis-color: black;
+        box-shadow: 0 0 10px rgba(2, 0, 4, 0.4);
+      }
+      .footer{
+        box-shadow: 0 0 10px rgba(2, 0, 4, 0.4);
+      }
 
 
 
@@ -147,6 +158,61 @@
               />
             </a>
           </li>
+          <li class="nav-item">
+            <a
+              class="nav-link text-black"
+              aria-current="page"
+              href="/productosVenta.html"
+            >
+              <img
+                class="img-flu"
+                src="/icons/icon.svg"
+                alt=""
+              />
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a
+              class="nav-link text-black"
+              aria-current="page"
+              href="/productosVenta.html"
+            >
+              <img
+                class="img-flu"
+                src="/icons/iconProduct.svg"
+                alt=""
+              />
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a
+              class="nav-link text-black"
+              aria-current="page"
+              href="/editarProducto.html"
+            >
+              <img
+                class="img-flu"
+                src="/icons/IconUpdate.svg"
+                alt=""
+              />
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a
+              class="nav-link text-black"
+              aria-current="page"
+              href="/crearProducto.html"
+            >
+              <img
+                class="img-flu"
+                src="/icons/iconCreate.svg"
+                alt=""
+              />
+            </a>
+          </li>
 
           <!-- Dropdown menu for Categories -->
           <li class="nav-item dropdown">
@@ -176,6 +242,16 @@
               <img class="img-flu" src="/icons/shoping-cart.svg" alt="" />
             </a>
           </li>
+
+          <li class="nav-item">
+            <a
+              class="nav-link text-black"
+              aria-current="page"
+              href="/crearUsuarioAdmin.html"
+            >
+              <img class="img-flu" src="/icons/CreateAdmin.svg" alt="" />
+            </a>
+          </li>
           <li class="nav-item">
             <a
               class="nav-link text-black"
@@ -193,7 +269,7 @@
             <a
               class="nav-link text-black"
               aria-current="page"
-              href="/loginUsers.html"
+              href="/loginAdminstrdores.html"
             >
               <img
                 class="img-flu"
@@ -202,6 +278,7 @@
               />
             </a>
           </li>
+
         </ul>
       </div>
     </div>
@@ -252,6 +329,11 @@
       </div>
     </div>
   </div>
+
+
+  <footer class="footer mt-auto py-3 text-center">
+    <span class="text-muted">Victor Manuel - <script>document.write(new Date().getFullYear())</script>. Todos los derechos reservados.</span>
+</footer>
 
   <script src="/validate/js/crearUsuarioaAndEditar.js"></script>
 
