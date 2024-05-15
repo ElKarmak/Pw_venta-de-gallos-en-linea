@@ -1,3 +1,12 @@
+<?php
+session_start();
+if (!isset($_SESSION['username'])) {
+  header("Location: ../loginUsers.php");
+  die();
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="es">
   <head>
@@ -8,7 +17,7 @@
     <link rel="stylesheet" href="./css/bootstrap.css" />
     <script defer src="./js/bootstrap.js"></script>
     <style>
-      
+
       body {
         background-color: aliceblue;
         background-repeat: no-repeat;
@@ -203,7 +212,7 @@
               <a
                 class="nav-link text-black"
                 aria-current="page"
-                href="/loginUsers.html"
+                href="/functions/cerrarSesionUsers.php"
               >
                 <img
                   class="img-flu"

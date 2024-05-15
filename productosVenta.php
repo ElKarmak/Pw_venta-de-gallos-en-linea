@@ -7,13 +7,8 @@ if (!isset($_SESSION['username'])) {
 
 ?>
 
-
 <!DOCTYPE html>
 <html lang="es">
-
-
-
-
 
 <head>
   <meta charset="UTF-8" />
@@ -311,7 +306,7 @@ if (!isset($_SESSION['username'])) {
             <a
               class="nav-link text-black"
               aria-current="page"
-              href="/functions/cerrarSesion.php"
+              href="/functions/cerrarSesionAdmins.php"
             >
               <img
                 class="img-flu"

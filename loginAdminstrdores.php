@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Login Sesión Administradores</title>
+  <title>Sesión Administradores</title>
   <link rel="stylesheet" href="./css/bootstrap.css" />
   <link rel="stylesheet" href="css/animations.css">
   <link rel="icon" href="img/Semental.jpeg" />
@@ -76,6 +76,9 @@
               <?= isset($_GET['error']) ? '<div class="alert alert-danger" role="alert">Usuario o contraseña incorrectos</div>' : '' ?>
 
             <form id="login-form" class="text-center needs-validation" action="/functions/adminLogin.php" method="POST">
+
+
+
               <div class="mb-3 w-50 mx-auto">
                 <label for="username" class="form-label">Usuario</label>
                 <input id="input-text"  type="text" class="form-control" id="username" name="username"

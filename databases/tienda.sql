@@ -33,7 +33,7 @@ CREATE TABLE IF NOT EXISTS products(
 
 
 INSERT INTO users(username, password) VALUES
-('user', '123');
+('user', 'Admin123.');
 
 INSERT INTO admins(username, password) VALUES
 ('admin', 'Admin123.');

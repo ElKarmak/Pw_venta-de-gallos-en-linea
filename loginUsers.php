@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login Secion</title>
+    <title> Secion usuarios</title>
     <link rel="stylesheet" href="./css/bootstrap.css" />
     <link rel="icon" href="img/Semental.jpeg" />
     <link rel="stylesheet" href="css/animations.css">
@@ -69,10 +69,14 @@
           <div class="container">
             <div class="card-body">
               <h1 class="card-title text-center mb-4">Inicio de Sesión</h1>
+
+              <?= isset($_GET['error']) ? '<div class="alert alert-danger" role="alert">Usuario o contraseña incorrectos</div>' : '' ?>
+
               <form
                 id="login-form"
                 class="text-center needs-validation"
-                action="/index.html"
+                action="/functions/userLogin.php"
+                method="POST"
               >
                 <div class="mb-3 w-50 mx-auto">
                   <label for="username" class="form-label">Usuario</label>
@@ -82,6 +86,7 @@
                     class="form-control"
                     id="username"
                     name="username"
+                    placeholder="user"
                     required
                   />
                 </div>
@@ -93,6 +98,7 @@
                     class="form-control"
                     id="password"
                     name="password"
+                    placeholder="Admin123."
                     required
                   />
                 </div>
