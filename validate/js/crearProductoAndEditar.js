@@ -100,7 +100,7 @@ $("#btn-submit").addEventListener("click", (event) => {
   if (formIsValid) {
     // Si el formulario es válido
     console.log("Formulario válido"); // Muestra mensaje de validación por consola
-    $("#login-form").submit();
+    $("#form_create").submit();
     // Puedes realizar el envío del formulario o acciones adicionales
   } else {
     console.log("Formulario inválido"); // Muestra mensaje si el formulario es inválido por consola

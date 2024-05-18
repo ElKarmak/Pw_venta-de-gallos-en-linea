@@ -75,7 +75,7 @@
               <form
                 id="login-form"
                 class="text-center needs-validation"
-                action="/functions/userLogin.php"
+                action="/functions/login.php"
                 method="POST"
               >
                 <div class="mb-3 w-50 mx-auto">
@@ -114,7 +114,7 @@
                   </button>
 
                   <div class="text-center mt-3">
-                    <a href="/crearUsuario.html" class="text-black"
+                    <a href="/crearUsuario.php" class="text-black"
                       >¿No tienes cuenta? ¡Crea una aquí!</a
                     >
                   </div>

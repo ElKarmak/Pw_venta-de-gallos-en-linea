@@ -148,7 +148,7 @@
             <a
               class="nav-link text-black"
               aria-current="page"
-              href="/index.html"
+              href="/index.php"
             >
               <img
                 class="img-flu"
@@ -224,30 +224,31 @@
         <div class="container">
           <div class="card-body">
             <h1 class="card-title text-center mb-4">Crear</h1>
-            <form class="text-center" action="#">
+
+            <form anctype="multipart/form-data" id="form_create" class="text-center" action="./functions/createUser.php" method="POST">
 
               <div class="form-group mb-3 w-75 mx-auto">
                 <label for="username" class="form-label">Nombre</label>
-                <input type="text" class="form-control text-center" id="input-user" name="username" placeholder="Escriba su nombre"
+                <input type="text" class="form-control text-center" id="input-user" name="name_user" placeholder="Escriba su nombre"
                   />
               </div>
 
               <div class="form-group mb-3 w-75 mx-auto">
                 <label for="email" class="form-label">Correo</label>
-                <input type="email" class="form-control text-center" id="input-email" name="email" placeholder="Escriba su correo"
+                <input type="email" class="form-control text-center" id="input-email" name="name_email" placeholder="Escriba su correo"
                 />
               </div>
 
               <div class="form-group mb-3 w-75 mx-auto">
                 <label for="password" class="form-label">Contraseña</label>
-                <input type="password" class="form-control text-center" id="input-password" name="password"
+                <input type="password" class="form-control text-center" id="input-password" name="name_password"
                   placeholder="Escriba su contraseña"
                   />
               </div>
 
               <div class="form-group mb-3 w-75 mx-auto">
                 <label for="confirm-password" class="form-label">Confirme su Contraseña</label>
-                <input type="password" class="form-control text-center" id="input-confirm-password" name="confirm-password"
+                <input type="password" class="form-control text-center" id="input-confirm-password" name="name_confirm-password"
                   placeholder="Confirme su contraseña"
                   />
               </div>

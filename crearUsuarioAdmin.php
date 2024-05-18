@@ -58,8 +58,8 @@
     }
 
     .navbar-nav .nav-item.dropdown:hover .dropdown-menu {
-        display: block;
-      }
+      display: block;
+    }
 
 
     /* Ajusta el ancho de los inputs */
@@ -82,47 +82,50 @@
       background-color: #d3ed50;
       /* Azul oscuro */
     }
-    h1,label {
+
+    h1,
+    label {
       font-weight: bold;
 
     }
+
     .navbar-brand::img-icon {
-        width: 50%;
-      }
+      width: 50%;
+    }
 
-      .img-fluid {
-        max-height: 100vh;
-        max-width: auto;
-      }
+    .img-fluid {
+      max-height: 100vh;
+      max-width: auto;
+    }
 
-      .img-fluid {
-        min-height: 35vh;
-        min-width: auto;
-      }
-
-
-      .img-flu {
-        height: 50px;
-
-      }
-      .icon-flu{
-        height: 75px;
-        border-radius: 5px;
-      }
-      footer {
-        position: fixed;
-        bottom: 0;
-        width: 100%;
-        background-color: rgba(255, 255, 255, 0.5);
-        text-emphasis-color: black;
-        box-shadow: 0 0 10px rgba(2, 0, 4, 0.4);
-      }
-      .footer{
-        box-shadow: 0 0 10px rgba(2, 0, 4, 0.4);
-      }
+    .img-fluid {
+      min-height: 35vh;
+      min-width: auto;
+    }
 
 
+    .img-flu {
+      height: 50px;
 
+    }
+
+    .icon-flu {
+      height: 75px;
+      border-radius: 5px;
+    }
+
+    footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.5);
+      text-emphasis-color: black;
+      box-shadow: 0 0 10px rgba(2, 0, 4, 0.4);
+    }
+
+    .footer {
+      box-shadow: 0 0 10px rgba(2, 0, 4, 0.4);
+    }
   </style>
 </head>
 
@@ -132,98 +135,43 @@
       <a class="navbar-brand text-black">
         <img class="icon-flu" src="/icons/iconoOrigin.svg" alt="" />
       </a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarNav"
-        aria-controls="navbarNav"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <a
-              class="nav-link text-black"
-              aria-current="page"
-              href="/index.html"
-            >
-              <img
-                class="img-flu"
-                src="/icons/ic--baseline-home.svg"
-                alt=""
-              />
+            <a class="nav-link text-black" aria-current="page" href="/index.html">
+              <img class="img-flu" src="/icons/ic--baseline-home.svg" alt="" />
             </a>
           </li>
           <li class="nav-item">
-            <a
-              class="nav-link text-black"
-              aria-current="page"
-              href="/productosVenta.html"
-            >
-              <img
-                class="img-flu"
-                src="/icons/icon.svg"
-                alt=""
-              />
+            <a class="nav-link text-black" aria-current="page" href="/productosVenta.php">
+              <img class="img-flu" src="/icons/icon.svg" alt="" />
             </a>
           </li>
 
           <li class="nav-item">
-            <a
-              class="nav-link text-black"
-              aria-current="page"
-              href="/productosVenta.html"
-            >
-              <img
-                class="img-flu"
-                src="/icons/iconProduct.svg"
-                alt=""
-              />
+            <a class="nav-link text-black" aria-current="page" href="/productosVenta.php">
+              <img class="img-flu" src="/icons/iconProduct.svg" alt="" />
             </a>
           </li>
 
           <li class="nav-item">
-            <a
-              class="nav-link text-black"
-              aria-current="page"
-              href="/editarProducto.html"
-            >
-              <img
-                class="img-flu"
-                src="/icons/IconUpdate.svg"
-                alt=""
-              />
+            <a class="nav-link text-black" aria-current="page" href="/editarProducto.php">
+              <img class="img-flu" src="/icons/IconUpdate.svg" alt="" />
             </a>
           </li>
 
           <li class="nav-item">
-            <a
-              class="nav-link text-black"
-              aria-current="page"
-              href="/crearProducto.html"
-            >
-              <img
-                class="img-flu"
-                src="/icons/iconCreate.svg"
-                alt=""
-              />
+            <a class="nav-link text-black" aria-current="page" href="/crearProducto.php">
+              <img class="img-flu" src="/icons/iconCreate.svg" alt="" />
             </a>
           </li>
 
           <!-- Dropdown menu for Categories -->
           <li class="nav-item dropdown">
-            <a
-              class="nav-link dropdown-toggle text-black"
-              href="#"
-              id="navbarDropdown"
-              role="button"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
+            <a class="nav-link dropdown-toggle text-black" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               <img class="img-flu" src="/icons/icon_Category.svg" alt="" />
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -234,48 +182,24 @@
             </ul>
           </li>
           <li class="nav-item">
-            <a
-              class="nav-link text-black"
-              aria-current="page"
-              href="/carrito.html"
-            >
+            <a class="nav-link text-black" aria-current="page" href="/carrito.html">
               <img class="img-flu" src="/icons/shoping-cart.svg" alt="" />
             </a>
           </li>
 
           <li class="nav-item">
-            <a
-              class="nav-link text-black"
-              aria-current="page"
-              href="/crearUsuarioAdmin.html"
-            >
+            <a class="nav-link text-black" aria-current="page" href="/crearUsuarioAdmin.html">
               <img class="img-flu" src="/icons/CreateAdmin.svg" alt="" />
             </a>
           </li>
           <li class="nav-item">
-            <a
-              class="nav-link text-black"
-              aria-current="page"
-              href="/Perfil.html"
-            >
-              <img
-                class="img-flu"
-                src="/icons/majesticons--user.svg"
-                alt=""
-              />
+            <a class="nav-link text-black" aria-current="page" href="/Perfil.php">
+              <img class="img-flu" src="/icons/majesticons--user.svg" alt="" />
             </a>
           </li>
           <li class="nav-item">
-            <a
-              class="nav-link text-black"
-              aria-current="page"
-              href="/loginAdminstrdores.html"
-            >
-              <img
-                class="img-flu"
-                src="/icons/majesticons--login-line.svg"
-                alt=""
-              />
+            <a class="nav-link text-black" aria-current="page" href="/loginAdminstrdores.html">
+              <img class="img-flu" src="/icons/majesticons--login-line.svg" alt="" />
             </a>
           </li>
 
@@ -291,39 +215,50 @@
         <div class="container">
           <div class="card-body">
             <h1 class="card-title text-center mb-4">Adminstrador</h1>
-            <form class="text-center" action="#">
+
+
+
+
+            <form anctype="multipart/form-data" id="form_create" class="text-center" action="./functions/createUserAdmin.php" method="POST">
 
               <div class="form-group mb-3 w-75 mx-auto">
                 <label for="username" class="form-label">Nombre</label>
-                <input type="text" class="form-control text-center" id="input-user" name="username" placeholder="Escriba su nombre"
-                  />
+                <input type="text" class="form-control text-center" id="input-user" name="name_user" placeholder="Escriba su nombre" />
               </div>
 
               <div class="form-group mb-3 w-75 mx-auto">
                 <label for="email" class="form-label">Correo</label>
-                <input type="email" class="form-control text-center" id="input-email" name="email" placeholder="Escriba su correo"
-                />
+                <input type="email" class="form-control text-center" id="input-email" name="name_email" placeholder="Escriba su correo" />
               </div>
 
               <div class="form-group mb-3 w-75 mx-auto">
                 <label for="password" class="form-label">Contraseña</label>
-                <input type="password" class="form-control text-center" id="input-password" name="password"
-                  placeholder="Escriba su contraseña"
-                  />
+                <input type="password" class="form-control text-center" id="input-password" name="name_password" placeholder="Escriba su contraseña" />
               </div>
 
               <div class="form-group mb-3 w-75 mx-auto">
                 <label for="confirm-password" class="form-label">Confirme su Contraseña</label>
-                <input type="password" class="form-control text-center" id="input-confirm-password" name="confirm-password"
-                  placeholder="Confirme su contraseña"
-                  />
+                <input type="password" class="form-control text-center" id="input-confirm-password" name="name_confirm_password" placeholder="Confirme su contraseña" />
               </div>
 
-              <button id="btn-submit" type="submit" class="btn btn-primary py-2 text-black">
-                <img  class="img-flu" src="/icons/iconSave.svg" alt="">
-              </button>
 
+              <div class="form-group mb-3 w-75 mx-auto">
+                <label for="category-select" class="form-label">Tipo de usuario</label>
+                <select name="name_type_user" class="form-control form-control-lg-sm text-center" id="category-select" required>
+                  <option value="1">Usuario</option>
+                  <option value="2">Adminstrador</option>
+
+                </select>
+              </div>
+
+
+              <button id="btn-submit" type="submit" class="btn btn-primary py-2 text-black">
+                <img class="img-flu" src="/icons/iconSave.svg" alt="">
+              </button>
             </form>
+
+
+
           </div>
         </div>
       </div>
@@ -332,8 +267,10 @@
 
 
   <footer class="footer mt-auto py-3 text-center">
-    <span class="text-muted">Victor Manuel - <script>document.write(new Date().getFullYear())</script>. Todos los derechos reservados.</span>
-</footer>
+    <span class="text-muted">Victor Manuel - <script>
+        document.write(new Date().getFullYear())
+      </script>. Todos los derechos reservados.</span>
+  </footer>
 
   <script src="/validate/js/crearUsuarioaAndEditar.js"></script>
 

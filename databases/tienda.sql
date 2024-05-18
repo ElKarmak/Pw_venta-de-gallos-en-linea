@@ -5,35 +5,26 @@ USE tienda;
 CREATE TABLE IF NOT EXISTS users(
   id INT(11) NOT NULL AUTO_INCREMENT, PRIMARY KEY(id),
   username VARCHAR(16) NOT NULL,
-  password VARCHAR(60) NOT NULL
-);
-
-CREATE TABLE IF NOT EXISTS admins(
-  id INT(11) NOT NULL AUTO_INCREMENT, PRIMARY KEY(id),
-  username VARCHAR(16) NOT NULL,
-  password VARCHAR(60) NOT NULL
-);
-
-CREATE TABLE IF NOT EXISTS categories(
-  id INT(11) NOT NULL AUTO_INCREMENT, PRIMARY KEY(id),
-  name VARCHAR(60) NOT NULL
+  email VARCHAR(255) NOT NULL,
+  password VARCHAR(60) NOT NULL,
+  role ENUM('Usuario', 'Administrador') NOT NULL default 'Usuario'
 );
 
 CREATE TABLE IF NOT EXISTS products(
   id INT(11) NOT NULL AUTO_INCREMENT, PRIMARY KEY(id),
   name VARCHAR(60) NOT NULL,
-  image longblob NOT NULL,
+  image LONGBLOB NOT NULL,
   description VARCHAR(255) NOT NULL,
-  price DECIMAL(5,2) NOT NULL,
+  price DECIMAL(20,5) NOT NULL,
   stock INT(11) NOT NULL,
-  category_id INT(11) NOT NULL,
-  FOREIGN KEY(category_id) REFERENCES categories(id)
+  category ENUM('primer nivel', 'segundo nivel', 'tercer nivel') NOT NULL
 );
 
 
 
-INSERT INTO users(username, password) VALUES
-('user', 'Admin123.');
+INSERT INTO users(username, email,  password, role) VALUES
+('user', 'user@gamil.com', 'User123.', 'Usuario');
 
-INSERT INTO admins(username, password) VALUES
-('admin', 'Admin123.');
+
+INSERT INTO users(username, email, password, role) VALUES
+('admin','admin@gamil.com' , 'Admin123.', 'Administrador');
