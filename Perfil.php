@@ -1,19 +1,14 @@
 <?php
-
 include_once "./conetion.php";
 session_start();
 if (!isset($_SESSION['username'])) {
   header("Location: ../login.php");
   die();
 }
-
 // Realizamos la consulta para obtener los datos del usuario correspondiente logueado
 $response = Database::query("SELECT * FROM users WHERE username = '" . $_SESSION['username'] . "'");
-
 $users = $response->fetch_assoc();
-
 $userId= $users['id'];
-
 ?>
 
 

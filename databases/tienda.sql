@@ -15,10 +15,12 @@ CREATE TABLE IF NOT EXISTS products(
   name VARCHAR(60) NOT NULL,
   image LONGBLOB NOT NULL,
   description VARCHAR(255) NOT NULL,
-  price DECIMAL(20,5) NOT NULL,
+  price DECIMAL(10,2) NOT NULL,
   stock INT(11) NOT NULL,
   category ENUM('primer nivel', 'segundo nivel', 'tercer nivel') NOT NULL
 );
+
+ALTER TABLE products MODIFY price DECIMAL(10,2);
 
 
 

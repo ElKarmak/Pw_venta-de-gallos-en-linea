@@ -21,7 +21,7 @@ if($data->num_rows > 0){
   }
 
   if ($row['role'] == 'Usuario') {
-    header("Location: ../index.php");
+    header("Location: ../indexp.php");
     die();
   }
 }

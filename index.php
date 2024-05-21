@@ -1,11 +1,3 @@
-<?php
-session_start();
-if (!isset($_SESSION['username'])) {
-  header("Location: ../login.php");
-  die();
-}
-?>
-
 <!DOCTYPE html>
 <html lang="es">
 
@@ -20,10 +12,12 @@ if (!isset($_SESSION['username'])) {
     .parrafoAltura {
       display: -webkit-box;
       -webkit-box-orient: vertical;
-      -webkit-line-clamp: 1;
-      overflow: hidden;
+      -webkit-line-clamp: 2;
+      overflow: none;
+
       height: 40px;
     }
+
 
     body {
       background-color: aliceblue;
@@ -34,16 +28,18 @@ if (!isset($_SESSION['username'])) {
       color: black;
       width: 100%;
       min-height: 110vh;
-      position: relative;
+
     }
 
     .product-card {
       display: block;
       width: auto;
-      border-radius: 5px;
+
       padding: 15px;
       margin-bottom: 20px;
       box-shadow: 0 0 10px rgba(2, 0, 4, 0.4);
+      background-color: rgba(255, 255, 255, 0.5);
+      backdrop-filter: blur(10px);
     }
 
     .product-image {
@@ -86,16 +82,14 @@ if (!isset($_SESSION['username'])) {
 
     .botones[type="button"] {
       display: block;
-      padding: auto auto;
-      border: none;
-      border-radius: 5px;
-      background-color: hsl(61, 100%, 50%);
-      font-size: 16px;
+      border: 1px;
+      border-radius: 10px;
+      font-size: 10px;
       cursor: pointer;
     }
 
     .botones[type="button"]:hover {
-      background-color: #d3ed50;
+      background-color: wheat;
     }
 
     h2,
@@ -126,6 +120,7 @@ if (!isset($_SESSION['username'])) {
     .icon-flu {
       height: 75px;
       border-radius: 5px;
+      ;
     }
 
     .principal-container {
@@ -140,30 +135,30 @@ if (!isset($_SESSION['username'])) {
       text-emphasis-color: black;
       box-shadow: 0 0 10px rgba(2, 0, 4, 0.4);
     }
+
+  
+
+
+
   </style>
 </head>
 
 <body class="d-flex flex-column min-vh-90 overflow-x-hidden">
   <nav class="navbar navbar-expand-lg position-relative">
     <div class="container-fluid">
-      <a class="navbar-brand text-black">
-        <img class="icon-flu" src="/icons/iconoOrigin.svg" alt="" />
+      <img class="icon-flu" src="/icons/iconoOrigin.svg" alt="" />
+      <a class="texto navbar-brand text-black">
+        venta de gallos
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link text-black" aria-current="page" href="/index.php">
-              <img class="img-flu" src="/icons/ic--baseline-home.svg" alt="" />
-            </a>
-          </li>
-
           <!-- Dropdown menu for Categories -->
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle text-black" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              <img class="img-flu" src="/icons/icon_Category.svg" alt="" />
+            <a class="nav-link dropdown-toggle text-black p-xl-4" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Categorias
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 
@@ -174,6 +169,14 @@ if (!isset($_SESSION['username'])) {
               <!-- Add more categories as needed -->
             </ul>
           </li>
+
+          <li class="nav-item">
+            <a class="nav-link text-black" aria-current="page" href="/index.php">
+              <img class="img-flu" src="/icons/ic--baseline-home.svg" alt="" />
+            </a>
+          </li>
+
+
           <li class="nav-item">
             <a class="nav-link text-black" aria-current="page" href="/carrito.html">
               <img class="img-flu" src="/icons/shoping-cart.svg" alt="" />
@@ -203,6 +206,7 @@ if (!isset($_SESSION['username'])) {
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             grid-gap: 10px;
           ">
+
         <div class="col-md-4" style="cursor: pointer">
           <div class="product-card" onclick="window.location.href='/inspecionarProducto.html'">
             <img class="img-fluid" src="/img/GalloTienda1.jpg" alt="Producto 1" class="product-image" />
@@ -210,261 +214,32 @@ if (!isset($_SESSION['username'])) {
             <h4>$ 30000</h4>
             <p>Diponible: 5</p>
             <h6>Descripción</h6>
+            <p class="parrafoAltura">Se caracterisa por es una ave de color grewrwr3rwr4343552rwqd</p>
+            <div class="center">
+              <button type="button" class="botones btn" onclick="alert('Botón presionado! Jajajajaa *_*'); event.stopPropagation();">
+                <img t class="img-flu" src="/icons/shoping-cart.svg" alt="" />
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4" style="cursor: pointer">
+          <div class="product-card" onclick="window.location.href='/inspecionarProducto.html'">
+            <img class="img-fluid" src="/img/GalloTienda2.jpg" alt="Producto 1" class="product-image" />
+            <h2 class="mt-3">Hatch</h2>
+            <h4>$ 30000</h4>
+            <p>Diponible: 5</p>
+            <h6>Descripción</h6>
             <p class="parrafoAltura">Se caracterisa por es una ave de color </p>
-            <div class="d-flex justify-content-center">
+            <div class="center">
               <button type="button" class="botones btn" onclick="alert('Botón presionado! Jajajajaa *_*'); event.stopPropagation();">
-                <img class="img-flu" src="/icons/shoping-cart.svg" alt="" />
+                <img t class="img-flu" src="/icons/shoping-cart.svg" alt="" />
               </button>
             </div>
           </div>
         </div>
 
-        <div class="col-md-4" style="cursor: pointer">
-          <div class="product-card" onclick="window.location.href='/inspecionarProducto.html'">
-            <img class="img-fluid" src="/img/GalloTienda2.jpg" alt="Producto 1" class="product-image" />
-            <h2 class="mt-3">Hatch</h2>
-            <h4>$ 30000</h4>
-            <div class="d-flex justify-content-center">
-              <button type="button" class="botones btn" onclick="alert('Botón presionado! Jajajajaa *_*'); event.stopPropagation();">
-                <img class="img-flu" src="/icons/shoping-cart.svg" alt="" />
-              </button>
-            </div>
-          </div>
-        </div>
 
-        <div class="col-md-4" style="cursor: pointer">
-          <div class="product-card" onclick="window.location.href='/inspecionarProducto.html'">
-            <img class="img-fluid" src="/img/GalloTienda3.jpg" alt="Producto 1" class="product-image" />
-            <h2 class="mt-3">White-Kelson</h2>
-            <h4>$ 30000</h4>
-            <div class="d-flex justify-content-center">
-              <button type="button" class="botones btn" onclick="alert('Botón presionado! Jajajajaa *_*'); event.stopPropagation();">
-                <img class="img-flu" src="/icons/shoping-cart.svg" alt="" />
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-4" style="cursor: pointer">
-          <div class="product-card" onclick="window.location.href='/inspecionarProducto.html'">
-            <img class="img-fluid" src="/img/GalloTienda4.jpg" alt="Producto 1" class="product-image" />
-            <h2 class="mt-3">White-Golden</h2>
-            <h4>$ 30000</h4>
-            <div class="d-flex justify-content-center">
-              <button type="button" class="botones btn" onclick="alert('Botón presionado! Jajajajaa *_*'); event.stopPropagation();">
-                <img class="img-flu" src="/icons/shoping-cart.svg" alt="" />
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-4" style="cursor: pointer">
-          <div class="product-card" onclick="window.location.href='/inspecionarProducto.html'">
-            <img class="img-fluid" src="/img/GalloTienda5.jpg" alt="Producto 1" class="product-image" />
-            <h2 class="mt-3">Golden</h2>
-            <h4>$ 30000</h4>
-            <div class="d-flex justify-content-center">
-              <button type="button" class="botones btn" onclick="alert('Botón presionado! Jajajajaa *_*'); event.stopPropagation();">
-                <img class="img-flu" src="/icons/shoping-cart.svg" alt="" />
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-4" style="cursor: pointer">
-          <div class="product-card" onclick="window.location.href='/inspecionarProducto.html'">
-            <img class="img-fluid" src="/img/GalloTienda1.jpg" alt="Producto 1" class="product-image" />
-            <h2 class="mt-3">Regulay Gray</h2>
-            <h4>$ 30000</h4>
-            <div class="d-flex justify-content-center">
-              <button type="button" class="botones btn" onclick="alert('Botón presionado! Jajajajaa *_*'); event.stopPropagation();">
-                <img class="img-flu" src="/icons/shoping-cart.svg" alt="" />
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-4" style="cursor: pointer">
-          <div class="product-card" onclick="window.location.href='/inspecionarProducto.html'">
-            <img class="img-fluid" src="/img/GalloTienda2.jpg" alt="Producto 1" class="product-image" />
-            <h2 class="mt-3">Hatch</h2>
-            <h4>$ 30000</h4>
-            <div class="d-flex justify-content-center">
-              <button type="button" class="botones btn" onclick="alert('Botón presionado! Jajajajaa *_*'); event.stopPropagation();">
-                <img class="img-flu" src="/icons/shoping-cart.svg" alt="" />
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-4" style="cursor: pointer">
-          <div class="product-card" onclick="window.location.href='/inspecionarProducto.html'">
-            <img class="img-fluid" src="/img/GalloTienda3.jpg" alt="Producto 1" class="product-image" />
-            <h2 class="mt-3">White-Kelson</h2>
-            <h4>$ 30000</h4>
-            <div class="d-flex justify-content-center">
-              <button type="button" class="botones btn" onclick="alert('Botón presionado! Jajajajaa *_*'); event.stopPropagation();">
-                <img class="img-flu" src="/icons/shoping-cart.svg" alt="" />
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-4" style="cursor: pointer">
-          <div class="product-card" onclick="window.location.href='/inspecionarProducto.html'">
-            <img class="img-fluid" src="/img/GalloTienda4.jpg" alt="Producto 1" class="product-image" />
-            <h2 class="mt-3">White-Golden</h2>
-            <h4>$ 30000</h4>
-            <div class="d-flex justify-content-center">
-              <button type="button" class="botones btn" onclick="alert('Botón presionado! Jajajajaa *_*'); event.stopPropagation();">
-                <img class="img-flu" src="/icons/shoping-cart.svg" alt="" />
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-4" style="cursor: pointer">
-          <div class="product-card" onclick="window.location.href='/inspecionarProducto.html'">
-            <img class="img-fluid" src="/img/GalloTienda5.jpg" alt="Producto 1" class="product-image" />
-            <h2 class="mt-3">Golden</h2>
-            <h4>$ 30000</h4>
-            <div class="d-flex justify-content-center">
-              <button type="button" class="botones btn" onclick="alert('Botón presionado! Jajajajaa *_*'); event.stopPropagation();">
-                <img class="img-flu" src="/icons/shoping-cart.svg" alt="" />
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-4" style="cursor: pointer">
-          <div class="product-card" onclick="window.location.href='/inspecionarProducto.html'">
-            <img class="img-fluid" src="/img/GalloTienda1.jpg" alt="Producto 1" class="product-image" />
-            <h2 class="mt-3">Regulay Gray</h2>
-            <h4>$ 30000</h4>
-            <div class="d-flex justify-content-center">
-              <button type="button" class="botones btn" onclick="alert('Botón presionado! Jajajajaa *_*'); event.stopPropagation();">
-                <img class="img-flu" src="/icons/shoping-cart.svg" alt="" />
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-4" style="cursor: pointer">
-          <div class="product-card" onclick="window.location.href='/inspecionarProducto.html'">
-            <img class="img-fluid" src="/img/GalloTienda2.jpg" alt="Producto 1" class="product-image" />
-            <h2 class="mt-3">Hatch</h2>
-            <h4>$ 30000</h4>
-            <div class="d-flex justify-content-center">
-              <button type="button" class="botones btn" onclick="alert('Botón presionado! Jajajajaa *_*'); event.stopPropagation();">
-                <img class="img-flu" src="/icons/shoping-cart.svg" alt="" />
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-4" style="cursor: pointer">
-          <div class="product-card" onclick="window.location.href='/inspecionarProducto.html'">
-            <img class="img-fluid" src="/img/GalloTienda3.jpg" alt="Producto 1" class="product-image" />
-            <h2 class="mt-3">White-Kelson</h2>
-            <h4>$ 30000</h4>
-            <div class="d-flex justify-content-center">
-              <button type="button" class="botones btn" onclick="alert('Botón presionado! Jajajajaa *_*'); event.stopPropagation();">
-                <img class="img-flu" src="/icons/shoping-cart.svg" alt="" />
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-4" style="cursor: pointer">
-          <div class="product-card" onclick="window.location.href='/inspecionarProducto.html'">
-            <img class="img-fluid" src="/img/GalloTienda4.jpg" alt="Producto 1" class="product-image" />
-            <h2 class="mt-3">White-Golden</h2>
-            <h4>$ 30000</h4>
-            <div class="d-flex justify-content-center">
-              <button type="button" class="botones btn" onclick="alert('Botón presionado! Jajajajaa *_*'); event.stopPropagation();">
-                <img class="img-flu" src="/icons/shoping-cart.svg" alt="" />
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-4" style="cursor: pointer">
-          <div class="product-card" onclick="window.location.href='/inspecionarProducto.html'">
-            <img class="img-fluid" src="/img/GalloTienda5.jpg" alt="Producto 1" class="product-image" />
-            <h2 class="mt-3">Golden</h2>
-            <h4>$ 30000</h4>
-            <div class="d-flex justify-content-center">
-              <button type="button" class="botones btn" onclick="alert('Botón presionado! Jajajajaa *_*'); event.stopPropagation();">
-                <img class="img-flu" src="/icons/shoping-cart.svg" alt="" />
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-4" style="cursor: pointer">
-          <div class="product-card" onclick="window.location.href='/inspecionarProducto.html'">
-            <img class="img-fluid" src="/img/GalloTienda1.jpg" alt="Producto 1" class="product-image" />
-            <h2 class="mt-3">Regulay Gray</h2>
-            <h4>$ 30000</h4>
-            <div class="d-flex justify-content-center">
-              <button type="button" class="botones btn" onclick="alert('Botón presionado! Jajajajaa *_*'); event.stopPropagation();">
-                <img class="img-flu" src="/icons/shoping-cart.svg" alt="" />
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-4" style="cursor: pointer">
-          <div class="product-card" onclick="window.location.href='/inspecionarProducto.html'">
-            <img class="img-fluid" src="/img/GalloTienda2.jpg" alt="Producto 1" class="product-image" />
-            <h2 class="mt-3">Hatch</h2>
-            <h4>$ 30000</h4>
-            <div class="d-flex justify-content-center">
-              <button type="button" class="botones btn" onclick="alert('Botón presionado! Jajajajaa *_*'); event.stopPropagation();">
-                <img class="img-flu" src="/icons/shoping-cart.svg" alt="" />
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-4" style="cursor: pointer">
-          <div class="product-card" onclick="window.location.href='/inspecionarProducto.html'">
-            <img class="img-fluid" src="/img/GalloTienda3.jpg" alt="Producto 1" class="product-image" />
-            <h2 class="mt-3">White-Kelson</h2>
-            <h4>$ 30000</h4>
-            <div class="d-flex justify-content-center">
-              <button type="button" class="botones btn" onclick="alert('Botón presionado! Jajajajaa *_*'); event.stopPropagation();">
-                <img class="img-flu" src="/icons/shoping-cart.svg" alt="" />
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-4" style="cursor: pointer">
-          <div class="product-card" onclick="window.location.href='/inspecionarProducto.html'">
-            <img class="img-fluid" src="/img/GalloTienda4.jpg" alt="Producto 1" class="product-image" />
-            <h2 class="mt-3">White-Golden</h2>
-            <h4>$ 30000</h4>
-            <div class="d-flex justify-content-center">
-              <button type="button" class="botones btn" onclick="alert('Botón presionado! Jajajajaa *_*'); event.stopPropagation();">
-                <img class="img-flu" src="/icons/shoping-cart.svg" alt="" />
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-4" style="cursor: pointer">
-          <div class="product-card" onclick="window.location.href='/inspecionarProducto.html'">
-            <img class="img-fluid" src="/img/GalloTienda5.jpg" alt="Producto 1" class="product-image" />
-            <h2 class="mt-3">Golden</h2>
-            <h4>$ 30000</h4>
-            <div class="d-flex justify-content-center">
-              <button type="button" class="botones btn" onclick="alert('Botón presionado! Jajajajaa *_*'); event.stopPropagation();">
-                <img class="img-flu" src="/icons/shoping-cart.svg" alt="" />
-              </button>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </div>

@@ -11,53 +11,13 @@ if (!isset($_SESSION['username'])) {
 
 
 
-if (isset($_GET['id'])) {
-  $id = $_GET['id'];
-
-  $data = Database::query("SELECT * FROM products WHERE id='$id'");
-  if ($data && $data->num_rows > 0) {
-    $campos = $data->fetch_assoc();
-    $name = $campos['name'];
-    $pictures = $campos['imagen'];
-    $description = $campos['description'];
-    $spricy = $campos['price'];
-    $stock = $campos['stock'];
-    $categorys = $campos['category'];
-  }
-}
-?>
-
-<?php
 $id = $_GET['id'];
-if (isset($_POST['name_product'])) {
-
-  $pictures = $_FILES['imagen_product']['tmp_name'];
-  $check = getimagesize($pictures);
-
-
-
-  if ($check !== false) {
-
-
-    $name = $_POST['name_product'];
-    $description = $_POST['description_product'];
-    $spricy = $_POST['price_product'];
-    $stock = $_POST['stock_product'];
-    $categorys = $_POST['category_product'];
-
-
-    $sql = Database::query("UPDATE products SET name='$name', image='$pictures', description='$description',  price='$spricy', stock='$stock', category='$categorys' WHERE id='$id'");
-
-
-    if ($sql) {
-
-      header('location: /productosVenta.php');
-    } else {
-      print_r(Database::get_instance()->error);
-    }
-  }
-}
+$query = "SELECT * FROM products WHERE id = $id";
+$result = Database::query($query);
+$row = mysqli_fetch_array($result);
 ?>
+
+
 
 
 <!DOCTYPE html>
@@ -271,48 +231,48 @@ if (isset($_POST['name_product'])) {
             <h1 class="card-title text-center mb-4">Editar 📦.</h1>
 
 
-            <form enctype="multipart/form-data" id="form_create" class="text-center" action="#" method="POST">
+            <form enctype="multipart/form-data" id="form_create" class="text-center" action="/functions/editProduct.php?id=<?php echo $id ?>" method="POST">
 
               <div class="mb-3">
-                <img src="data:image/jpg;base64,<?php echo base64_encode($check) ?>" style="width: 330px; height: 200px; object-fit: cover; align-self: center ">
+                <img src="data:image/jpg;base64,<?php echo base64_encode($row['image']) ?>" style="width: 330px; height: 200px; object-fit: cover; align-self: center ">
               </div>
 
               <div class="form-group mb-3 w-75 mx-auto">
                 <label for="username" class="form-label">Enacabezado</label>
-                <input type="text" class="form-control text-center" id="input-text" name="name_product" placeholder="Escriba el titulo del producto" value="<?php echo $name ?>" />
+                <input type="text" class="form-control text-center" id="input-text" name="name_product" placeholder="Escriba el titulo del producto" value="<?=$row['name'] ?>" />
               </div>
 
               <div class="form-group mb-3 w-75 mx-auto">
                 <label for="formFile" class="form-label">Cargar Imagen</label>
-                <input id="input-formFile" class="form-control" type="file" id="formFile" name="imagen_product"/>
+                <input id="input-formFile" class="form-control" type="file" id="formFile" name="imagen_product"  accept="image/png, image/gif, image/jpeg" />
               </div>
 
 
               <div class="form-group mb-3 w-75 mx-auto">
                 <label for="username" class="form-label">Descripcion</label>
-                <input id="input-description" type="text" class="form-control text-center p-4 " id="input-text" name="description_product" placeholder="Esciba la descripcion del producto" value="<?php echo $description ?>" />
+                <input id="input-description" type="text" class="form-control text-center p-4 " id="input-text" name="description_product" placeholder="Esciba la descripcion del producto" value="<?=$row['description'] ?>" />
               </div>
 
               <div class="form-group mb-3 w-75 mx-auto">
                 <label for="number" class="form-label">Precio</label>
-                <input type="text" class="form-control text-center" id="input-number" name="price_product" placeholder="Escriba el precio" value="<?php echo $pricy ?>" />
+                <input type="text" class="form-control text-center" id="input-number" name="price_product" placeholder="Escriba el precio" value="<?=$row['price'] ?>" />
               </div>
 
               <div class="form-group mb-3 w-75 mx-auto">
                 <label for="text" class="form-label">unidades</label>
-                <input class="form-control form-control-lg-sm text-center" name="stock_product" id="input-number-positive" type="number" value="1" placeholder="Selecione mas unidades" required value="<?php echo $stock ?>" />
+                <input class="form-control form-control-lg-sm text-center" name="stock_product" id="input-number-positive" type="number" value="1" placeholder="Selecione mas unidades" required value="<?=$row['stock'] ?>" />
               </div>
 
               <div class="form-group mb-3 w-75 mx-auto">
                 <label for="category-select" class="form-label">Categorias</label>
-                <select name="category_product" class="form-control form-control-lg-sm text-center" id="category-select" required value="<?php echo $categorys ?>">
+                <select name="category_product" class="form-control form-control-lg-sm text-center" id="category-select" required value="<?= $row['category'] ?>">
                   <option value="1">Primer Nivel</option>
                   <option value="2">Segundo Nivel</option>
                   <option value="3">Tercer Nivel</option>
                 </select>
               </div>
 
-              <button id="btn-submit" type="submit" class="btn btn-primary py-2 text-black">
+               <button id="btn-submit" type="submit" class="btn btn-primary py-2 text-black">
                 Guardar Cambios
               </button>
 
@@ -335,7 +295,7 @@ if (isset($_POST['name_product'])) {
       </script>
       . Todos los derechos reservados.
     </span>
-    <script src="/validate/js/crearProductoAndEditar.js"></script>
+    <script src="/validate/js/editarProducto.js"></script>
   </footer>
 </body>
 

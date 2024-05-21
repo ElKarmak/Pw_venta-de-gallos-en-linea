@@ -187,7 +187,7 @@ $products = $response->fetch_all(MYSQLI_ASSOC);
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <a class="nav-link text-black" aria-current="page" href="/index.php">
+            <a class="nav-link text-black" aria-current="page" href="/indexp.php">
               <img class="img-flu" src="/icons/ic--baseline-home.svg" alt="" />
             </a>
           </li>
@@ -203,11 +203,7 @@ $products = $response->fetch_all(MYSQLI_ASSOC);
             </a>
           </li>
 
-          <li class="nav-item">
-            <a class="nav-link text-black" aria-current="page" href="/editarProducto.php">
-              <img class="img-flu" src="/icons/IconUpdate.svg" alt="" />
-            </a>
-          </li>
+
 
           <li class="nav-item">
             <a class="nav-link text-black" aria-current="page" href="/crearProducto.php">
