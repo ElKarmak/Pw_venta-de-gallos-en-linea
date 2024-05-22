@@ -31,29 +31,6 @@
       margin-right: 25px;
     }
 
-    .navbar {
-      position: absolute;
-      margin-bottom: 10px;
-      background-color: rgba(255, 255, 255, 0.5);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      z-index: 999;
-      box-shadow: 0 0 10px rgba(2, 0, 4, 0.4);
-    }
-
-    .navbar-nav .nav-item .nav-link,
-    .navbar-nav .nav-item a,
-    .navbar-brand {
-      font-size: 20px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      font-weight: bold;
-      margin-bottom: 5px;
-    }
-
-    .navbar-nav .nav-item.dropdown:hover .dropdown-menu {
-      display: block;
-    }
 
     .icon-flu {
       height: 75px;
@@ -83,65 +60,28 @@
     }
 
     .card {
-      min-width: none;
-      max-width: none;
-      width: 100%;
+
+      width: 105%;
       height: 100%;
     }
+
+    #imagen {
+      width: 100%;
+      height: 58%;
+
+
+    }
+
   </style>
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg position-relative">
-    <div class="container-fluid">
-      <img class="icon-flu" src="/icons/iconoOrigin.svg" alt="" />
-      <a class="texto navbar-brand text-black">
-        Venta de Gallos
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <!-- Dropdown menu for Categories -->
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle text-black p-xl-4" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Categorías
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="/indexp.php?category=primer nivel">Primer Nivel</a></li>
-              <li><a class="dropdown-item" href="/indexp.php?category=segundo nivel">Segundo Nivel</a></li>
-              <li><a class="dropdown-item" href="/indexp.php?category=tercer nivel">Tercer Nivel</a></li>
-              <li><a class="dropdown-item" href="/indexp.php?category=todos">Todos</a></li>
-              <!-- Add more categories as needed -->
-            </ul>
-          </li>
 
-          <li class="nav-item">
-            <a class="nav-link text-black" aria-current="page" href="/indexp.php">
-              <img class="img-flu" src="/icons/ic--baseline-home.svg" alt="" />
-            </a>
-          </li>
 
-          <li class="nav-item">
-            <a class="nav-link text-black" aria-current="page" href="/carrito.php">
-              <img class="img-flu" src="/icons/shoping-cart.svg" alt="" />
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-black" aria-current="page" href="/Perfil.php">
-              <img class="img-flu" src="/icons/majesticons--user.svg" alt="" />
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-black" aria-current="page" href="/functions/cerrarSesionUsers.php">
-              <img class="img-flu" src="/icons/majesticons--login-line.svg" alt="" />
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+
+  <?php
+include_once './menuUser.php';
+  ?>
 
   <div class="bootstrap_cards2">
     <div class="container py-5">
@@ -166,12 +106,12 @@
               <!-- Card-->
               <div class="card rounded shadow-sm border-0" id="tarjeta">
                 <div class="card-body p-4" onclick="window.location.href='/inspecionarProducto.html'">
-                  <?php echo '<img src="data:image/jpeg;base64,' . base64_encode($row['image']) . '" class="img-fluid d-block mx-auto mb-3">' ?>
+                  <?php echo '<img id="imagen" src="data:image/jpeg;base64,' . base64_encode($row['image']) . '" class="img-fluid d-block mx-auto mb-3">' ?>
                   <h5><a href="#" class="text-dark"><?php echo $row['name'] ?></a></h5>
                   <p id="parrafoAltura" class="small text-muted font-italic"><?php echo $row['description'] ?></p>
                   <p>Precio $<b><?php echo $row['price'] ?></b></p>
                   <a href="./functions/insertProductShopping.php?id=<?php echo $row['id'] ?>">
-                    <button type="button" class="btn btn-success">
+                    <button type="button" class="btn"  style=" border-color:black; color: black;"">
                       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
                         <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"></path>
                       </svg>

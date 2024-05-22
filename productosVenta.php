@@ -210,18 +210,6 @@ $products = $response->fetch_all(MYSQLI_ASSOC);
             </a>
           </li>
 
-          <!-- Dropdown menu for Categories -->
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle text-black" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              <img class="img-flu" src="/icons/icon_Category.svg" alt="" />
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="#">Categoria 1</a></li>
-              <li><a class="dropdown-item" href="#">Categoria 2</a></li>
-              <li><a class="dropdown-item" href="#">Categoria 3</a></li>
-              <!-- Add more categories as needed -->
-            </ul>
-          </li>
           <li class="nav-item">
             <a class="nav-link text-black" aria-current="page" href="/carrito.html">
               <img class="img-flu" src="/icons/shoping-cart.svg" alt="" />
@@ -255,7 +243,7 @@ $products = $response->fetch_all(MYSQLI_ASSOC);
       justify-content: space-between;
       margin-bottom: 5px;
       ">
-      <h2>Editar Productos</h2>
+      <h2>Listado de Productos</h2>
       <input class="border-2 rounded-3" type="search" placeholder="Buscar...">
     </div>
     <div class="table-respornsive ">

@@ -1,4 +1,4 @@
-<?php include_once "./conetion.php";?>
+<?php include_once "./conetion.php"; ?>
 
 <?php
 session_start();
@@ -239,40 +239,43 @@ $row = mysqli_fetch_array($result);
 
               <div class="form-group mb-3 w-75 mx-auto">
                 <label for="username" class="form-label">Enacabezado</label>
-                <input type="text" class="form-control text-center" id="input-text" name="name_product" placeholder="Escriba el titulo del producto" value="<?=$row['name'] ?>" />
+                <input type="text" class="form-control text-center" id="input-text" name="name_product" placeholder="Escriba el titulo del producto" value="<?= $row['name'] ?>" />
               </div>
 
               <div class="form-group mb-3 w-75 mx-auto">
                 <label for="formFile" class="form-label">Cargar Imagen</label>
-                <input id="input-formFile" class="form-control" type="file" id="formFile" name="imagen_product"  accept="image/png, image/gif, image/jpeg" />
+                <input id="input-formFile" class="form-control" type="file" id="formFile" name="imagen_product" accept="image/png, image/gif, image/jpeg" />
               </div>
 
 
               <div class="form-group mb-3 w-75 mx-auto">
                 <label for="username" class="form-label">Descripcion</label>
-                <input id="input-description" type="text" class="form-control text-center p-4 " id="input-text" name="description_product" placeholder="Esciba la descripcion del producto" value="<?=$row['description'] ?>" />
+                <input id="input-description" type="text" class="form-control text-center p-4 " id="input-text" name="description_product" placeholder="Esciba la descripcion del producto" value="<?= $row['description'] ?>" />
               </div>
 
               <div class="form-group mb-3 w-75 mx-auto">
                 <label for="number" class="form-label">Precio</label>
-                <input type="text" class="form-control text-center" id="input-number" name="price_product" placeholder="Escriba el precio" value="<?=$row['price'] ?>" />
+                <input type="text" class="form-control text-center" id="input-number" name="price_product" placeholder="Escriba el precio" value="<?= $row['price'] ?>" />
               </div>
 
               <div class="form-group mb-3 w-75 mx-auto">
                 <label for="text" class="form-label">unidades</label>
-                <input class="form-control form-control-lg-sm text-center" name="stock_product" id="input-number-positive" type="number" value="1" placeholder="Selecione mas unidades" required value="<?=$row['stock'] ?>" />
+                <input class="form-control form-control-lg-sm text-center" name="stock_product" id="input-number-positive" type="number" placeholder="Selecione mas unidades" required value="<?= $row['stock'] ?>" />
               </div>
 
               <div class="form-group mb-3 w-75 mx-auto">
+
                 <label for="category-select" class="form-label">Categorias</label>
-                <select name="category_product" class="form-control form-control-lg-sm text-center" id="category-select" required value="<?= $row['category'] ?>">
-                  <option value="1">Primer Nivel</option>
-                  <option value="2">Segundo Nivel</option>
-                  <option value="3">Tercer Nivel</option>
+
+                <select name="category_product" class="form-control form-control-lg-sm text-center" id="category-select" required">
+                <option value="primer nivel" <?php echo $row['category']=="primer nivel" ? "selected" : "" ?> >primer nivel</option>
+                <option value="segundo nivel" <?php echo $row['category']=="segundo nivel" ? "selected" : "" ?>>segundo nivel</option>
+                <option value="tercer nivel" <?php echo $row['category']=="tercer nivel" ? "selected" : "" ?>>tercer Nivel</option>
                 </select>
+
               </div>
 
-               <button id="btn-submit" type="submit" class="btn btn-primary py-2 text-black">
+              <button id="btn-submit" type="submit" class="btn btn-primary py-2 text-black">
                 Guardar Cambios
               </button>
 
