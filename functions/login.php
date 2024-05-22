@@ -14,6 +14,7 @@ if($data->num_rows > 0){
   session_start();
   $_SESSION['username'] = $row['username'];
   $_SESSION['role'] = $row['role'];
+  $_SESSION['user_id'] = $row['id'];
 
   if ($row['role'] == 'Administrador') {
     header("Location: ../productosVenta.php");

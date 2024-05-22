@@ -1,7 +1,5 @@
 CREATE DATABASE IF NOT EXISTS tienda;
-
 USE tienda;
-
 CREATE TABLE IF NOT EXISTS users(
   id INT(11) NOT NULL AUTO_INCREMENT, PRIMARY KEY(id),
   username VARCHAR(16) NOT NULL,
@@ -20,13 +18,18 @@ CREATE TABLE IF NOT EXISTS products(
   category ENUM('primer nivel', 'segundo nivel', 'tercer nivel') NOT NULL
 );
 
+CREATE TABLE IF NOT EXISTS shopping_cart(
+  quantity INT(11) NOT NULL,
+  user_id INT(11) NOT NULL,
+  product_id INT(11) NOT NULL,
+  FOREIGN KEY (user_id) REFERENCES users(id),
+  FOREIGN KEY (product_id) REFERENCES products(id)
+);
+
 ALTER TABLE products MODIFY price DECIMAL(10,2);
-
-
 
 INSERT INTO users(username, email,  password, role) VALUES
 ('user', 'user@gamil.com', 'User123.', 'Usuario');
-
 
 INSERT INTO users(username, email, password, role) VALUES
 ('admin','admin@gamil.com' , 'Admin123.', 'Administrador');

@@ -5,7 +5,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-  <title>Ventas </title>
+  <title>Ventas</title>
   <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&amp;subset=latin-ext">
   <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
@@ -124,7 +124,7 @@
           </li>
 
           <li class="nav-item">
-            <a class="nav-link text-black" aria-current="page" href="/carrito.html">
+            <a class="nav-link text-black" aria-current="page" href="/carrito.php">
               <img class="img-flu" src="/icons/shoping-cart.svg" alt="" />
             </a>
           </li>
@@ -145,22 +145,23 @@
 
   <div class="bootstrap_cards2">
     <div class="container py-5">
-      <h2 id="titulo" class="font-weight-bold mb-2">Productos</h2>
-      <div class="row pb-5 mb-4">
-        <?php
+      <?= $_GET['error'] == 'no-stock' ? '<div class="alert alert-danger" role="alert">No hay stock disponible</div>' : ''; ?>
+      <?= $_GET['success'] == 'added-to-cart' ? '<div class="alert alert-success" role="alert">Añadido al carrito</div>' : ''; ?>
 
-        $category = $_GET['category'] ?? 'primer nivel ';
-        $category = $_GET['category'] ?? 'segundo nivel';
-        $category = $_GET['category'] ?? 'tercer nivel';
-        $category = $_GET['category'] ?? 'todos';
+      <?php
+      $category = $_GET['category'] ?? 'todos';
 
-        $query = ($category === 'todos') ? "SELECT * FROM products" : "SELECT * FROM products WHERE category = '$category'";
+      $query = ($category === 'todos') ? "SELECT * FROM products" : "SELECT * FROM products WHERE category = '$category'";
 
-        $result = Database::query($query);
+      $result = Database::query($query);
 
-        if ($result && $result->num_rows > 0) {
+      if ($result && $result->num_rows > 0) {
+      ?>
+        <h2 id="titulo" class="font-weight-bold mb-2">Productos</h2>
+        <div class="row pb-5 mb-4">
+          <?php
           while ($row = $result->fetch_assoc()) {
-        ?>
+          ?>
             <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
               <!-- Card-->
               <div class="card rounded shadow-sm border-0" id="tarjeta">
@@ -169,22 +170,26 @@
                   <h5><a href="#" class="text-dark"><?php echo $row['name'] ?></a></h5>
                   <p id="parrafoAltura" class="small text-muted font-italic"><?php echo $row['description'] ?></p>
                   <p>Precio $<b><?php echo $row['price'] ?></b></p>
-                  <button type="button" class="btn btn-success">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
-                      <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"></path>
-                    </svg>
-                    Agregar
-                  </button>
+                  <a href="./functions/insertProductShopping.php?id=<?php echo $row['id'] ?>">
+                    <button type="button" class="btn btn-success">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+                        <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"></path>
+                      </svg>
+                      Agregar
+                    </button>
+                  </a>
                 </div>
               </div>
             </div>
-        <?php
+          <?php
           }
-        } else {
-          echo "<p class='text-center'>No hay productos disponibles en esta categoría.</p>";
-        }
-        ?>
-      </div>
+          ?>
+        </div>
+      <?php
+      } else {
+        echo "<h4 class='text-center'>No hay productos disponibles en esta categoría <b>$category</b>.</h4>";
+      }
+      ?>
     </div>
   </div>
 

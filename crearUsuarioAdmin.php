@@ -1,3 +1,12 @@
+<?php
+include_once "./conetion.php";
+session_start();
+if (!isset($_SESSION['username'])) {
+  header("Location: ../login.php");
+  die();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
