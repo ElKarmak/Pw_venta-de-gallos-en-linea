@@ -16,18 +16,7 @@ const validation = () => {
 
   // Define los campos del formulario y sus reglas de validación
   const fields = {
-    // Campo de texto solo con letras y espacios
-    text: {
-      element: $("#input-name"), // Elemento HTML para el campo de texto
-      regEx: /^([a-zA-Z\s])+$/, // Expresión regular para validar
-      message: "Solo se aceptan letras", // Mensaje de error
-    },
-    // Campo de correo electrónico
-    email: {
-      element: $("#input-email"), // Elemento HTML para el correo
-      regEx: /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i, // RegEx para correos válidos
-      message: "El correo no es válido", // Mensaje de error
-    },
+
 
     // Campo para números de teléfono
     phone: {
@@ -110,7 +99,7 @@ $("#btn-submit").addEventListener("click", (event) => {
   if (formIsValid) {
     // Si el formulario es válido
     console.log("Formulario válido"); // Muestra mensaje de validación por consola
-    $("#login-form").submit();
+    $("#envio-form").submit();
     // Puedes realizar el envío del formulario o acciones adicionales
   } else {
     console.log("Formulario inválido"); // Muestra mensaje si el formulario es inválido por consola

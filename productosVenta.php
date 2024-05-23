@@ -40,30 +40,6 @@ $products = $response->fetch_all(MYSQLI_ASSOC);
       height: 102vh;
     }
 
-    .navbar {
-      position: absolute;
-      margin-bottom: 10px;
-      background-color: rgba(255, 255, 255, 0.5);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      z-index: 999;
-      box-shadow: 0 0 10px rgba(2, 0, 4, 0.4);
-    }
-
-    .navbar-nav .nav-item .nav-link,
-    .navbar-nav .nav-item a,
-    .navbar-brand {
-      font-size: 20px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      font-weight: bold;
-      margin-bottom: 5px;
-    }
-
-    .navbar-nav .nav-item.dropdown:hover .dropdown-menu {
-      display: block;
-    }
-
     .table-container {
       max-width: 100%;
       border: 2px solid black;
@@ -106,8 +82,6 @@ $products = $response->fetch_all(MYSQLI_ASSOC);
       /* Azul oscuro */
     }
 
-
-
     .table {
       border: 2px solid black;
 
@@ -126,7 +100,7 @@ $products = $response->fetch_all(MYSQLI_ASSOC);
     }
 
     .botones[type="button"] {
-      display: block;
+      display: center;
       margin: 0 auto;
 
       border: none;
@@ -142,6 +116,7 @@ $products = $response->fetch_all(MYSQLI_ASSOC);
       /* Azul oscuro */
     }
 
+
     h2,
     h1,
     h4,
@@ -151,12 +126,9 @@ $products = $response->fetch_all(MYSQLI_ASSOC);
     }
 
     .img-flu {
-      height: 50px;
-    }
+      height: 30px;
+      width: 30px;
 
-    .icon-flu {
-      height: 75px;
-      border-radius: 5px;
     }
 
     footer {
@@ -175,68 +147,10 @@ $products = $response->fetch_all(MYSQLI_ASSOC);
 </head>
 
 <body id="recargar">
-  <nav class="navbar navbar-expand-lg position-relative">
-    <div class="container-fluid">
-      <a class="navbar-brand text-black">
-        <img class="icon-flu" src="/icons/iconoOrigin.svg" alt="" />
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link text-black" aria-current="page" href="/indexp.php">
-              <img class="img-flu" src="/icons/ic--baseline-home.svg" alt="" />
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-black" aria-current="page" href="/productosVenta.php">
-              <img class="img-flu" src="/icons/icon.svg" alt="" />
-            </a>
-          </li>
+  <?php
 
-          <li class="nav-item">
-            <a class="nav-link text-black" aria-current="page" href="/productosVenta.php">
-              <img class="img-flu" src="/icons/iconProduct.svg" alt="" />
-            </a>
-          </li>
-
-
-
-          <li class="nav-item">
-            <a class="nav-link text-black" aria-current="page" href="/crearProducto.php">
-              <img class="img-flu" src="/icons/iconCreate.svg" alt="" />
-            </a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link text-black" aria-current="page" href="/carrito.html">
-              <img class="img-flu" src="/icons/shoping-cart.svg" alt="" />
-            </a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link text-black" aria-current="page" href="/crearUsuarioAdmin.php">
-              <img class="img-flu" src="/icons/CreateAdmin.svg" alt="" />
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-black" aria-current="page" href="/Perfil.php">
-              <img class="img-flu" src="/icons/majesticons--user.svg" alt="" />
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-black" aria-current="page" href="/functions/cerrarSesionUsers.php">
-              <img class="img-flu" src="/icons/majesticons--login-line.svg" alt="" />
-            </a>
-          </li>
-
-        </ul>
-      </div>
-    </div>
-  </nav>
-
+  include_once './menuAdmin.php';
+  ?>
   <div class="container mt-5 rounded-3 text-center conresponsive">
     <div style="
       display: flex;
@@ -282,7 +196,7 @@ $products = $response->fetch_all(MYSQLI_ASSOC);
               </td>
 
               <td>
-              <?= $product['description']?>
+                <?= $product['description'] ?>
               </td>
               <td class="d-flex flex-column align-items-center">
                 <div class="mb-3">

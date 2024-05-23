@@ -8,18 +8,11 @@ if (!isset($_SESSION['username'])) {
 }
 ?>
 <?php
-
-
-
 $id = $_GET['id'];
 $query = "SELECT * FROM products WHERE id = $id";
 $result = Database::query($query);
 $row = mysqli_fetch_array($result);
 ?>
-
-
-
-
 <!DOCTYPE html>
 <html lang="es">
 
@@ -43,29 +36,7 @@ $row = mysqli_fetch_array($result);
       min-height: 100vh;
     }
 
-    .navbar {
-      position: absolute;
-      margin-bottom: 10px;
-      background-color: rgba(255, 255, 255, 0.5);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      z-index: 999;
-      box-shadow: 0 0 10px rgba(2, 0, 4, 0.4);
-    }
 
-    .navbar-nav .nav-item .nav-link,
-    .navbar-nav .nav-item a,
-    .navbar-brand {
-      font-size: 20px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      font-weight: bold;
-      margin-bottom: 5px;
-    }
-
-    .navbar-nav .nav-item.dropdown:hover .dropdown-menu {
-      display: block;
-    }
 
     .container {
       margin-top: 20px;
@@ -151,76 +122,9 @@ $row = mysqli_fetch_array($result);
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg position-relative">
-    <div class="container-fluid">
-      <a class="navbar-brand text-black">
-        <img class="icon-flu" src="/icons/iconoOrigin.svg" alt="" />
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link text-black" aria-current="page" href="/index.html">
-              <img class="img-flu" src="/icons/ic--baseline-home.svg" alt="" />
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-black" aria-current="page" href="/productosVenta.html">
-              <img class="img-flu" src="/icons/icon.svg" alt="" />
-            </a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link text-black" aria-current="page" href="/productosVenta.php">
-              <img class="img-flu" src="/icons/iconProduct.svg" alt="" />
-            </a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link text-black" aria-current="page" href="/editarProducto.php">
-              <img class="img-flu" src="/icons/IconUpdate.svg" alt="" />
-            </a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link text-black" aria-current="page" href="/crearProducto.php">
-              <img class="img-flu" src="/icons/iconCreate.svg" alt="" />
-            </a>
-          </li>
-
-          <!-- Dropdown menu for Categories -->
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle text-black" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              <img class="img-flu" src="/icons/icon_Category.svg" alt="" />
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="#">Categoria 1</a></li>
-              <li><a class="dropdown-item" href="#">Categoria 2</a></li>
-              <li><a class="dropdown-item" href="#">Categoria 3</a></li>
-              <!-- Add more categories as needed -->
-            </ul>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-black" aria-current="page" href="/carrito.html">
-              <img class="img-flu" src="/icons/shoping-cart.svg" alt="" />
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-black" aria-current="page" href="/Perfil.html">
-              <img class="img-flu" src="/icons/majesticons--user.svg" alt="" />
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-black" aria-current="page" href="/loginAdminstrdores.html">
-              <img class="img-flu" src="/icons/majesticons--login-line.svg" alt="" />
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+<?php
+include_once './menuAdmin.php';
+?>
 
   <div class="container-fluid">
     <div class="row justify-content-center vh-100 align-items-center">

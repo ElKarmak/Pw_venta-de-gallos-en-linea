@@ -33,16 +33,6 @@
         box-shadow: 0 0 10px rgba(2, 0, 4, 0.4);
       }
 
-      button[type="button"] {
-        display: block;
-        margin: 0 auto;
-        border: none;
-        border-radius: 5px;
-        background-color: hsl(61, 100%, 50%);
-        /* Azul */
-        font-size: 16px;
-        cursor: pointer;
-      }
 
       button[type="button"]:hover {
         background-color: #d3ed50;
@@ -105,11 +95,7 @@
 
                 <div class="text-center">
 
-                    <button
-                    id="btn-submit"
-                    type="button"
-                    class="btn btn-primary text-black py-2"
-                  >
+                    <button id="btn-submit" type="button" class="btn" style=" border-color:black; color: black;">
                     Iniciar Sesión
                   </button>
 
