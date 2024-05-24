@@ -5,23 +5,18 @@ if (!isset($_SESSION['username'])) {
   header("Location: ../login.php");
   die();
 }
-
 $total = $_GET['total'];
-
 $_SESSION['user_id'];
-
 
 ?>
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Datos de Envío</title>
   <link rel="icon" href="img/Semental.jpeg" />
   <link rel="stylesheet" href="/css/bootstrap.css" />
-
   <link rel="stylesheet" href="/css/animations.css">
   <style>
     body {
@@ -137,7 +132,6 @@ $_SESSION['user_id'];
     <h2>Datos de Envío</h2>
 
     <form id="envio-form" class="needs-validation" action="./functions/envio.php?total=<?php echo $total?>" method="POST">
-
       <div class="form-group">
         <label for="phone">Teléfono:</label>
         <input id="input-phone-number" name="telephone" type="tel" class="form-control text-center" placeholder="Ingrese su número de telefono" />
@@ -146,13 +140,10 @@ $_SESSION['user_id'];
         <label for="address">Calle</label>
         <input id="input-calle" name="calle" type="text" class="form-control text-center" placeholder="Calle" />
       </div>
-
       <div class="form-group">
         <label for="address">Numero de casa</label>
         <input id="input-number-home" name="home-number" type="text" class="form-control text-center" placeholder="Numero" />
       </div>
-
-
       <div class="form-group">
         <label for="country">País:</label>
         <select name="city" id="input-contry" class="custom-select text-center">
@@ -164,15 +155,11 @@ $_SESSION['user_id'];
         <label for="post-code">Código Postal:</label>
         <input id="input-postal-code" type="text" class="form-control text-center" i placeholder="Ingrese su Código Postal" />
       </div>
-
-
         <button id="btn-submit" type="button" class="btn" style=" border-color:black; color: black;">
           <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 16 16">
             <path fill="currentColor" d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5M3.14 5l1.25 5h8.22l1.25-5zM5 13a1 1 0 1 0 0 2a1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0a2 2 0 0 1-4 0m9-1a1 1 0 1 0 0 2a1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0a2 2 0 0 1-4 0" />
           </svg>
         </button>
-
-
     </form>
   </div>
   <footer class="footer mt-auto py-3 text-center">

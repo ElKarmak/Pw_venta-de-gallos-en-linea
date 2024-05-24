@@ -142,9 +142,7 @@ $_SESSION['total'] = $total;
   <?php
   include_once './menuUser.php';
   ?>
-
   <?php
-
 
 if (isset($_GET['sucess'])) {
   echo '<h4 class="alert text-center alert-success" role="alert">Compra exitosa!</h4>';
@@ -231,14 +229,8 @@ if (isset($_GET['sucess'])) {
         </div>
       </div>
     </div>
-
   </div>
-
-
-
-
   <br> <br> <br> <br>
-
   <footer class="footer mt-auto py-3 text-center">
     <span class="text-muted">Victor Manuel -
       <script>

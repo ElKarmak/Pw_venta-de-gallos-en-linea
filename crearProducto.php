@@ -149,7 +149,7 @@ include_once './menuAdmin.php';
                     name="stock_product"
                     id="input-number-positive"
                     type="number"
-                    value="1"
+                    value=""
                     placeholder="Selecione mas unidades"
                     required
                   />

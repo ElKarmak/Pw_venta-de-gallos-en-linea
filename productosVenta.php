@@ -1,22 +1,16 @@
 <?php
 include_once "./conetion.php";
-
 session_start();
 if (!isset($_SESSION['username'])) {
   header("Location: ../login.php");
   die();
 }
-
 $query = "SELECT * FROM products";
 $response = Database::query($query);
-
 $products = $response->fetch_all(MYSQLI_ASSOC);
-
 ?>
-
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -132,12 +126,9 @@ $products = $response->fetch_all(MYSQLI_ASSOC);
 
   include_once './menuAdmin.php';
   ?>
-
-
   <?php
   if (empty($products)) {
     echo "<h4 class='text-center p-5 '>No tienes ningún producto en venta. ¡Agrega al menos uno!</h4>";
-
     return;
   }
 
@@ -169,8 +160,6 @@ $products = $response->fetch_all(MYSQLI_ASSOC);
 
           <?php
           foreach ($products as $product) {
-          
-
           ?>
             <tr class="align-middle">
               <td class="overflow-auto">

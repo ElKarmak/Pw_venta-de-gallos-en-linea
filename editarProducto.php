@@ -77,21 +77,7 @@ $row = mysqli_fetch_array($result);
       resize: none;
     }
 
-    button[type="submit"] {
-      display: block;
-      margin: 0 auto;
-      border: none;
-      border-radius: 5px;
-      background-color: hsl(61, 100%, 50%);
-      /* Azul */
-      font-size: 16px;
-      cursor: pointer;
-    }
 
-    button[type="submit"]:hover {
-      background-color: #d3ed50;
-      /* Azul oscuro */
-    }
 
     h1,
     label {
@@ -179,7 +165,7 @@ include_once './menuAdmin.php';
 
               </div>
 
-              <button id="btn-submit" type="submit" class="btn btn-primary py-2 text-black">
+              <button id="btn-submit" type="button" class="btn" style="border-color:black; color: black;">
                 Guardar Cambios
               </button>
 

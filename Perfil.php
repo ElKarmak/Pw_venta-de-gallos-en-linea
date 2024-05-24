@@ -9,25 +9,13 @@ if (!isset($_SESSION['username'])) {
 $response = Database::query("SELECT * FROM users WHERE username = '" . $_SESSION['username'] . "'");
 $users = $response->fetch_assoc();
 $userId = $users['id'];
-
-
-
-
 $data=Database::query("SELECT * FROM users WHERE id='$userId'");
 if ($data && $data->num_rows > 0) {
   $campos = $data->fetch_assoc();
   $nameUser= $campos['username'];
   $email= $campos['email'];
 }
-
-
-
-
-
-
 ?>
-
-
 <!DOCTYPE html>
 <html lang="es">
 
