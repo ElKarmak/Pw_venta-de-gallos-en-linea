@@ -13,8 +13,6 @@ $categorys = $_POST['category_product'];
 if($image != null){
   $image = addslashes(file_get_contents($image));
   $sql = Database::query("UPDATE products SET name='$name', image='$image', description='$description',  price='$spricy', stock='$stock', category='$categorys' WHERE id='$id'");
-
-
 }else{
 
   $sql = Database::query("UPDATE products SET name='$name', description='$description',  price='$spricy', stock='$stock', category='$categorys' WHERE id='$id'");

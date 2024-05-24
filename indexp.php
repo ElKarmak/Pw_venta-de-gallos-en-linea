@@ -60,8 +60,7 @@
     }
 
     .card {
-
-      width: 105%;
+      width: 100%;
       height: 100%;
     }
 
@@ -105,7 +104,7 @@ include_once './menuUser.php';
             <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
               <!-- Card-->
               <div class="card rounded shadow-sm border-0" id="tarjeta">
-                <div class="card-body p-4" onclick="window.location.href='/inspecionarProducto.html'">
+                <div class="card-body p-4" onclick="window.location.href='/inspecionarProducto.php?id=<?php echo $row['id'] ?>'">
                   <?php echo '<img id="imagen" src="data:image/jpeg;base64,' . base64_encode($row['image']) . '" class="img-fluid d-block mx-auto mb-3">' ?>
                   <h5><a href="#" class="text-dark"><?php echo $row['name'] ?></a></h5>
                   <p id="parrafoAltura" class="small text-muted font-italic"><?php echo $row['description'] ?></p>

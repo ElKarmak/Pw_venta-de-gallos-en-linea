@@ -116,7 +116,11 @@ $_SESSION['user_id'];
       border-radius: 5px;
     }
 
-    footer {
+
+    .footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
       background-color: rgba(255, 255, 255, 0.5);
       text-emphasis-color: black;
       box-shadow: 0 0 10px rgba(2, 0, 4, 0.4);
@@ -172,12 +176,11 @@ $_SESSION['user_id'];
     </form>
   </div>
   <footer class="footer mt-auto py-3 text-center">
-    <span class="text-muted">Victor Manuel -
-      <script>
-        document.write(new Date().getFullYear());
-      </script>
-      . Todos los derechos reservados.
-    </span>
+
+      <span class="text-muted">Victor Manuel - <script>
+          document.write(new Date().getFullYear())
+        </script>. Todos los derechos reservados.</span>
+
   </footer>
   <script src="/validate/js/detallesEnvio.js"></script>
   <script src="/js/bootstrap.js"></script>

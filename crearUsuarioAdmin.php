@@ -19,7 +19,7 @@ if (!isset($_SESSION['username'])) {
   <script defer src="./js/bootstrap.js"></script>
   <link rel="stylesheet" href="/css/animations.css">
   <style>
-    body {
+     body {
       background-color: aliceblue;
       background-repeat: no-repeat;
       background-size: cover;
@@ -28,14 +28,13 @@ if (!isset($_SESSION['username'])) {
       color: black;
       width: 100%;
       height: 100vh;
-  
+      position: relative;
     }
 
-
-
     .container {
-      margin-bottom: 180px;
-      padding: 40px;
+      margin-top: 4px;
+      margin-bottom: 80px;
+      padding: 20px;
       box-shadow: 0 0 10px rgba(2, 0, 4, 0.4);
       /* Agregando sombra */
       border-radius: 10px;
@@ -47,51 +46,25 @@ if (!isset($_SESSION['username'])) {
       box-shadow: 0 0 10px rgba(2, 0, 4, 0.4);
     }
 
-
-
-
     /* Ajusta el ancho de los inputs */
     .form-control {
       width: 100%;
     }
-
-    button[type="submit"] {
-      display: block;
-      margin: 0 auto;
-      border: none;
-      border-radius: 5px;
-      background-color: hsl(61, 100%, 50%);
-      /* Azul */
-      font-size: 16px;
-      cursor: pointer;
-    }
-
-    button[type="submit"]:hover {
-      background-color: #d3ed50;
-      /* Azul oscuro */
-    }
-
-    h1,
+      h1,
     label {
       font-weight: bold;
-
     }
-
     .navbar-brand::img-icon {
       width: 50%;
     }
-
     .img-fluid {
       max-height: 100vh;
       max-width: auto;
     }
-
     .img-fluid {
       min-height: 35vh;
       min-width: auto;
     }
-
-
     .img-flu {
       height: 50px;
 
@@ -117,14 +90,14 @@ if (!isset($_SESSION['username'])) {
   </style>
 </head>
 
-<body class="d-flex flex-column min-vh-90 overflow-x-hidden">
+<body class="d-flex flex-column ">
  <?php
 include_once './menuAdmin.php';
 
  ?>
 
 
-  <div class="container-fluid">
+
     <div class="row justify-content-center vh-100 align-items-center">
       <div class="col-md-4">
         <div class="container">
@@ -167,8 +140,8 @@ include_once './menuAdmin.php';
               </div>
 
 
-              <button id="btn-submit" type="submit" class="btn btn-primary py-2 text-black">
-                <img class="img-flu" src="/icons/iconSave.svg" alt="">
+              <button id="btn-submit" type="button" class="btn" style=" border-color:black; color: black;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"><path fill="currentColor" d="M12 22q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2q1.625 0 3.075.475T17.75 3.8L16.3 5.275q-.95-.6-2.025-.937T12 4Q8.675 4 6.337 6.338T4 12t2.338 5.663T12 20q.8 0 1.55-.15t1.45-.425l1.5 1.525q-1.025.5-2.15.775T12 22m7-2v-3h-3v-2h3v-3h2v3h3v2h-3v3zm-8.4-3.4l-4.25-4.25l1.4-1.4l2.85 2.85l10-10.025l1.4 1.4z"/></svg>
               </button>
             </form>
 
@@ -178,7 +151,7 @@ include_once './menuAdmin.php';
         </div>
       </div>
     </div>
-  </div>
+
 
 
   <footer class="footer mt-auto py-3 text-center">

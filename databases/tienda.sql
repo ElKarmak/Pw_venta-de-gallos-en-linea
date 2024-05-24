@@ -40,7 +40,7 @@ CREATE TABLE IF NOT EXISTS shipping_details(
   FOREIGN KEY (user_id) REFERENCES users(id)
 );
 
-CREATE TABLE shipping_has_products(
+CREATE TABLE IF NOT EXISTS shipping_has_products(
   shipping_id INT NOT NULL,
   product_id INT NOT NULL,
   quantity INT NOT NULL,
@@ -48,6 +48,17 @@ CREATE TABLE shipping_has_products(
   FOREIGN KEY (shipping_id) REFERENCES shipping_details(id),
   FOREIGN KEY (product_id) REFERENCES products(id)
 );
+
+
+CREATE TABLE IF NOT EXISTS inspec_produ(
+id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+product_id INT NOT NULL,
+quantity INT NOT NULL,
+FOREIGN KEY (product_id) REFERENCES products(id)
+
+)
+
+
 
 
 

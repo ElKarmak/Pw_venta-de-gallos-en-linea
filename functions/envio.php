@@ -4,15 +4,11 @@ session_start();
 $total=$_GET['total'];
 
 
-
-
 // Paso 1: Eliminar las comas
 $cleanNumber = str_replace(',', '', $total);
 
 // Paso 2: Convertir a número decimal
 $decimalNumber = (float) $cleanNumber;
-
-
 
 
 $idUser=$_SESSION['user_id'];
@@ -24,8 +20,6 @@ if($data &&$data->num_rows>0){
   $email=$campos['email'];
 
 }
-
-
 
 if(isset($_POST['telephone'])){
   $telephone = $_POST['telephone'];

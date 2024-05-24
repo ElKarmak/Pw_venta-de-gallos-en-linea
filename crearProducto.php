@@ -25,8 +25,8 @@
 
       .container {
         margin-top: 25px;
-        margin-bottom: 120px;
-        padding: 40px;
+        margin-bottom: 25px;
+        padding: 20px;
         box-shadow: 0 0 10px rgba(2, 0, 4, 0.4);
         /* Agregando sombra */
         border-radius: 10px;
@@ -48,23 +48,6 @@
         align-items: center;
         height: 100px;
         /* Asegúrate de que este sea el mismo que el de tu textarea */
-      }
-
-
-
-      button[type="submit"] {
-        display: block;
-        margin: 0 auto;
-        border: none;
-        border-radius: 5px;
-        background-color: hsl(61, 100%, 50%);
-        font-size: 16px;
-        cursor: pointer;
-      }
-
-      button[type="submit"]:hover {
-        background-color: #d3ed50;
-        /* Azul oscuro */
       }
 
       h1,
@@ -186,11 +169,7 @@ include_once './menuAdmin.php';
                   </select>
                 </div>
 
-                <button
-                  id="btn-submit"
-                  type="submit"
-                  class="btn btn-primary py-2 text-black"
-                >
+                <button id="btn-submit" type="button" class="btn" style=" border-color:black; color: black;" >
                   <img class="img-flu" src="/icons/iconSave.svg" alt="" />
                 </button>
               </form>

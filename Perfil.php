@@ -9,6 +9,22 @@ if (!isset($_SESSION['username'])) {
 $response = Database::query("SELECT * FROM users WHERE username = '" . $_SESSION['username'] . "'");
 $users = $response->fetch_assoc();
 $userId = $users['id'];
+
+
+
+
+$data=Database::query("SELECT * FROM users WHERE id='$userId'");
+if ($data && $data->num_rows > 0) {
+  $campos = $data->fetch_assoc();
+  $nameUser= $campos['username'];
+  $email= $campos['email'];
+}
+
+
+
+
+
+
 ?>
 
 
@@ -82,7 +98,7 @@ $userId = $users['id'];
     .img-fluid {
       width: 50%;
       height: 40%px;
-      border-radius: 40px;
+      border-radius: 60px;
     }
 
     .img-flu {
@@ -108,16 +124,14 @@ $userId = $users['id'];
       <div class="col-md-6 mx-lg-auto">
         <div class="product-details-container d-flex justify-content-center align-items-center flex-column">
           <h1 class="text-center mb-5">Perfil</h1>
-          <img class="img-fluid text-center p-4" src="/img/Gallo2.jpeg" alt="Imagen del Producto" />
-          <div class="align-content-center text-lg-start">
-            <h4 class="card-title p-2">Nombre: Juan Pérez</h4>
-            <h4 class="card-title p-2">
-              Correo Electrónico: juan.perez@example.com
+          <svg class="icon-flu border-danger mb-2 fa-rainbow" xmlns="http://www.w3.org/2000/svg" width="100" height="104.54545454545455" viewBox="0 0 1408 1472"><path fill="currentColor" d="M704 128q-144 0-225 106t-81 271q-1 205 132 325q17 16 12 41l-23 48q-11 24-32.5 37.5T396 995q-3 1-126.5 41T138 1080q-84 35-110 73q-28 63-28 319h1408q0-256-28-319q-26-38-110-73q-8-4-131.5-44T1012 995q-69-25-90.5-38.5T889 919l-23-48q-5-25 12-41q133-120 132-325q0-165-81-271T704 128"/></svg>
+          <div class="align-content-center text-lg-start p-4">
+            <h4 class="card-title p-2">Nombre: <?php echo $nameUser;?></h4>
+            <h4 class="card-title p-3">
+              Correo Electrónico: <?php echo $email; ?>
             </h4>
-            <h4 class="card-title p-2">
-              Dirección de Envío: Calle Principal #123, Ciudad, País
-            </h4>
-            <div class="d-flex justify-content-center">
+
+            <div class="d-flex justify-content-center p-3">
               <a href="/editarPerfil.php?id=<?php echo $userId; ?>"><button id="submit" type="button" class="btn" style=" border-color:black; color: black;">
               <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"><path fill="currentColor" d="M5 17.808v-.839q0-.619.36-1.159q.361-.539.97-.837q1.416-.679 2.834-1.018q1.417-.34 2.836-.34q.675 0 1.354.084t1.367.238l-.829.834q-.485-.067-.946-.111q-.46-.045-.946-.045q-1.335 0-2.646.319t-2.546.916q-.38.202-.593.494Q6 16.637 6 16.97v.647h5.846v1H5.808q-.343 0-.576-.233T5 17.808m9.23 1.384v-.73q0-.332.135-.633q.133-.3.35-.518l4.848-4.828q.148-.149.306-.2q.157-.052.315-.052q.172 0 .337.064t.302.193l.925.945q.123.148.187.307q.065.16.065.32t-.061.322t-.191.31l-4.829 4.83q-.217.217-.517.347q-.301.131-.633.131h-.73q-.344 0-.576-.232t-.232-.576m6.885-5.133l-.925-.944zm-6 5.056h.95l3.467-3.473l-.47-.475l-.455-.488l-3.492 3.486zm3.948-3.948l-.456-.488l.925.963zM12 11.385q-1.237 0-2.119-.882T9 8.385t.881-2.12T12 5.386t2.119.88t.881 2.12t-.881 2.118t-2.119.882m0-1q.825 0 1.413-.588T14 8.385t-.587-1.413T12 6.385t-1.412.587T10 8.385t.588 1.412t1.412.588m0-2"/></svg>
                 </button>

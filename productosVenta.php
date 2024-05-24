@@ -1,5 +1,4 @@
 <?php
-
 include_once "./conetion.php";
 
 session_start();
@@ -8,13 +7,10 @@ if (!isset($_SESSION['username'])) {
   die();
 }
 
-
-
 $query = "SELECT * FROM products";
 $response = Database::query($query);
 
 $products = $response->fetch_all(MYSQLI_ASSOC);
-
 
 ?>
 
@@ -99,22 +95,7 @@ $products = $response->fetch_all(MYSQLI_ASSOC);
       height: 125px;
     }
 
-    .botones[type="button"] {
-      display: center;
-      margin: 0 auto;
 
-      border: none;
-      border-radius: 5px;
-      background-color: hsl(61, 100%, 50%);
-      /* Azul */
-      font-size: 16px;
-      cursor: pointer;
-    }
-
-    .botones[type="button"]:hover {
-      background-color: #d3ed50;
-      /* Azul oscuro */
-    }
 
 
     h2,
@@ -151,6 +132,16 @@ $products = $response->fetch_all(MYSQLI_ASSOC);
 
   include_once './menuAdmin.php';
   ?>
+
+
+  <?php
+  if (empty($products)) {
+    echo "<h4 class='text-center p-5 '>No tienes ningún producto en venta. ¡Agrega al menos uno!</h4>";
+
+    return;
+  }
+
+  ?>
   <div class="container mt-5 rounded-3 text-center conresponsive">
     <div style="
       display: flex;
@@ -158,7 +149,7 @@ $products = $response->fetch_all(MYSQLI_ASSOC);
       margin-bottom: 5px;
       ">
       <h2>Listado de Productos</h2>
-      <input class="border-2 rounded-3" type="search" placeholder="Buscar...">
+
     </div>
     <div class="table-respornsive ">
       <table class="table ">
@@ -178,6 +169,7 @@ $products = $response->fetch_all(MYSQLI_ASSOC);
 
           <?php
           foreach ($products as $product) {
+          
 
           ?>
             <tr class="align-middle">
@@ -198,43 +190,39 @@ $products = $response->fetch_all(MYSQLI_ASSOC);
               <td>
                 <?= $product['description'] ?>
               </td>
-              <td class="d-flex flex-column align-items-center">
+              <td class=" justify-content-center"
+              style="width: 20px; height: 20px;  justify-content: center; align-items: center;">
+
                 <div class="mb-3">
                   <a href="/editarProducto.php?id=<?= $product['id'] ?>" style="text-decoration: none">
-                    <button type="button" class="botones btn-primary btn btn-danger text-black">
+                    <buttontype="button" class="btn" style=" color: black;">
                       <img class="img-flu" src="/icons/IconUpdate.svg" alt="">
-                    </button>
+                    </buttontype=>
                   </a>
                 </div>
                 <div>
                   <a href="/functions/./deleteProduct.php?id=<?= $product['id'] ?>" style="text-decoration: none">
-                    <button type="button" class="btn btn-danger m-3 text-black">
-                      <img class="img-flu" src="/icons/IconDelate.svg" alt="">
+                    <button type="button" class="btn" style=" color: black;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24">
+                      <path fill="currentColor" d="M15 13h1.5v2.82l2.44 1.41l-.75 1.3L15 16.69zm8 3c0 3.87-3.13 7-7 7c-1.91 0-3.64-.76-4.9-2H8c-1.1 0-2-.9-2-2V7h12v2.29c2.89.86 5 3.54 5 6.71M9 16c0-3.87 3.13-7 7-7H8v10h1.67c-.43-.91-.67-1.93-.67-3m7-5c-2.76 0-5 2.24-5 5s2.24 5 5 5s5-2.24 5-5s-2.24-5-5-5m-.5-7H19v2H5V4h3.5l1-1h5z" />
+                    </svg>
                     </button>
                   </a>
                 </div>
               </td>
             </tr>
-
           <?php
           }
           ?>
-
         </tbody>
-
       </table>
-
-
     </div>
-
-
   </div> <br> <br> <br> <br>
   <footer class="footer mt-auto py-3 text-center">
     <span class="text-muted">Victor Manuel - <script>
         document.write(new Date().getFullYear())
       </script>. Todos los derechos reservados.</span>
   </footer>
-
   <script>
     Document.getElementById('recargar').addEventListener("click", function() {
       window.location.reload();

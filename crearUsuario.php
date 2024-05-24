@@ -18,15 +18,15 @@
       background-attachment: flex;
       color: black;
       width: 100%;
-      height: 110vh;
+      height: 100vh;
       position: relative;
     }
 
 
     .container {
-      margin-top: 100px;
-      margin-bottom: 120px;
-      padding: 40px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      padding: 20px;
       box-shadow: 0 0 10px rgba(2, 0, 4, 0.4);
       /* Agregando sombra */
       border-radius: 10px;
@@ -38,9 +38,6 @@
       box-shadow: 0 0 10px rgba(2, 0, 4, 0.4);
     }
 
-    .navbar-nav .nav-item.dropdown:hover .dropdown-menu {
-        display: block;
-      }
 
 
     /* Ajusta el ancho de los inputs */
@@ -112,7 +109,7 @@
  ?>
 
 
-  <div class="container-fluid">
+
     <div class="row justify-content-center vh-100 align-items-center">
       <div class="col-md-4">
         <div class="container">
@@ -156,7 +153,7 @@
         </div>
       </div>
     </div>
-  </div>
+
 
   <footer class="footer mt-auto py-3 text-center">
     <span class="text-muted">Victor Manuel - <script>document.write(new Date().getFullYear())</script>. Todos los derechos reservados.</span>
