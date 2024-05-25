@@ -59,28 +59,37 @@
       box-shadow: 0 0 10px rgba(2, 0, 4, 0.4);
     }
 
+    .footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.5);
+      text-emphasis-color: black;
+      box-shadow: 0 0 10px rgba(2, 0, 4, 0.4);
+    }
+
+
     .card {
       width: 100%;
-      height: 100%;
+      height: 105%;
     }
 
     #imagen {
       width: 100%;
-      height: 58%;
-
+      height: 50%;
 
     }
   </style>
 </head>
 
-<body>
+<body style="height:50%">
   <?php
   include_once './menuUser.php';
   ?>
-  <div class="bootstrap_cards2">
-    <div class="container py-5">
-      <?= $_GET['error'] == 'no-stock' ? '<div class="alert alert-danger" role="alert">No hay stock disponible</div>' : ''; ?>
-      <?= $_GET['success'] == 'true' ? '<div class="alert alert-success" role="alert">Añadido al carrito</div>' : ''; ?>
+  <div class="bootstrap_cards2" style="height: 80%">
+    <div class="container py-5 "  style="height: 100%">
+      <?= $_GET['error'] == 'no-stock' ? '<div class="alert alert-danger text-center" role="alert">No ahi gallos disponibles de esta raza</div>' : ''; ?>
+      <?= $_GET['success'] == 'added-to-cart' ? '<div class="alert alert-success text-center" role="alert"> GalloAñadido al carrito exitosamente!</div>' : ''; ?>
       <?php
       $category = $_GET['category'] ?? 'todos';
       $query = ($category === 'todos') ? "SELECT * FROM products" : "SELECT * FROM products WHERE category = '$category'";
@@ -88,18 +97,19 @@
       if ($result && $result->num_rows > 0) {
       ?>
         <h2 id="titulo" class="font-weight-bold mb-2">Productos</h2>
-        <div class="row pb-5 mb-4">
+        <div class="row pb-5 mb-3" style="height: 100%">
           <?php
           while ($row = $result->fetch_assoc()) {
           ?>
-            <div class="col-lg-3 col-md-6 mb-4 mb-lg-0 p-2 ">
-              <!-- Card-->
+            <div class="col-lg-3 col-md-6 mb-5 mb-lg-0 p-4 ">
+              <!-- Card imgen 920X600 -->
               <div class="card rounded shadow-sm border-0" id="tarjeta">
                 <div class="card-body p-4" onclick="window.location.href='/inspecionarProducto.php?id=<?php echo $row['id'] ?>'">
                   <?php echo '<img id="imagen" src="data:image/jpeg;base64,' . base64_encode($row['image']) . '" class="img-fluid d-block mx-auto mb-3">' ?>
                   <h5><a href="#" class="text-dark"><?php echo $row['name'] ?></a></h5>
                   <p id="parrafoAltura" class="small text-muted font-italic"><?php echo $row['description'] ?></p>
                   <p>Precio $<b><?php echo $row['price'] ?></b></p>
+
                   <a href="./functions/insertProductShopping.php?id=<?php echo $row['id'] ?>">
                     <button type="button" class="btn" style=" border-color:black; color: black;">
                       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
@@ -122,12 +132,13 @@
       ?>
     </div>
   </div>
+
   <footer class="footer mt-auto py-3 text-center">
-    <div class="container">
+
       <span class="text-muted">Victor Manuel - <script>
           document.write(new Date().getFullYear())
         </script>. Todos los derechos reservados.</span>
-    </div>
+
   </footer>
   <script src="assets/bootstrap/js/bootstrap.min.js"></script>
   <script src="assets/js/MENU-Navbar---Apple.js"></script>

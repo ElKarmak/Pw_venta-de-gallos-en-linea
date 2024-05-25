@@ -1,5 +1,10 @@
 .bootstrap_cards2 {
-  min-height: 100vh;
+  display: -ms-flexbox;
+  display: flex;
+
+  
+  max-height: 100vh;
+  overflow: auto;
   background: #fafafa;
 }
 
@@ -23,5 +28,5 @@
 }
 
 .progress {
-  height: 10px;
+  height: 15px;
 }

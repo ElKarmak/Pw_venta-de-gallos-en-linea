@@ -5,6 +5,17 @@ if (!isset($_SESSION['username'])) {
   header("Location: ../login.php");
   die();
 }
+
+
+$data = Database::query("SELECT * FROM users WHERE username = '{$_SESSION['username']}'");
+$row = $data->fetch_assoc();
+
+
+if ($row['role'] == 'Usuario') {
+  header("Location: ../indexp.php");
+  die();
+}
+
 ?>
 
 <!DOCTYPE html>

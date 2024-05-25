@@ -144,101 +144,108 @@ $_SESSION['total'] = $total;
   ?>
   <?php
 
-if (isset($_GET['sucess'])) {
-  echo '<h4 class="alert text-center alert-success" role="alert">Compra exitosa!</h4>';
-  return;
-}
+  if (isset($_GET['sucess'])) {
+    echo '<h4 class="alert text-center alert-success" role="alert">Compra exitosa!</h4>';
+    return;
+  }
 
   if (empty($products)) {
-   echo "<h4 class='text-center p-5'>No tienes productos existentes en el carrito!</h4>";
-   return;
-  }
+    echo "<h4 class='text-center p-5'>No tienes productos existentes en el carrito!</h4>";
+  } else {
   ?>
-
-  <div class="container mt-5 rounded-3 text-center">
-    <h2>Carrito</h2>
-    <div class="table-responsive">
-      <!-- Agregamos la clase table-responsive -->
-      <table class="table">
-        <thead>
-          <tr>
-            <th scope="colgroup">Imagen</th>
-            <th scope="col">Nombre</th>
-            <th scope="col">Precio</th>
-            <th scope="col">Cantidad</th>
-            <th scope="col">Categoría</th>
-            <th scope="col">Descripción</th>
-            <th scope="col">Acciones</th>
-          </tr>
-        </thead>
-        <tbody>
-          <?php foreach ($products as $product) { ?>
-            <tr class="align-middle">
-              <td class="overflow-auto">
-                <!-- Agregamos la clase overflow-auto -->
-                <!-- Aquí envolvemos la imagen en un contenedor con overflow-auto -->
-                <img class="img-fluid" src="data:image/jpeg;base64,<?= base64_encode($product['image']) ?>" alt="Product Image" />
-              </td>
-              <td>
-                <?php echo $product['name']; ?>
-              </td>
-              <td id="price">$<?php echo $product['price']; ?></td>
-              <td>
-                <div class="align-middle text-center">
-                  <input class="form-control form-control-lg-sm" type="number" disabled value="<?php echo $product['quantity']; ?>" />
-                </div>
-              </td>
-              <td><?php echo $product['category']; ?></td>
-              <td><?php echo $product['description']; ?></td>
-              <td>
-                <a href="/functions/deleteproductSopping.php?id=<?php echo $product['id']; ?>">
-                  <button type="button" class="btn" style=" color: black;">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24">
-                      <path fill="currentColor" d="M15 13h1.5v2.82l2.44 1.41l-.75 1.3L15 16.69zm8 3c0 3.87-3.13 7-7 7c-1.91 0-3.64-.76-4.9-2H8c-1.1 0-2-.9-2-2V7h12v2.29c2.89.86 5 3.54 5 6.71M9 16c0-3.87 3.13-7 7-7H8v10h1.67c-.43-.91-.67-1.93-.67-3m7-5c-2.76 0-5 2.24-5 5s2.24 5 5 5s5-2.24 5-5s-2.24-5-5-5m-.5-7H19v2H5V4h3.5l1-1h5z" />
-                    </svg>
-                  </button>
-                </a>
-              </td>
+    <div class="container mt-5 rounded-3 text-center">
+      <h2>Carrito</h2>
+      <div class="table-responsive">
+        <!-- Agregamos la clase table-responsive -->
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="colgroup">Imagen</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Precio</th>
+              <th scope="col">Cantidad</th>
+              <th scope="col">Categoría</th>
+              <th scope="col">Descripción</th>
+              <th scope="col">Acciones</th>
             </tr>
-          <?php } ?>
-        </tbody>
-      </table>
-    </div>
-
-    <div class="d-flex table-responsive justify-content-between align-items-center">
-
-      <div class="col-4 text-center">
-
-        <a href="/detallesEnvio.php??total=<?php echo number_format($total) ?>">
-
-          <button type="button" class="btn" style=" border-color:black; color: black;">
-            <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 14 14">
-              <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="6.5" cy="6.5" r="6" />
-                <path d="m10.74 10.74l2.76 2.76M6.5 4V2.5M5 8c0 .75.67 1 1.5 1S8 9 8 8c0-1.5-3-1.5-3-3c0-1 .67-1 1.5-1S8 4.38 8 5M6.5 9v1.5" />
-              </g>
-            </svg>
-
-          </button>
-        </a>
+          </thead>
+          <tbody>
+            <?php foreach ($products as $product) { ?>
+              <tr class="align-middle">
+                <td class="overflow-auto">
+                  <!-- Agregamos la clase overflow-auto -->
+                  <!-- Aquí envolvemos la imagen en un contenedor con overflow-auto -->
+                  <img class="img-fluid" src="data:image/jpeg;base64,<?= base64_encode($product['image']) ?>" alt="Product Image" />
+                </td>
+                <td>
+                  <?php echo $product['name']; ?>
+                </td>
+                <td id="price">$<?php echo $product['price']; ?></td>
+                <td>
+                  <div class="align-middle text-center">
+                    <input class="form-control form-control-lg-sm" type="number" disabled value="<?php echo $product['quantity']; ?>" />
+                  </div>
+                </td>
+                <td><?php echo $product['category']; ?></td>
+                <td><?php echo $product['description']; ?></td>
+                <td>
+                  <a href="/functions/deleteproductSopping.php?id=<?php echo $product['id']; ?>">
+                    <button type="button" class="btn" style=" color: black;">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24">
+                        <path fill="currentColor" d="M15 13h1.5v2.82l2.44 1.41l-.75 1.3L15 16.69zm8 3c0 3.87-3.13 7-7 7c-1.91 0-3.64-.76-4.9-2H8c-1.1 0-2-.9-2-2V7h12v2.29c2.89.86 5 3.54 5 6.71M9 16c0-3.87 3.13-7 7-7H8v10h1.67c-.43-.91-.67-1.93-.67-3m7-5c-2.76 0-5 2.24-5 5s2.24 5 5 5s5-2.24 5-5s-2.24-5-5-5m-.5-7H19v2H5V4h3.5l1-1h5z" />
+                      </svg>
+                    </button>
+                  </a>
+                </td>
+              </tr>
+            <?php } ?>
+          </tbody>
+        </table>
       </div>
-      <div class="col-4 text-end">
-        <div class="mt-3">
-          <!-- Agrega margen superior -->
-          <h3 class="text-end text-black">Total: $<?php echo number_format($total); ?></h3>
+
+      <div class="d-flex table-responsive justify-content-between align-items-center">
+
+        <div class="col-4 text-center">
+
+          <a href="/detallesEnvio.php??total=<?php echo number_format($total) ?>">
+
+            <button type="button" class="btn" style=" border-color:black; color: black;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 14 14">
+                <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="6.5" cy="6.5" r="6" />
+                  <path d="m10.74 10.74l2.76 2.76M6.5 4V2.5M5 8c0 .75.67 1 1.5 1S8 9 8 8c0-1.5-3-1.5-3-3c0-1 .67-1 1.5-1S8 4.38 8 5M6.5 9v1.5" />
+                </g>
+              </svg>
+
+            </button>
+          </a>
+        </div>
+        <div class="col-4 text-end">
+          <div class="mt-3">
+            <!-- Agrega margen superior -->
+            <h3 class="text-end text-black">Total: $<?php echo number_format($total); ?></h3>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <br> <br> <br> <br>
+    <br> <br> <br> <br>
+    <?php
+
+    ?>
+  <?php
+  }
+  ?>
+
+
   <footer class="footer mt-auto py-3 text-center">
-    <span class="text-muted">Victor Manuel -
-      <script>
-        document.write(new Date().getFullYear());
-      </script>
-      . Todos los derechos reservados.
-    </span>
+
+    <span class="text-muted">Victor Manuel - <script>
+        document.write(new Date().getFullYear())
+      </script>. Todos los derechos reservados.</span>
+
   </footer>
+
+
 </body>
 
 </html>

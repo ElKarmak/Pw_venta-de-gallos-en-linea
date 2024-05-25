@@ -58,6 +58,63 @@
 
 
 
+<style>
+  .text {
+    position: relative;
+    display: inline-block;
+    color: black;
+    font-size: 20px;
+    text-decoration: none;
+    overflow: hidden;
+  }
+
+  .text::before,
+  .text::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.1);
+    z-index: -1;
+    border-radius: 50%;
+    animation: bubble 3s infinite;
+    opacity: 0;
+  }
+
+  .text::after {
+    animation-delay: 1.5s;
+  }
+
+  @keyframes bubble {
+    0% {
+      transform: scale(0.5);
+      opacity: 1;
+    }
+
+    50% {
+      transform: scale(1.1);
+      opacity: 1;
+    }
+
+    100% {
+      transform: scale(2.5);
+      opacity: 1;
+    }
+  }
+</style>
+
+<?php
+include_once './conetion.php';
+session_start();
+if (!isset($_SESSION['username'])) {
+
+}
+$nameUser = $_SESSION['username'];
+?>
+
+
 
 <nav class="navbar navbar-expand-lg position-relative">
   <div class="container-fluid">
@@ -65,12 +122,29 @@
     <a class="texto navbar-brand text-black">
       Venta de Gallos
     </a>
+
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    
+
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
+
+
+        <li class="nav-item dropdown">
+
+          <a class="text nav-link  text-black p-xl-4 text-center" style="font-size: 1.2em; font-weight: bold; color: #000;">
+            Bienvenido: <?php
+            if (empty($nameUser)){
+              echo $nameUser = "Invitado";
+            }else{
+
+              echo $nameUser = $nameUser;
+            } ?>
+          </a>
+
+        </li>
+
 
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle text-black p-xl-4" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">

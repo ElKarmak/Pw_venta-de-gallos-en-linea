@@ -19,7 +19,7 @@ $row = mysqli_fetch_array($result);
 <html lang="es">
 
 <head>
-  
+
 </head> <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Detalles del Producto</title>
@@ -157,7 +157,7 @@ $row = mysqli_fetch_array($result);
       <div class="col-12 col-md-8 offset-md-2">
         <h2 class="text-center">Detalles del Producto</h2>
         <div class="d-flex justify-content-center p-2">
-          <img class="img-fluid" src="data:image/jpg;base64,<?php echo base64_encode($row['image']) ?>" style="width: 330px; height: 200px; align-self: center ">
+          <img class="card rounded shadow-sm" src="data:image/jpg;base64,<?php echo base64_encode($row['image']) ?>" style="width: 500px; height: 280px; align-self: center ">
         </div>
 
         <div>

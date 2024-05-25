@@ -6,7 +6,17 @@ if (!isset($_SESSION['username'])) {
   header("Location: ../login.php");
   die();
 }
+$data = Database::query("SELECT * FROM users WHERE username = '{$_SESSION['username']}'");
+$row = $data->fetch_assoc();
+
+
+if ($row['role'] == 'Usuario') {
+  header("Location: ../indexp.php");
+  die();
+}
+
 ?>
+
 <?php
 $id = $_GET['id'];
 $query = "SELECT * FROM products WHERE id = $id";
@@ -108,9 +118,9 @@ $row = mysqli_fetch_array($result);
 </head>
 
 <body>
-<?php
-include_once './menuAdmin.php';
-?>
+  <?php
+  include_once './menuAdmin.php';
+  ?>
 
   <div class="container-fluid">
     <div class="row justify-content-center vh-100 align-items-center">
@@ -123,8 +133,8 @@ include_once './menuAdmin.php';
 
             <form enctype="multipart/form-data" id="form_create" class="text-center" action="/functions/editProduct.php?id=<?php echo $id ?>" method="POST">
 
-              <div class="mb-3">
-                <img src="data:image/jpg;base64,<?php echo base64_encode($row['image']) ?>" style="width: 330px; height: 200px; object-fit: cover; align-self: center ">
+              <div class="d-flex justify-content-center p-2">
+                <img class="border rounded" src="data:image/jpg;base64,<?php echo base64_encode($row['image']) ?>" style="width: 250px; height: 150px; align-self: center">
               </div>
 
               <div class="form-group mb-3 w-75 mx-auto">
@@ -158,9 +168,9 @@ include_once './menuAdmin.php';
                 <label for="category-select" class="form-label">Categorias</label>
 
                 <select name="category_product" class="form-control form-control-lg-sm text-center" id="category-select" required">
-                <option value="primer nivel" <?php echo $row['category']=="primer nivel" ? "selected" : "" ?> >primer nivel</option>
-                <option value="segundo nivel" <?php echo $row['category']=="segundo nivel" ? "selected" : "" ?>>segundo nivel</option>
-                <option value="tercer nivel" <?php echo $row['category']=="tercer nivel" ? "selected" : "" ?>>tercer Nivel</option>
+                  <option value="primer nivel" <?php echo $row['category'] == "primer nivel" ? "selected" : "" ?>>primer nivel</option>
+                  <option value="segundo nivel" <?php echo $row['category'] == "segundo nivel" ? "selected" : "" ?>>segundo nivel</option>
+                  <option value="tercer nivel" <?php echo $row['category'] == "tercer nivel" ? "selected" : "" ?>>tercer Nivel</option>
                 </select>
 
               </div>
