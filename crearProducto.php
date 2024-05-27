@@ -205,6 +205,6 @@ include_once './menuAdmin.php';
         . Todos los derechos reservados.</span
       >
     </footer>
-    <script src="/validate/js/crearProductoAndEditar.js"></script>
+    <script src="/validate/js/crearProducto.js"></script>
   </body>
 </html>

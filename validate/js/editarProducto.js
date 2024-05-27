@@ -24,14 +24,20 @@ const validation = () => {
     },
     textArea: {
       element: $("#input-description"), // Elemento HTML para el campo de texto
-      regEx: /^([a-zA-Z\s])+$/, // Expresión regular para validar
+      regEx: /^[a-zA-Z\s.,]+$/,// Expresión regular para validar
       message: "Solo se aceptan letras", // Mensaje de error
     },
     // Campo para números enteros
-    decimal: {
+    int: {
       element: $("#input-number"), // Elemento para el número entero
-      regEx: /^[+-]?(\d+(\.\d*)?|\.\d+)$/, // Solo acepta dígitos
+      regEx: /^(0*[1-9]\d*(\.\d+)?|0*\.\d*[1-9]\d*)$/, // Solo acepta dígitos
       message: "Solo se aceptan números", // Mensaje de error
+
+    },
+    numberPositive: {
+      element: $("#input-number-positive"), // Elemento para el número entero
+      regEx: /^(0*[1-9]\d*(\.\d+)?|0*\.\d*[1-9]\d*)$/, // Solo acepta dígitos
+      message: "Solo se aceptan números positivos", // Mensaje de error
 
     }
   };
