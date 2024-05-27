@@ -147,6 +147,8 @@ $products = $response->fetch_all(MYSQLI_ASSOC);
   }
 
   ?>
+    <?= $_GET['success'] == 'deleted' ? '<div class="alert alert-success text-center" role="alert">Producto eliminado exitosamente de la venta!</div>' : ''; ?>
+    <?= $_GET['success'] == 'updated' ? '<div class="alert alert-success text-center" role="alert">Producto actualizado exitosamente de la venta!</div>' : ''; ?>
   <div class="container mt-5 rounded-3 text-center conresponsive">
     <div style="
       display: flex;

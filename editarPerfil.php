@@ -33,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $sql = Database::query("UPDATE users SET username='$name', email='$email', password='$password' WHERE id='$id'");
         if ($sql) {
             $_SESSION['username'] = $name; // Actualiza la sesión con el nuevo nombre de usuario
-            header("Location: /Perfil.php?id=$id");
+            header("Location: /Perfil.php?message=updated?id=$id");
             exit; // Importante: detén la ejecución del script después de la redirección
         } else {
             $error_message = "Error: " . Database::get_instance()->error;
@@ -117,7 +117,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <div class="card-body">
           <h1 class="card-title text-center mb-4">Editar</h1>
           <?php if ($error_message): ?>
-              <div class="alert alert-danger" role="alert">
+              <div class="alert alert-danger text-center" role="alert">
                   <?php echo $error_message; ?>
               </div>
           <?php endif; ?>

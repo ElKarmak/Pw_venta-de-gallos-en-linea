@@ -149,9 +149,17 @@ $_SESSION['total'] = $total;
     return;
   }
 
+  if ($_GET['product=deleted']) {
+    echo '<h4 class="alert text-center alert-danger" role="alert">Error al realizar la compra</h4>';
+
+  }
+
   if (empty($products)) {
     echo "<h4 class='text-center p-5'>No tienes productos existentes en el carrito!</h4>";
-  } else {
+  }else{
+
+
+
   ?>
     <div class="container mt-5 rounded-3 text-center">
       <h2>Carrito</h2>
@@ -234,9 +242,9 @@ $_SESSION['total'] = $total;
     ?>
   <?php
   }
+
+ 
   ?>
-
-
   <footer class="footer mt-auto py-3 text-center">
 
     <span class="text-muted">Victor Manuel - <script>

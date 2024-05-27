@@ -89,7 +89,7 @@
   <div class="bootstrap_cards2" style="height: 80%">
     <div class="container py-5 "  style="height: 100%">
       <?= $_GET['error'] == 'no-stock' ? '<div class="alert alert-danger text-center" role="alert">No ahi gallos disponibles de esta raza</div>' : ''; ?>
-      <?= $_GET['success'] == 'added-to-cart' ? '<div class="alert alert-success text-center" role="alert"> GalloAñadido al carrito exitosamente!</div>' : ''; ?>
+      <?= $_GET['success'] == 'added-to-cart' ? '<div class="alert alert-success text-center" role="alert"> Gallo añadido al carrito exitosamente!</div>' : ''; ?>
       <?php
       $category = $_GET['category'] ?? 'todos';
       $query = ($category === 'todos') ? "SELECT * FROM products" : "SELECT * FROM products WHERE category = '$category'";

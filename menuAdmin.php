@@ -128,12 +128,12 @@ $nameUser = $_SESSION['username'];
     </button>
 
     <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
+      <ul class="navbar-nav ms-auto" style="padding-right: 20px; padding-left: 20px; padding-top: 20px;">
 
 
-        <li class="nav-item dropdown">
+        <li class="nav-item dropdown" style="padding-top: 15px;">
 
-          <a class="text nav-link  text-black p-xl-4" style="font-size: 1.2em; font-weight: bold; color: #000;">
+          <a class="text nav-link  text-black " style="font-size: 1.2em; font-weight: bold; color: #000;">
             Bienvenido: <?php echo $nameUser; ?>
           </a>
 
@@ -153,6 +153,19 @@ $nameUser = $_SESSION['username'];
             <!-- Add more categories as needed -->
           </ul>
         </li>
+
+
+
+        <li class="nav-item dropdown">
+          <a class="nav-link text-black p-xl-4" aria-current="page" href="/listaUser.php">
+            Usuarios
+          </a>
+        </li>
+
+
+
+
+
 
         <li class="nav-item">
           <a class="nav-link text-black" aria-current="page" href="/indexp.php">

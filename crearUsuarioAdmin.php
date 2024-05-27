@@ -109,6 +109,7 @@ include_once './menuAdmin.php';
       <div class="col-md-4">
         <div class="container">
           <div class="card-body">
+          <?= isset($_GET['error']) ? '<div class="alert alert-danger text-center!" role="alert">Error las contraseñas no coinciden</div>' : '' ?>
             <h1 class="card-title text-center mb-4">Adminstrador</h1>
             <form anctype="multipart/form-data" id="form_create" class="text-center" action="./functions/createUserAdmin.php" method="POST">
               <div class="form-group mb-3 w-75 mx-auto">

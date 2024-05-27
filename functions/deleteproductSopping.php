@@ -7,5 +7,5 @@ print_r($id);
 
 $data= Database::query("DELETE FROM shopping_cart WHERE product_id = '{$id}'");
 
-header("Location: ../carrito.php");
+header("Location: ../carrito.php?product=deleted");
 ?>

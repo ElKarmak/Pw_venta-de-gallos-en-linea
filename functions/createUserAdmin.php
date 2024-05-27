@@ -1,4 +1,4 @@
-<?php
+<?= $_GET['success'] == 'deleted' ? '<div class="alert alert-success text-center" role="alert">Producto eliminado exitosamente de la venta!</div>' : ''; ?><?php
 include_once "../conetion.php";
 
 if (isset($_POST['name_user'])) {
@@ -15,7 +15,7 @@ if (isset($_POST['name_user'])) {
   }
 
   if ($password !== $confir_password) {
-    header("Location: /crearUsuarioAdmin.php");
+    header("Location: /crearUsuarioAdmin.php?error=1");
     exit;
   }
 
@@ -23,5 +23,5 @@ if (isset($_POST['name_user'])) {
 
   $data = Database::query("INSERT INTO users (username,email, password ,role) VALUES ('{$name}','{$email}', '{$password}','{$type_user}')");
 
-  header("Location: /crearUsuarioAdmin.php");
+  header("Location: ../listaUser.php");
 }

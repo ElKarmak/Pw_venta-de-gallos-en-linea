@@ -18,7 +18,7 @@ if($image != null){
   $sql = Database::query("UPDATE products SET name='$name', description='$description',  price='$spricy', stock='$stock', category='$categorys' WHERE id='$id'");
 }
 
-header("Location: ../productosVenta.php");
+header("Location: ../productosVenta.php?success=updated");
 
 
 
