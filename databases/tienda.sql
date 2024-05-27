@@ -57,17 +57,8 @@ quantity INT NOT NULL,
 FOREIGN KEY (product_id) REFERENCES products(id)
 
 )
-
-
-
-
-
-
-
-ALTER TABLE products MODIFY price DECIMAL(10,2);
-
 INSERT INTO users(username, email,  password, role) VALUES
-('user', 'user@gamil.com', 'User123.', 'Usuario');
+('Victor', 'victor@gamil.com', 'User123.', 'Usuario');
 
 INSERT INTO users(username, email, password, role) VALUES
-('admin','admin@gamil.com' , 'Admin123.', 'Administrador');
+('Manuel','manuel@gamil.com' , 'Admin123.', 'Administrador');

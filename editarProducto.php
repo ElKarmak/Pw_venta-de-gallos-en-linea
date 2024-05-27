@@ -143,13 +143,13 @@ $row = mysqli_fetch_array($result);
               </div>
 
               <div class="form-group mb-3 w-75 mx-auto">
-                <label for="formFile" class="form-label">Cargar Imagen</label>
+                <label for="formFile" class="form-label">Cargar imagen</label>
                 <input id="input-formFile" class="form-control" type="file" id="formFile" name="imagen_product" accept="image/png, image/gif, image/jpeg" />
               </div>
 
 
               <div class="form-group mb-3 w-75 mx-auto">
-                <label for="username" class="form-label">Descripcion</label>
+                <label for="username" class="form-label">Descripción</label>
                 <input id="input-description" type="text" class="form-control text-center p-4 " id="input-text" name="description_product" placeholder="Esciba la descripcion del producto" value="<?= $row['description'] ?>" />
               </div>
 

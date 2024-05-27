@@ -124,7 +124,7 @@ include_once './menuAdmin.php';
                 </div>
 
                 <div class="form-group mb-3 w-75 mx-auto">
-                  <label for="formFile" class="form-label">Cargar Imagen</label>
+                  <label for="formFile" class="form-label">Cargar imagen</label>
                   <input
                     id="input-formFile"
                     class="form-control"
@@ -135,7 +135,7 @@ include_once './menuAdmin.php';
                 </div>
 
                 <div class="form-group mb-3 w-75 mx-auto">
-                  <label for="username" class="form-label">Descripcion</label>
+                  <label for="username" class="form-label">Descripción</label>
                   <input
                   id="input-description"
                     type="text"
