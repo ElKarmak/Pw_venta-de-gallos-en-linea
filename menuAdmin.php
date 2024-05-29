@@ -141,18 +141,7 @@ $nameUser = $_SESSION['username'];
 
 
 
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle text-black p-xl-4" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Categorías
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="/indexp.php?category=primer nivel">Primer Nivel</a></li>
-            <li><a class="dropdown-item" href="/indexp.php?category=segundo nivel">Segundo Nivel</a></li>
-            <li><a class="dropdown-item" href="/indexp.php?category=tercer nivel">Tercer Nivel</a></li>
-            <li><a class="dropdown-item" href="/indexp.php?category=todos">Todos</a></li>
-            <!-- Add more categories as needed -->
-          </ul>
-        </li>
+
 
 
 
@@ -168,7 +157,7 @@ $nameUser = $_SESSION['username'];
 
 
         <li class="nav-item">
-          <a class="nav-link text-black" aria-current="page" href="/indexp.php">
+          <a class="nav-link text-black" aria-current="page" href="/productosVenta.php">
             <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24">
               <rect width="4" height="6" x="10" y="14" fill="currentColor" fill-opacity="0">
                 <animate fill="freeze" attributeName="fill-opacity" begin="0.9s" dur="0.15s" values="0;0.3" />
@@ -192,24 +181,6 @@ $nameUser = $_SESSION['username'];
         </li>
 
         <li class="nav-item">
-          <a class="nav-link text-black" aria-current="page" href="/productosVenta.php">
-            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24">
-              <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" color="currentColor">
-                <path d="M2 12.4c0-3.017 0-4.525.946-5.463C3.893 6 5.416 6 8.462 6h1.076c3.047 0 4.57 0 5.516.937S16 9.383 16 12.4v3.2c0 3.017 0 4.525-.946 5.463c-.947.937-2.47.937-5.516.937H8.462c-3.046 0-4.57 0-5.516-.937S2 18.617 2 15.6z" />
-                <path d="M15.538 16h.923c2.611 0 3.917 0 4.728-.82S22 13.04 22 10.4V7.6c0-2.64 0-3.96-.811-4.78S19.072 2 16.46 2h-.923c-2.612 0-3.917 0-4.728.82c-.71.717-.799 1.817-.81 3.847M6 12h3m-3 5h5m-.5-14l4 3.5" />
-              </g>
-            </svg>
-          </a>
-        </li>
-
-
-
-
-
-
-
-
-        <li class="nav-item">
           <a class="nav-link text-black" aria-current="page" href="/crearProducto.php">
             <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24">
               <path fill="currentColor" d="M11 17h2v-4h4v-2h-4V7h-2v4H7v2h4zm1 5q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22m0-2q3.35 0 5.675-2.325T20 12t-2.325-5.675T12 4T6.325 6.325T4 12t2.325 5.675T12 20m0-8" />
@@ -225,19 +196,8 @@ $nameUser = $_SESSION['username'];
           </a>
         </li>
 
-
-
-
-
         <li class="nav-item">
-          <a class="nav-link text-black" aria-current="page" href="/carrito.php">
-            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 16 16">
-              <path fill="currentColor" d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5M3.14 5l1.25 5h8.22l1.25-5zM5 13a1 1 0 1 0 0 2a1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0a2 2 0 0 1-4 0m9-1a1 1 0 1 0 0 2a1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0a2 2 0 0 1-4 0" />
-            </svg>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-black" aria-current="page" href="/Perfil.php">
+          <a class="nav-link text-black" aria-current="page" href="/perfilAdmin.php">
             <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 256 256">
               <path fill="currentColor" d="M230.92 212c-15.23-26.33-38.7-45.21-66.09-54.16a72 72 0 1 0-73.66 0c-27.39 8.94-50.86 27.82-66.09 54.16a8 8 0 1 0 13.85 8c18.84-32.56 52.14-52 89.07-52s70.23 19.44 89.07 52a8 8 0 1 0 13.85-8M72 96a56 56 0 1 1 56 56a56.06 56.06 0 0 1-56-56" />
             </svg>

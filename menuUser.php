@@ -108,9 +108,7 @@
 <?php
 include_once './conetion.php';
 session_start();
-if (!isset($_SESSION['username'])) {
 
-}
 $nameUser = $_SESSION['username'];
 ?>
 

@@ -21,6 +21,12 @@ if($product['stock'] > 0){
    $cartData = Database::query("SELECT * FROM shopping_cart WHERE user_id = $userId AND product_id = $id");
    $cartItem = mysqli_fetch_assoc($cartData);
 
+
+
+
+
+
+
    if($cartItem){
      // Si el producto ya está en el carrito, incrementar la cantidad
      $newQuantity = $cartItem['quantity'] + 1;

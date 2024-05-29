@@ -26,7 +26,6 @@ $products = mysqli_fetch_all($cartData, MYSQLI_ASSOC);
 
 $_SESSION['cart'] = $products;
 
-
 // Calcular el total
 $total = 0;
 foreach ($products as $product) {
@@ -243,7 +242,7 @@ $_SESSION['total'] = $total;
   <?php
   }
 
- 
+
   ?>
   <footer class="footer mt-auto py-3 text-center">
 

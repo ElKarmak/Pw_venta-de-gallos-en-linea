@@ -20,26 +20,26 @@ const validation = () => {
     text: {
       element: $("#input-user"), // Elemento HTML para el campo de texto
       regEx: /^([a-zA-Z\s])+$/, // Expresión regular para validar
-      message: "Solo se aceptan letras", // Mensaje de error
+      message: "Solo se aceptan letras, de la aA-zZ", // Mensaje de error
     },
     // Campo de correo electrónico
     email: {
       element: $("#input-email"), // Elemento HTML para el correo
       regEx: /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i, // RegEx para correos válidos
-      message: "El correo no es válido", // Mensaje de error
+      message: "El correo no es válido debe contener '@gmail.com'", // Mensaje de error
     },
     // Campo de contraseña con requisitos específicos
     password: {
       element: $("#input-password"), // Elemento para la contraseña
       regEx:
         /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]).{8,}$/, // Requisitos para la contraseña
-      message: "La contraseña no cumple con los requisitos mínimos", // Mensaje de error
+      message: "La contraseña no cumple con los requisitos, debe de contener al menos 8 caracteres, una mayúscula, una minúscula, un número y un caracter especial: Ejemplo: Abcv123!", // Mensaje de error
     },
     confirm_password: {
       element: $("#input-confirm-password"), // Elemento para la contraseña
       regEx:
         /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]).{8,}$/, // Requisitos para la contraseña
-      message: "La contraseña no cumple con los requisitos mínimos", // Mensaje de error
+      message: "La contraseña no cumple con los requisitos, debe de contener al menos 8 caracteres, una mayúscula, una minúscula, un número y un caracter especial: Ejemplo: Abcv123!",// Mensaje de error
     },
   };
 

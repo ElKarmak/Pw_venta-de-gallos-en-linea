@@ -80,6 +80,9 @@
 
     }
   </style>
+
+
+
 </head>
 
 <body style="height:50%">
@@ -88,7 +91,7 @@
   ?>
   <div class="bootstrap_cards2" style="height: 80%">
     <div class="container py-5 "  style="height: 100%">
-      <?= $_GET['error'] == 'no-stock' ? '<div class="alert alert-danger text-center" role="alert">No ahi gallos disponibles de esta raza</div>' : ''; ?>
+      <?= $_GET['error'] == 'no-stock' ? '<div class="alert alert-danger text-center" role="alert">No hay gallos disponibles de esta raza</div>' : ''; ?>
       <?= $_GET['success'] == 'added-to-cart' ? '<div class="alert alert-success text-center" role="alert"> Gallo añadido al carrito exitosamente!</div>' : ''; ?>
       <?php
       $category = $_GET['category'] ?? 'todos';
@@ -101,7 +104,7 @@
           <?php
           while ($row = $result->fetch_assoc()) {
           ?>
-            <div class="col-lg-3 col-md-6 mb-5 mb-lg-0 p-4 ">
+            <div class="col-lg-3 col-md-6 mb-5 mb-lg-0 p-4">
               <!-- Card imgen 920X600 -->
               <div class="card rounded shadow-sm border-0" id="tarjeta">
                 <div class="card-body p-4" onclick="window.location.href='/inspecionarProducto.php?id=<?php echo $row['id'] ?>'">

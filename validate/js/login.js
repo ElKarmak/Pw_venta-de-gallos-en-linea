@@ -28,7 +28,7 @@ const validation = () => {
       element: $("#input-password"), // Elemento para la contraseña
       regEx:
         /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]).{8,}$/, // Requisitos para la contraseña
-      message: "La contraseña no cumple con los requisitos mínimos", // Mensaje de error
+      message: "La contraseña no cumple con los requisitos, debe de contener al menos 8 caracteres, una mayúscula, una minúscula, un número y un caracter especial: Ejemplo: Abcv123!", // Mensaje de error
     },
 
   };
