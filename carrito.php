@@ -190,7 +190,9 @@ $_SESSION['total'] = $total;
                 <td id="price">$<?php echo $product['price']; ?></td>
                 <td>
                   <div class="align-middle text-center">
-                    <input class="form-control form-control-lg-sm" type="number" disabled value="<?php echo $product['quantity']; ?>" />
+                    <input onchange="
+                      updateQuantity('<?php echo $product['id']; ?>', this.value,this)
+                    "  class="form-control form-control-lg-sm" type="number" min="1"   value="<?php echo $product['quantity']; ?>" />
                   </div>
                 </td>
                 <td><?php echo $product['category']; ?></td>
@@ -214,7 +216,7 @@ $_SESSION['total'] = $total;
 
         <div class="col-4 text-center">
 
-          <a href="/detallesEnvio.php??total=<?php echo number_format($total) ?>">
+          <a href="/detallesEnvio.php?total=<?php echo number_format($total) ?>">
 
             <button type="button" class="btn" style=" border-color:black; color: black;">
               <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 14 14">
@@ -251,6 +253,21 @@ $_SESSION['total'] = $total;
       </script>. Todos los derechos reservados.</span>
 
   </footer>
+
+
+
+  <script>
+    function updateQuantity(id, quantity,element) {
+      fetch(`functions/updateCart.php?id=${id}&quantity=${quantity}`, {
+        method: 'GET',
+      }).then(res => res.json()).then(data => {
+        if (!data.success) {
+          alert(data.error);
+          element.value = quantity - 1;
+        }
+      })
+    }
+  </script>
 
 
 </body>

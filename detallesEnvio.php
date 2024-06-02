@@ -6,6 +6,8 @@ if (!isset($_SESSION['username'])) {
   die();
 }
 $total = $_GET['total'];
+
+
 $_SESSION['user_id'];
 
 ?>
@@ -131,7 +133,7 @@ $_SESSION['user_id'];
   <div class="container text-center">
     <h2>Datos de Envío</h2>
 
-    <form id="envio-form" class="needs-validation" action="./functions/envio.php?total=<?php echo $total?>" method="POST">
+    <form id="envio-form" class="needs-validation" action="/functions/detallesenvio.php?total=<?php echo $total?>" method="POST">
       <div class="form-group">
         <label for="phone">Teléfono:</label>
         <input id="input-phone-number" name="telephone" type="tel" class="form-control text-center" placeholder="Ingrese su número de telefono" />
@@ -148,12 +150,12 @@ $_SESSION['user_id'];
         <label for="country">País:</label>
         <select name="city" id="input-contry" class="custom-select text-center">
           <option value="">Seleccionar País</option>
-          <option value="mx">México</option>
+          <option value="Mexico">México</option>
         </select>
       </div>
       <div class="form-group">
         <label for="post-code">Código Postal:</label>
-        <input id="input-postal-code" type="text" class="form-control text-center" i placeholder="Ingrese su Código Postal" />
+        <input  id="input-postal-code" type="text" name="post-code" class="form-control text-center" placeholder="Ingrese su Código Postal" />
       </div>
         <button id="btn-submit" type="button" class="btn" style=" border-color:black; color: black;">
           <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 16 16">
